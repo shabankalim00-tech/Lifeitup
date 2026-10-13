@@ -78,9 +78,21 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
       <main className={`relative z-10 w-full rounded-3xl p-6 sm:p-9 animate-fade-in ${
         isRoyal ? 'royal-glass-card' : 'luxury-glass-card'
       }`}>
+        {/* Unlocked Teaser Pill */}
+        <div className="flex justify-center mb-5">
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold ${
+            isRoyal 
+              ? 'bg-[#0a2318] border border-[#d4af37]/40 text-[#fde68a]' 
+              : 'bg-emerald-950 border border-emerald-500/40 text-lime-300'
+          }`}>
+            <Lock className="w-3.5 h-3.5" />
+            <span>Report Ready to Deliver</span>
+          </div>
+        </div>
+
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-display font-medium text-emerald-50 mb-2">
-            Unlock Your Personalised Report
+            Unlock Your Holistic Report
           </h1>
           <p className={`text-xs sm:text-sm ${isRoyal ? 'text-[#dfc282]/85' : 'text-emerald-200/80'}`}>
             Enter your details below to instantly view your Holistic Wellness Score and tailored LifeITUp pathway.
@@ -222,14 +234,14 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-4 ${
+            className={`w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-base cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-4 shadow-lg ${
               isRoyal ? 'btn-royal-gold' : 'bg-gradient-to-r from-lime-300 via-lime-400 to-emerald-400 text-emerald-950 shadow-[0_10px_25px_rgba(163,230,53,0.35)] hover:scale-[1.01]'
             }`}
           >
             {isLoading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                <span>Processing Report...</span>
+                <span>Unlocking Your Report...</span>
               </>
             ) : (
               <>
@@ -244,7 +256,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           isRoyal ? 'text-[#dfc282]/70' : 'text-emerald-500/70'
         }`}>
           <Lock className="w-3 h-3 text-emerald-400" />
-          <span>We respect your privacy. No spam, ever.</span>
+          <span>We respect your privacy. 100% spam-free.</span>
         </div>
       </main>
 

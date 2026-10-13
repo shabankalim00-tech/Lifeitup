@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { AssessmentMeta, LeadFormData, ReportPayload } from './types';
 import { IntroScreen } from './components/IntroScreen';
 import { QuestionScreen } from './components/QuestionScreen';
+import { AnalyzingScreen } from './components/AnalyzingScreen';
 import { CompletionScreen } from './components/CompletionScreen';
 import { LeadCaptureScreen } from './components/LeadCaptureScreen';
 import { ReportScreen } from './components/ReportScreen';
@@ -33,7 +34,7 @@ const FALLBACK_OPTIONS = [
 ];
 
 export function App() {
-  const [step, setStep] = useState<'intro' | 'quiz' | 'completed' | 'lead_capture' | 'report'>('intro');
+  const [step, setStep] = useState<'intro' | 'quiz' | 'analyzing' | 'completed' | 'lead_capture' | 'report'>('intro');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [sessionId, setSessionId] = useState<string>('');
@@ -114,15 +115,15 @@ export function App() {
         });
         const data = await res.json();
         if (data.success) {
-          // Transition to Completion screen
-          setStep('completed');
+          // Transition to Analyzing screen for high-tech client feel
+          setStep('analyzing');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
           alert(data.error || 'Failed to submit assessment answers.');
         }
       } catch (err: any) {
-        // Even if offline, proceed to completed screen
-        setStep('completed');
+        // Even if offline, proceed to analyzing/completed screen
+        setStep('analyzing');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } finally {
         setIsLoading(false);
@@ -254,6 +255,10 @@ export function App() {
           onNext={handleNext}
           onBack={handleBack}
         />
+      )}
+
+      {step === 'analyzing' && (
+        <AnalyzingScreen onComplete={() => setStep('completed')} isRoyal={isRoyal} />
       )}
 
       {step === 'completed' && (
