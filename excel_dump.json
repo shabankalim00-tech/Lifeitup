@@ -1,0 +1,9975 @@
+{
+  "Quiz": [
+    [
+      0,
+      [
+        "",
+        "",
+        "Recommended Response Options (Same for All Questions)"
+      ]
+    ],
+    [
+      2,
+      [
+        "",
+        "",
+        "4 options, for each question"
+      ]
+    ],
+    [
+      4,
+      [
+        "",
+        "",
+        "A.",
+        "Almost Never"
+      ]
+    ],
+    [
+      5,
+      [
+        "",
+        "",
+        "B.",
+        "Sometimes"
+      ]
+    ],
+    [
+      6,
+      [
+        "",
+        "",
+        "C.",
+        "Often"
+      ]
+    ],
+    [
+      7,
+      [
+        "",
+        "",
+        "D.",
+        "Almost Always"
+      ]
+    ],
+    [
+      9,
+      [
+        "",
+        "",
+        "Scoring:"
+      ]
+    ],
+    [
+      11,
+      [
+        "",
+        "",
+        "A = 1"
+      ]
+    ],
+    [
+      12,
+      [
+        "",
+        "",
+        "B = 2"
+      ]
+    ],
+    [
+      13,
+      [
+        "",
+        "",
+        "C = 3"
+      ]
+    ],
+    [
+      14,
+      [
+        "",
+        "",
+        "D = 4"
+      ]
+    ],
+    [
+      18,
+      [
+        "",
+        "",
+        "LIFEITUP HOLISTIC WELLNESS ASSESSMENT"
+      ]
+    ],
+    [
+      20,
+      [
+        "",
+        "",
+        "12 Questions Across the 6 Pillars of Life"
+      ]
+    ],
+    [
+      23,
+      [
+        "",
+        "",
+        "“Thinking about the last 30 days, choose the response that best describes you.”"
+      ]
+    ],
+    [
+      26,
+      [
+        "",
+        "",
+        "1️⃣ SOUL – Purpose & Meaning"
+      ]
+    ],
+    [
+      28,
+      [
+        "",
+        "",
+        "Q1. My work feels meaningful and connected to a larger purpose."
+      ]
+    ],
+    [
+      30,
+      [
+        "",
+        "",
+        "Q2. My daily actions align with my deeper values and beliefs."
+      ]
+    ],
+    [
+      34,
+      [
+        "",
+        "",
+        "2️⃣ MIND – Emotional Balance & Mental Clarity"
+      ]
+    ],
+    [
+      36,
+      [
+        "",
+        "",
+        "Q3. I remain calm and composed when facing stressful situations."
+      ]
+    ],
+    [
+      38,
+      [
+        "",
+        "",
+        "Q4. I experience mental clarity and focus during most of my day."
+      ]
+    ],
+    [
+      42,
+      [
+        "",
+        "",
+        "3️⃣ BODY – Energy & Physical Wellbeing"
+      ]
+    ],
+    [
+      44,
+      [
+        "",
+        "",
+        "Q5. I maintain good energy levels throughout the day."
+      ]
+    ],
+    [
+      46,
+      [
+        "",
+        "",
+        "Q6. I regularly practice habits that support my physical wellbeing (sleep, movement, breathing, etc.)."
+      ]
+    ],
+    [
+      50,
+      [
+        "",
+        "",
+        "4️⃣ CAREER – Performance & Professional Growth"
+      ]
+    ],
+    [
+      52,
+      [
+        "",
+        "",
+        "Q7. I make important professional decisions with confidence."
+      ]
+    ],
+    [
+      54,
+      [
+        "",
+        "",
+        "Q8. I feel I am consistently growing and progressing in my professional role."
+      ]
+    ],
+    [
+      58,
+      [
+        "",
+        "",
+        "5️⃣ ENVIRONMENT – Declutter & Healthy Surroundings"
+      ]
+    ],
+    [
+      60,
+      [
+        "",
+        "",
+        "Q9. My physical and digital environments are organised and clutter-free."
+      ]
+    ],
+    [
+      62,
+      [
+        "",
+        "",
+        "Q10. The people and relationships around me support my growth and wellbeing."
+      ]
+    ],
+    [
+      66,
+      [
+        "",
+        "",
+        "6️⃣ CONTRIBUTION – Impact & Service"
+      ]
+    ],
+    [
+      68,
+      [
+        "",
+        "",
+        "Q11. My work positively impacts others in a meaningful way.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Stage1",
+        "Just show the total Score out of total"
+      ]
+    ],
+    [
+      69,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "And 1 remark"
+      ]
+    ],
+    [
+      70,
+      [
+        "",
+        "",
+        "Q12. I actively contribute to helping others grow or succeed."
+      ]
+    ],
+    [
+      73,
+      [
+        "Stage 1",
+        "",
+        "",
+        "Just show the total Score out of total marks"
+      ]
+    ],
+    [
+      74,
+      [
+        "",
+        "",
+        "",
+        "And 1 remark as given below, with the score range"
+      ]
+    ],
+    [
+      76,
+      [
+        "",
+        "",
+        "Holistic Wellness Score"
+      ]
+    ],
+    [
+      78,
+      [
+        "",
+        "",
+        "Total score range: 12 – 48"
+      ]
+    ],
+    [
+      80,
+      [
+        "",
+        "Actual Score",
+        "| Score     | Category        | Curiosity-arousing remark                                                         |"
+      ]
+    ],
+    [
+      81,
+      [
+        "",
+        "",
+        "| --------- | --------------- | --------------------------------------------------------------------------------- |"
+      ]
+    ],
+    [
+      82,
+      [
+        "",
+        "Actual Score",
+        "| **12–20** | 🔴 **LOW**      | **Something may be quietly holding you back. Discover what—and where to begin.**  |"
+      ]
+    ],
+    [
+      83,
+      [
+        "",
+        "Actual Score",
+        "| **21–32** | 🟠 **MODERATE** | **You have a foundation. But where are you losing your potential?**               |"
+      ]
+    ],
+    [
+      84,
+      [
+        "",
+        "Actual Score",
+        "| **33–40** | 🟢 **STABLE**   | **You’re doing many things right. But what could be limiting your next level?**   |"
+      ]
+    ],
+    [
+      85,
+      [
+        "",
+        "Actual Score",
+        "| **41–48** | 🔵 **HEALTHY** | **Your foundation looks balanced. But which hidden gap deserves your attention?** |"
+      ]
+    ],
+    [
+      88,
+      [
+        "Stage 2"
+      ]
+    ],
+    [
+      91,
+      [
+        "",
+        "Report"
+      ]
+    ],
+    [
+      94,
+      [
+        "",
+        "PAGE 1",
+        "Almost Done! Get Your Personalised LIU Holistic Life Report"
+      ]
+    ],
+    [
+      96,
+      [
+        "",
+        "",
+        "Please enter your details so we can send your full report and recommendations."
+      ]
+    ],
+    [
+      98,
+      [
+        "",
+        "",
+        "Full Name"
+      ]
+    ],
+    [
+      99,
+      [
+        "",
+        "",
+        "WhatsApp Number"
+      ]
+    ],
+    [
+      100,
+      [
+        "",
+        "",
+        "Email Address"
+      ]
+    ],
+    [
+      101,
+      [
+        "",
+        "",
+        "Institution / Organisation Name"
+      ]
+    ],
+    [
+      103,
+      [
+        "",
+        "",
+        "Button:"
+      ]
+    ],
+    [
+      105,
+      [
+        "",
+        "",
+        "Get My Holistic Wellness Score & Report"
+      ]
+    ],
+    [
+      109,
+      [
+        "",
+        "PAGE 2",
+        "Step 2 – LifeITUp Holistic Wellness Score & Report"
+      ]
+    ],
+    [
+      111,
+      [
+        "",
+        "",
+        "Your Holistic Wellnes Score & Report"
+      ]
+    ],
+    [
+      113,
+      [
+        "",
+        "",
+        "Score: __ / 48"
+      ]
+    ],
+    [
+      115,
+      [
+        "",
+        "",
+        "This score reflects your current alignment across six important pillars of life."
+      ]
+    ],
+    [
+      117,
+      [
+        "",
+        "",
+        "These pillars are based on research in wellbeing, workplace performance and holistic development."
+      ]
+    ],
+    [
+      121,
+      [
+        "",
+        "PAGE 3",
+        "Step 3 – report detail"
+      ]
+    ],
+    [
+      123,
+      [
+        "",
+        "",
+        "See next sheet - \"score based report\""
+      ]
+    ],
+    [
+      125,
+      [
+        "",
+        "",
+        "Based on score, the backend will fetch and put the relevant detail in the report"
+      ]
+    ],
+    [
+      129,
+      [
+        "",
+        "page 4",
+        "Conclusion"
+      ]
+    ],
+    [
+      130,
+      [
+        "",
+        "",
+        "YOUR SCORE IS ONLY THE BEGINNING."
+      ]
+    ],
+    [
+      132,
+      [
+        "",
+        "",
+        "Your assessment highlights where you are today."
+      ]
+    ],
+    [
+      134,
+      [
+        "",
+        "",
+        "Your personalised pathway shows where to focus next."
+      ]
+    ],
+    [
+      136,
+      [
+        "",
+        "",
+        "Stay tuned for somethign very special coming your way"
+      ]
+    ],
+    [
+      138,
+      [
+        "",
+        "",
+        "Whatsapp Channel & Community link",
+        "",
+        "",
+        "",
+        "",
+        "Instagram link",
+        "",
+        "Youtube link"
+      ]
+    ],
+    [
+      140,
+      [
+        "",
+        "",
+        "Your wellbeing doesn't change in one assessment."
+      ]
+    ],
+    [
+      141,
+      [
+        "",
+        "",
+        "It changes through what you do next."
+      ]
+    ],
+    [
+      143,
+      [
+        "",
+        "",
+        "LifeITUp Worldwide"
+      ]
+    ],
+    [
+      144,
+      [
+        "",
+        "",
+        "Empowering Your Holistic Success"
+      ]
+    ]
+  ],
+  "Details": [
+    [
+      1,
+      [
+        46072.0,
+        "",
+        "",
+        "",
+        "Lifeitup Engagement + Automation Blueprint (Fast & Scalable)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Quiz framework",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Here is your complete, crisp, WhatsApp-shareable Institutional SQUAAA Wellness Model"
+      ]
+    ],
+    [
+      2,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "(Assessment + Scoring + Service Provider Mapping in ONE)"
+      ]
+    ],
+    [
+      3,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Perfect. Below is a single, clean, WhatsApp-sharable message you can save, forward, or use as a build reference tomorrow."
+      ]
+    ],
+    [
+      4,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Increase engagement across 20,000 base → Build trust → Convert to Paid Annual Membership.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "It’s action-oriented, crisp, and structured — no fluff."
+      ]
+    ],
+    [
+      6,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🟢 LifeITUp – 2-Minute Holistic Readiness Check (Build Note)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Institutional Holistic Wellness Assessment (SQUAAA Model)"
+      ]
+    ],
+    [
+      7,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Aligned with WEF • WHO • ILO • SHRM • NSDC standards"
+      ]
+    ],
+    [
+      8,
+      [
+        "",
+        "",
+        "",
+        "",
+        "After Quiz → Segment into 3 buckets:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Purpose:"
+      ]
+    ],
+    [
+      9,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• High Stress",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Run a quick WhatsApp-friendly quiz → auto-generate a personal report → enroll user into a Free 1-Day Refresher Experience → nurture into 1-Year LifeITUp Membership.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "SQUAAA = Structure • Quality • Utilisation • Accountability • Alignment • Advancement"
+      ]
+    ],
+    [
+      10,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Moderate"
+      ]
+    ],
+    [
+      11,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Leadership Track",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 QUIZ FORMAT"
+      ]
+    ],
+    [
+      13,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Total Questions: 12",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "(Score each 0–3)"
+      ]
+    ],
+    [
+      14,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Typeform / Google Forms → Make.com → MailerLite",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Time: 2 minutes"
+      ]
+    ],
+    [
+      15,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Options (for all questions):"
+      ]
+    ],
+    [
+      16,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Always | Often | Sometimes | Rarely | Almost Never"
+      ]
+    ],
+    [
+      17,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "(Internal scoring: 5 → 1)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1️⃣ Soul – Purpose & Values"
+      ]
+    ],
+    [
+      18,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Weekly 5-min task (Pressure Reset / Gratitude / Tough Talk Script)"
+      ]
+    ],
+    [
+      19,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Ask reply “DONE”",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 ADULT VERSION (Teachers / Employees / Professionals)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q1. Is the institutional purpose clearly defined and emotionally embraced by staff?"
+      ]
+    ],
+    [
+      20,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q2. Are leadership decisions visibly aligned with stated values?"
+      ]
+    ],
+    [
+      21,
+      [
+        "",
+        "",
+        "",
+        "",
+        "& stickiness.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "SOUL (Purpose Fatigue – India’s top pain)"
+      ]
+    ],
+    [
+      23,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Do you feel your daily work has meaning beyond income or duty?"
+      ]
+    ],
+    [
+      24,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Interakt (WhatsApp automation)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "2️⃣ Mind – Psychological Safety & Emotional Health"
+      ]
+    ],
+    [
+      25,
+      [
+        "",
+        "",
+        "",
+        "",
+        "MailerLite (Email drip)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Do you feel fulfilled despite being busy?"
+      ]
+    ],
+    [
+      26,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q3. Are structured mental health supports (EAP, counselling, stress audits) available?"
+      ]
+    ],
+    [
+      27,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "MIND (Stress & Overthinking)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q4. Do managers receive EI & conflict-handling training regularly?"
+      ]
+    ],
+    [
+      28,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3. Do you feel mentally exhausted even when work is manageable?"
+      ]
+    ],
+    [
+      29,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Holistic Leader of the Week",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4. Do you struggle to switch off your mind after work?"
+      ]
+    ],
+    [
+      30,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Digital Badges"
+      ]
+    ],
+    [
+      31,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• LinkedIn Spotlight",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "BODY (Energy & Sleep Issues)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3️⃣ Body – Physical Wellness & Recovery"
+      ]
+    ],
+    [
+      32,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "5. Do you wake up feeling energized most mornings?"
+      ]
+    ],
+    [
+      33,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "6. Does low energy affect your motivation or focus?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q5. Are health screening & wellness initiatives formally integrated?"
+      ]
+    ],
+    [
+      34,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q6. Are workload & leave policies actively preventing burnout?"
+      ]
+    ],
+    [
+      35,
+      [
+        "",
+        "",
+        "",
+        "",
+        "2–3 champions per institution",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "CAREER (Stagnation & AI Anxiety)"
+      ]
+    ],
+    [
+      36,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Private group + early access",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "7. Do you feel confident about your future career relevance?"
+      ]
+    ],
+    [
+      37,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8. Do you feel you are growing professionally year on year?"
+      ]
+    ],
+    [
+      38,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4️⃣ Career – Skills & Leadership Growth"
+      ]
+    ],
+    [
+      39,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "ENVIRONMENT (Culture & Belonging)"
+      ]
+    ],
+    [
+      40,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Flow:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "9. Do you feel valued and heard in your work environment?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q7. Is there a structured pathway for skill & promotion growth?"
+      ]
+    ],
+    [
+      41,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Landing Page → Quiz → Auto PDF → Email + WhatsApp → 3-Day Challenge → Membership Pitch",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "10. Do your work relationships support your wellbeing?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q8. Are future skills (digital + leadership + EI) part of strategy?"
+      ]
+    ],
+    [
+      43,
+      [
+        "",
+        "",
+        "",
+        "",
+        "& Low Cost)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "CONTRIBUTION (Need to Give Back)"
+      ]
+    ],
+    [
+      44,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "11. Do you feel you are contributing positively to society?"
+      ]
+    ],
+    [
+      45,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Quiz: Typeform (best UX) / Google Forms (free)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "12. Do you wish to create impact beyond personal success?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "5️⃣ Environment – Workplace Safety & Sustainability"
+      ]
+    ],
+    [
+      46,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Automation: Make.com"
+      ]
+    ],
+    [
+      47,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• PDF: PDFMonkey / Docupilot",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 STUDENT VERSION (Class 9–12)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q9. Is the workplace safe, ergonomic & productivity-friendly?"
+      ]
+    ],
+    [
+      48,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Email: MailerLite / Brevo",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q10. Are pollution, air quality, waste & sustainability practices monitored and improved?"
+      ]
+    ],
+    [
+      49,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• WhatsApp: Interakt / WATI",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "(Same structure, simplified language)"
+      ]
+    ],
+    [
+      50,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Live Sessions: Zoom"
+      ]
+    ],
+    [
+      51,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Content: Canva + CapCut",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Soul:"
+      ]
+    ],
+    [
+      52,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Scheduling: Buffer",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "6️⃣ Charities – Social Impact & CSR"
+      ]
+    ],
+    [
+      53,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Are you clear about who you want to become in life?"
+      ]
+    ],
+    [
+      54,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q11. Is CSR/community engagement structurally embedded?"
+      ]
+    ],
+    [
+      55,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Do you feel pressured to follow others’ expectations?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Q12. Do employees actively participate in volunteering?"
+      ]
+    ],
+    [
+      56,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Structure:"
+      ]
+    ],
+    [
+      57,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• 1 Pillar Insight",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Mind:"
+      ]
+    ],
+    [
+      58,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• 1 Practical Tool",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3. Do exams or the future make you anxious?"
+      ]
+    ],
+    [
+      59,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• 1 Member Spotlight",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4. Do you overthink or feel mentally tired often?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Each Pillar: 0–6"
+      ]
+    ],
+    [
+      60,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Upcoming Event",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Total Score: 0–36"
+      ]
+    ],
+    [
+      61,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Body:"
+      ]
+    ],
+    [
+      62,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "5. Do you feel energetic during the day?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "0–12 → At Risk"
+      ]
+    ],
+    [
+      63,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "6. Does tiredness affect your studies?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "13–22 → Fragmented"
+      ]
+    ],
+    [
+      64,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Top 10 winners → Recognition + Gifts",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "23–30 → Strategically Aligned"
+      ]
+    ],
+    [
+      65,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Sponsor funds rewards",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Career:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "31–36 → Model Holistic Institution"
+      ]
+    ],
+    [
+      66,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "7. Are you confused about career options?"
+      ]
+    ],
+    [
+      67,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8. Do you feel prepared for the future?"
+      ]
+    ],
+    [
+      69,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Quiz completion rate",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Environment:"
+      ]
+    ],
+    [
+      70,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Session retention",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "9. Do you feel supported by teachers and family?"
+      ]
+    ],
+    [
+      71,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• WhatsApp reply rate",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "10. Do you feel safe expressing yourself?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: Purpose alignment, culture strengthening"
+      ]
+    ],
+    [
+      72,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Newsletter open rate"
+      ]
+    ],
+    [
+      73,
+      [
+        "",
+        "",
+        "",
+        "",
+        "• Repeat attendance",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Contribution:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: Art of Living, Isha Foundation, Leadership coaches"
+      ]
+    ],
+    [
+      74,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "11. Do you enjoy helping others?",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: Search Inside Yourself Leadership Institute"
+      ]
+    ],
+    [
+      75,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "12. Do you feel good when you contribute?"
+      ]
+    ],
+    [
+      77,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Automation + Tools: ₹5k–₹15k",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 SCORING & MAPPING MODEL"
+      ]
+    ],
+    [
+      78,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Design + Badges: ₹3k",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: EAP, EI training, resilience programs"
+      ]
+    ],
+    [
+      79,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Total: < ₹20k",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Each pillar = 2 questions (max score 10)"
+      ]
+    ],
+    [
+      80,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: YourDOST, Trijog, InnerHour"
+      ]
+    ],
+    [
+      81,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Pillar Status:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: Lyra Health, Talkspace"
+      ]
+    ],
+    [
+      82,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8–10 → Strong"
+      ]
+    ],
+    [
+      83,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Week 1 – Quiz + Segmentation",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "6–7 → Stable"
+      ]
+    ],
+    [
+      84,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Week 2 – Micro-tasks + Recognition",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4–5 → Needs Attention"
+      ]
+    ],
+    [
+      85,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Week 3 – Ambassador rollout",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "≤3 → Critical",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: Corporate fitness, health screening, recovery systems"
+      ]
+    ],
+    [
+      86,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Week 4 – Newsletter + Gamified quiz"
+      ]
+    ],
+    [
+      87,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Week 5 – Paid Membership Offer",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 FINAL CATEGORY LOGIC",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: Practo Corporate, Cult.fit, HealthifyMe"
+      ]
+    ],
+    [
+      88,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: Virgin Pulse, Vitality"
+      ]
+    ],
+    [
+      89,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🟢 Aligned & Growing"
+      ]
+    ],
+    [
+      90,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4+ pillars strong, none critical"
+      ]
+    ],
+    [
+      91,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Core Formula:"
+      ]
+    ],
+    [
+      92,
+      [
+        "",
+        "",
+        "",
+        "",
+        "Relevance + Recognition + Routine + Identity = Healthy Conversion.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🟡 Capable but Stressed",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: Skill mapping, digital upskilling, leadership cohorts"
+      ]
+    ],
+    [
+      93,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Career strong, Mind/Body weak"
+      ]
+    ],
+    [
+      94,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: NSDC partners, Simplilearn, upGrad"
+      ]
+    ],
+    [
+      95,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🟠 Driven but Drained",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: LinkedIn Learning, Coursera for Business, FranklinCovey"
+      ]
+    ],
+    [
+      96,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Career + Mind high, Body + Soul low"
+      ]
+    ],
+    [
+      98,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔴 Searching & Unsettled"
+      ]
+    ],
+    [
+      99,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3+ pillars weak, Soul always weak",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: Ergonomic audit, air quality monitoring, sustainability strategy"
+      ]
+    ],
+    [
+      101,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 AUTO-GENERATED REPORT (USER RECEIVES)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: JLL India, Godrej Workspace, CSRBOX (sustainability advisory)"
+      ]
+    ],
+    [
+      102,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: CBRE, HOK, WELL Building Standard consultants"
+      ]
+    ],
+    [
+      103,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Category name + 1-paragraph insight"
+      ]
+    ],
+    [
+      104,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Pillar status summary"
+      ]
+    ],
+    [
+      105,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* 3 personalized observations"
+      ]
+    ],
+    [
+      106,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Next Step:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Needs: CSR design, volunteering platforms, impact measurement"
+      ]
+    ],
+    [
+      107,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "👉 Free 1-Day LifeITUp Refresher Experience"
+      ]
+    ],
+    [
+      108,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "India: GiveIndia, Goonj"
+      ]
+    ],
+    [
+      109,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Report sent instantly via WhatsApp + Email.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Global: Benevity, GlobalGiving"
+      ]
+    ],
+    [
+      111,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "🔹 FUNNEL FLOW"
+      ]
+    ],
+    [
+      113,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Quiz → Instant Report → Free 1-Day Experience →",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Page 1:"
+      ]
+    ],
+    [
+      114,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "7-Day Nurture → 1-Year LifeITUp Membership",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Radar chart vs Ideal Institution"
+      ]
+    ],
+    [
+      115,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Benchmark references (WEF, WHO, ILO)"
+      ]
+    ],
+    [
+      116,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "💡 Design Principle:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Institutional Wellness Index"
+      ]
+    ],
+    [
+      117,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Short. Diagnostic. Non-judgmental. India-relevant. Institution-safe."
+      ]
+    ],
+    [
+      118,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Page 2:"
+      ]
+    ],
+    [
+      119,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "If you want, tomorrow I can:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Pillar-by-pillar gap analysis"
+      ]
+    ],
+    [
+      120,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Build Google Form logic",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Risk exposure summary"
+      ]
+    ],
+    [
+      121,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Write exact WhatsApp report messages",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Recommended service integration"
+      ]
+    ],
+    [
+      122,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "* Create the 1-Day Refresher curriculum"
+      ]
+    ],
+    [
+      124,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Just say READY when you want to build."
+      ]
+    ],
+    [
+      125,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "This positions Lifeitup as:"
+      ]
+    ],
+    [
+      126,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Institutional Wellness Benchmarking Authority"
+      ]
+    ],
+    [
+      128,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Integrated Solution Ecosystem"
+      ]
+    ],
+    [
+      131,
+      [
+        46086.0,
+        "Thursday",
+        "for teachers/employeyes",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "for students"
+      ]
+    ],
+    [
+      132,
+      [
+        "",
+        "",
+        "& PROFESSIONALS",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Here is the WhatsApp-shareable version for students/kids, linking NEP 2020 sections + real pain areas reported in India (WHO / ICMR / UNICEF / NCERT studies).",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "If you want next:"
+      ]
+    ],
+    [
+      133,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "It mirrors the teacher version so schools can easily understand the need for student wellbeing programs.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I can design the exact 2-page PDF wording ready for automation."
+      ]
+    ],
+    [
+      134,
+      [
+        "",
+        "",
+        "(Evidence-backed insights for educators & organisations)"
+      ]
+    ],
+    [
+      137,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "(Evidence-based insights for schools & parents)"
+      ]
+    ],
+    [
+      138,
+      [
+        "",
+        "",
+        "1️⃣ Teachers Are the Cornerstone of Education"
+      ]
+    ],
+    [
+      140,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 5.2 (p.16)"
+      ]
+    ],
+    [
+      141,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1️⃣ Holistic Development of Children"
+      ]
+    ],
+    [
+      142,
+      [
+        "",
+        "",
+        "NEP states that teachers are the “most respected members of society and central to educational reform.”"
+      ]
+    ],
+    [
+      143,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 1.3 (p.4)"
+      ]
+    ],
+    [
+      145,
+      [
+        "",
+        "",
+        "• Emotional exhaustion",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Education must promote holistic development including cognitive, emotional, ethical and physical growth."
+      ]
+    ],
+    [
+      146,
+      [
+        "",
+        "",
+        "• Lack of recognition"
+      ]
+    ],
+    [
+      147,
+      [
+        "",
+        "",
+        "• Low professional wellbeing",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Academic pressure"
+      ]
+    ],
+    [
+      148,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Lack of emotional support"
+      ]
+    ],
+    [
+      149,
+      [
+        "",
+        "",
+        "teacher burnout can range from 25%–74% globally.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Focus only on marks"
+      ]
+    ],
+    [
+      151,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "mental health issues affect around 14% of adolescents globally."
+      ]
+    ],
+    [
+      153,
+      [
+        "",
+        "",
+        "2️⃣ Continuous Professional Development (50 Hours)"
+      ]
+    ],
+    [
+      155,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 5.15 (p.25)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "2️⃣ Social & Emotional Learning (SEL)"
+      ]
+    ],
+    [
+      157,
+      [
+        "",
+        "",
+        "Teachers should undergo 50 hours of CPD every year.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.4 (p.13)"
+      ]
+    ],
+    [
+      159,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Students must develop life skills like empathy, emotional intelligence and resilience."
+      ]
+    ],
+    [
+      160,
+      [
+        "",
+        "",
+        "• Skill stagnation"
+      ]
+    ],
+    [
+      161,
+      [
+        "",
+        "",
+        "• Lack of personal growth",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Poor emotional regulation"
+      ]
+    ],
+    [
+      162,
+      [
+        "",
+        "",
+        "• Teaching becoming routine",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Conflict with peers"
+      ]
+    ],
+    [
+      163,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Low self-confidence"
+      ]
+    ],
+    [
+      166,
+      [
+        "",
+        "",
+        "3️⃣ Focus on Social & Emotional Learning"
+      ]
+    ],
+    [
+      167,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3️⃣ Mental Health & Counselling Support"
+      ]
+    ],
+    [
+      168,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 4.4 (p.13)"
+      ]
+    ],
+    [
+      169,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.22 (p.15)"
+      ]
+    ],
+    [
+      170,
+      [
+        "",
+        "",
+        "Policy emphasises social-emotional learning and life skills for the education ecosystem."
+      ]
+    ],
+    [
+      171,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Schools must provide mental health support systems and counselling services."
+      ]
+    ],
+    [
+      173,
+      [
+        "",
+        "",
+        "• Emotional reactivity",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Anxiety"
+      ]
+    ],
+    [
+      174,
+      [
+        "",
+        "",
+        "• Classroom stress",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Exam stress"
+      ]
+    ],
+    [
+      175,
+      [
+        "",
+        "",
+        "• Conflict with parents / students",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Fear of failure"
+      ]
+    ],
+    [
+      177,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1 in 5 adolescents experiences mental health challenges."
+      ]
+    ],
+    [
+      179,
+      [
+        "",
+        "",
+        "4️⃣ Mental Health & Wellbeing in Schools"
+      ]
+    ],
+    [
+      181,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 4.22 (p.15)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "4️⃣ Reduced Exam Pressure"
+      ]
+    ],
+    [
+      183,
+      [
+        "",
+        "",
+        "Schools must support mental health and counselling systems.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.37 (p.18)"
+      ]
+    ],
+    [
+      185,
+      [
+        "",
+        "",
+        "• Anxiety",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Board exams will focus more on conceptual understanding rather than rote learning."
+      ]
+    ],
+    [
+      186,
+      [
+        "",
+        "",
+        "• Emotional fatigue"
+      ]
+    ],
+    [
+      187,
+      [
+        "",
+        "",
+        "• Chronic stress",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Extreme exam stress"
+      ]
+    ],
+    [
+      188,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Fear of judgement"
+      ]
+    ],
+    [
+      189,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Performance pressure"
+      ]
+    ],
+    [
+      191,
+      [
+        "",
+        "",
+        "5️⃣ Holistic Development Model"
+      ]
+    ],
+    [
+      193,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 1.3 (p.4)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "5️⃣ Physical Health & Wellness"
+      ]
+    ],
+    [
+      195,
+      [
+        "",
+        "",
+        "Education must promote holistic development – cognitive, emotional, ethical & physical.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.23 (p.15)"
+      ]
+    ],
+    [
+      197,
+      [
+        "",
+        "",
+        "Most professionals focus only on career performance, ignoring:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Schools should promote sports, yoga and health education."
+      ]
+    ],
+    [
+      199,
+      [
+        "",
+        "",
+        "• physical health",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Sedentary lifestyle"
+      ]
+    ],
+    [
+      200,
+      [
+        "",
+        "",
+        "• emotional balance",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Low physical activity"
+      ]
+    ],
+    [
+      201,
+      [
+        "",
+        "",
+        "• purpose",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Rising obesity among children"
+      ]
+    ],
+    [
+      205,
+      [
+        "",
+        "",
+        "6️⃣ Supportive School Culture",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "6️⃣ Experiential Learning"
+      ]
+    ],
+    [
+      207,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 5.20 (p.27)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.6 (p.13)"
+      ]
+    ],
+    [
+      209,
+      [
+        "",
+        "",
+        "Schools must create supportive working environments for teachers.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Students should learn through experiments, projects and real-life experiences."
+      ]
+    ],
+    [
+      211,
+      [
+        "",
+        "",
+        "Teacher stress often comes from:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Boredom in classrooms"
+      ]
+    ],
+    [
+      212,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Lack of curiosity"
+      ]
+    ],
+    [
+      213,
+      [
+        "",
+        "",
+        "• administrative workload",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Passive learning habits"
+      ]
+    ],
+    [
+      214,
+      [
+        "",
+        "",
+        "• compliance reporting"
+      ]
+    ],
+    [
+      215,
+      [
+        "",
+        "",
+        "• institutional pressure"
+      ]
+    ],
+    [
+      217,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "7️⃣ Character & Values Education"
+      ]
+    ],
+    [
+      219,
+      [
+        "",
+        "",
+        "7️⃣ Health & Wellness Education",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.4 (p.13)"
+      ]
+    ],
+    [
+      221,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 4.23 (p.15)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Education must develop ethics, compassion and responsible citizenship."
+      ]
+    ],
+    [
+      223,
+      [
+        "",
+        "",
+        "Policy recommends health education, yoga and preventive wellness training.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Lack of purpose"
+      ]
+    ],
+    [
+      224,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Social media influence"
+      ]
+    ],
+    [
+      225,
+      [
+        "",
+        "",
+        "Professionals face:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Weak value systems"
+      ]
+    ],
+    [
+      227,
+      [
+        "",
+        "",
+        "• fatigue"
+      ]
+    ],
+    [
+      228,
+      [
+        "",
+        "",
+        "• sleep problems"
+      ]
+    ],
+    [
+      229,
+      [
+        "",
+        "",
+        "• sedentary lifestyle",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8️⃣ Multidisciplinary Learning"
+      ]
+    ],
+    [
+      231,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.9 (p.14)"
+      ]
+    ],
+    [
+      233,
+      [
+        "",
+        "",
+        "8️⃣ Reflective Teaching Practice",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Students should be able to explore multiple interests beyond academic subjects."
+      ]
+    ],
+    [
+      235,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 5.16 (p.25)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Career confusion"
+      ]
+    ],
+    [
+      236,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Lack of exposure to diverse fields"
+      ]
+    ],
+    [
+      237,
+      [
+        "",
+        "",
+        "Teachers must engage in reflective learning and continuous improvement."
+      ]
+    ],
+    [
+      239,
+      [
+        "",
+        "",
+        "Many educators lack time to reflect due to:"
+      ]
+    ],
+    [
+      240,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "9️⃣ Safe & Positive School Environment"
+      ]
+    ],
+    [
+      241,
+      [
+        "",
+        "",
+        "• workload"
+      ]
+    ],
+    [
+      242,
+      [
+        "",
+        "",
+        "• digital distractions",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 5.20 (p.27)"
+      ]
+    ],
+    [
+      243,
+      [
+        "",
+        "",
+        "• mental overload"
+      ]
+    ],
+    [
+      244,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Schools must create inclusive, safe and supportive environments for children."
+      ]
+    ],
+    [
+      246,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Bullying"
+      ]
+    ],
+    [
+      247,
+      [
+        "",
+        "",
+        "9️⃣ Collaborative Professional Culture",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Peer pressure"
+      ]
+    ],
+    [
+      248,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Social isolation"
+      ]
+    ],
+    [
+      249,
+      [
+        "",
+        "",
+        "NEP 2020 – Section 5.10 (p.21)"
+      ]
+    ],
+    [
+      251,
+      [
+        "",
+        "",
+        "Schools should build professional learning communities for teachers."
+      ]
+    ],
+    [
+      252,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "& 21st Century Skills"
+      ]
+    ],
+    [
+      253,
+      [
+        "",
+        "",
+        "Teachers often feel:"
+      ]
+    ],
+    [
+      254,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "NEP 2020 – Section 4.4 (p.13)"
+      ]
+    ],
+    [
+      255,
+      [
+        "",
+        "",
+        "• isolated"
+      ]
+    ],
+    [
+      256,
+      [
+        "",
+        "",
+        "• unsupported",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Education must develop skills like:"
+      ]
+    ],
+    [
+      257,
+      [
+        "",
+        "",
+        "• emotionally drained"
+      ]
+    ],
+    [
+      258,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• communication"
+      ]
+    ],
+    [
+      259,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• critical thinking"
+      ]
+    ],
+    [
+      260,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• problem solving"
+      ]
+    ],
+    [
+      261,
+      [
+        "",
+        "",
+        "NEP 2020 – Multiple sections (student + teacher wellbeing)"
+      ]
+    ],
+    [
+      262,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Poor decision making"
+      ]
+    ],
+    [
+      263,
+      [
+        "",
+        "",
+        "The policy promotes wellbeing for both learners and educators.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Digital distractions"
+      ]
+    ],
+    [
+      264,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Low focus"
+      ]
+    ],
+    [
+      265,
+      [
+        "",
+        "",
+        "Professionals increasingly report:"
+      ]
+    ],
+    [
+      267,
+      [
+        "",
+        "",
+        "• burnout"
+      ]
+    ],
+    [
+      268,
+      [
+        "",
+        "",
+        "• decision fatigue",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "According to WHO and UNICEF studies:"
+      ]
+    ],
+    [
+      269,
+      [
+        "",
+        "",
+        "• mental overload"
+      ]
+    ],
+    [
+      270,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Common issues among adolescents today include:"
+      ]
+    ],
+    [
+      272,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• stress & anxiety"
+      ]
+    ],
+    [
+      273,
+      [
+        "",
+        "",
+        "NEP is moving education toward holistic wellbeing, but most schools still provide only:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• screen addiction"
+      ]
+    ],
+    [
+      274,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• lack of emotional resilience"
+      ]
+    ],
+    [
+      275,
+      [
+        "",
+        "",
+        "• academic training",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• peer pressure"
+      ]
+    ],
+    [
+      276,
+      [
+        "",
+        "",
+        "• compliance workshops",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• academic burnout"
+      ]
+    ],
+    [
+      278,
+      [
+        "",
+        "",
+        "There is a huge gap in:"
+      ]
+    ],
+    [
+      280,
+      [
+        "",
+        "",
+        "✔ emotional resilience",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Most schools still focus mainly on academic achievement, while NEP calls for:"
+      ]
+    ],
+    [
+      281,
+      [
+        "",
+        "",
+        "✔ mental clarity"
+      ]
+    ],
+    [
+      282,
+      [
+        "",
+        "",
+        "✔ teacher wellbeing",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "✔ emotional intelligence"
+      ]
+    ],
+    [
+      283,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "✔ physical wellbeing"
+      ]
+    ],
+    [
+      284,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "✔ life skills"
+      ]
+    ],
+    [
+      285,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "✔ ethical development"
+      ]
+    ],
+    [
+      286,
+      [
+        "",
+        "",
+        "Your 6-pillar life framework addresses the exact gaps NEP highlights:"
+      ]
+    ],
+    [
+      288,
+      [
+        "",
+        "",
+        "• Soul – purpose & meaning"
+      ]
+    ],
+    [
+      289,
+      [
+        "",
+        "",
+        "• Mind – emotional intelligence",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A balanced student program can include:"
+      ]
+    ],
+    [
+      290,
+      [
+        "",
+        "",
+        "• Body – energy & health"
+      ]
+    ],
+    [
+      291,
+      [
+        "",
+        "",
+        "• Career – professional growth",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Mind – focus & emotional intelligence"
+      ]
+    ],
+    [
+      292,
+      [
+        "",
+        "",
+        "• Environment – relationships",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Body – health & energy"
+      ]
+    ],
+    [
+      293,
+      [
+        "",
+        "",
+        "• Contribution – values & service",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Soul – purpose & values"
+      ]
+    ],
+    [
+      294,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Career – future readiness"
+      ]
+    ],
+    [
+      295,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Environment – relationships"
+      ]
+    ],
+    [
+      296,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "• Contribution – empathy & service"
+      ]
+    ],
+    [
+      297,
+      [
+        "",
+        "",
+        "✔ This is why holistic educator programs are becoming a global trend."
+      ]
+    ],
+    [
+      300,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "✔ This is why student wellbeing programs are becoming a major priority in schools globally."
+      ]
+    ],
+    [
+      304,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "If you want, I can also help you build the exact 3 student programs aligned with NEP:"
+      ]
+    ],
+    [
+      306,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1️⃣ Grades 6–8 emotional foundation program"
+      ]
+    ],
+    [
+      307,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "2️⃣ Grades 9–10 stress & identity program"
+      ]
+    ],
+    [
+      308,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "3️⃣ Grades 11–12 career clarity & resilience program"
+      ]
+    ],
+    [
+      310,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "These would align perfectly with your LIU ecosystem vision."
+      ]
+    ],
+    [
+      311,
+      [
+        "",
+        "",
+        "tabular - PAIN AREAS AND SOLUTION PROMISE"
+      ]
+    ],
+    [
+      314,
+      [
+        "",
+        "",
+        "LIU Pillar",
+        "Biggest Pain Area (Evidence)",
+        "Global Evidence Source",
+        "NEP 2020 Alignment (Section)",
+        "Program Promise"
+      ]
+    ],
+    [
+      315,
+      [
+        "",
+        "",
+        "Soul (Purpose & Meaning)",
+        "Lack of meaning, disengagement and loss of motivation at work",
+        "Gallup Global Workplace Report: ~70% employees disengaged",
+        "Sec 4.4 – Emphasis on values, ethics and character building",
+        "Help participants reconnect with purpose, values and inner direction"
+      ]
+    ],
+    [
+      316,
+      [
+        "",
+        "",
+        "Mind (Emotional & Mental Clarity)",
+        "Stress, anxiety, emotional reactivity and overthinking",
+        "WHO workplace studies show stress as one of the biggest workplace health risks",
+        "Sec 4.4 – Focus on social-emotional learning and wellbeing",
+        "Build emotional resilience, calm thinking and mental clarity"
+      ]
+    ],
+    [
+      317,
+      [
+        "",
+        "",
+        "Body (Energy & Health)",
+        "Fatigue, sedentary lifestyle, burnout and declining physical health",
+        "ICMR studies show rising lifestyle diseases and inactivity among Indian professionals",
+        "Sec 4.23 – Promotion of health, yoga and physical wellbeing",
+        "Establish daily energy routines and stress-recovery habits"
+      ]
+    ],
+    [
+      318,
+      [
+        "",
+        "",
+        "Career (Performance & Growth)",
+        "Decision fatigue, performance pressure and lack of professional growth clarity",
+        "Leadership studies show professionals make 100+ decisions daily",
+        "Sec 5.15 – 50 hours annual continuous professional development (CPD) for teachers",
+        "Develop clear decision frameworks and consistent performance discipline"
+      ]
+    ],
+    [
+      319,
+      [
+        "",
+        "",
+        "Environment (Declutter & Relationships)",
+        "Cluttered workspaces, digital overload, interpersonal conflict and poor communication",
+        "Workplace research identifies interpersonal stress as a major burnout factor",
+        "Sec 5.20 – Need for supportive and positive school environments",
+        "Improve decluttered environments, emotional intelligence and healthy relationships"
+      ]
+    ],
+    [
+      320,
+      [
+        "",
+        "",
+        "Contribution (Impact & Service)",
+        "Lack of fulfilment beyond work and weak sense of societal impact",
+        "Positive psychology research shows purpose and contribution increase wellbeing",
+        "Sec 4.4 – Encourages citizenship, ethics and service mindset",
+        "Cultivate service orientation and meaningful contribution to society"
+      ]
+    ],
+    [
+      325,
+      [
+        "",
+        "assessment format with questions"
+      ]
+    ],
+    [
+      327,
+      [
+        "",
+        "",
+        "Rs. 999.- Assessment and report FULLY COMPLIMENATARY FOR YOU"
+      ]
+    ],
+    [
+      328,
+      [
+        "",
+        "",
+        "Recommended Response Options (Same for All Questions)"
+      ]
+    ],
+    [
+      330,
+      [
+        "",
+        "",
+        "4 options, for each question"
+      ]
+    ],
+    [
+      332,
+      [
+        "",
+        "",
+        "A. Rarely true for me",
+        "",
+        "",
+        "A.",
+        "Almost Never"
+      ]
+    ],
+    [
+      333,
+      [
+        "",
+        "",
+        "B. Sometimes true for me",
+        "",
+        "",
+        "B.",
+        "Sometimes"
+      ]
+    ],
+    [
+      334,
+      [
+        "",
+        "",
+        "C. Often true for me",
+        "",
+        "",
+        "C.",
+        "Often"
+      ]
+    ],
+    [
+      335,
+      [
+        "",
+        "",
+        "D. Consistently true for me",
+        "",
+        "",
+        "D.",
+        "Almost Always"
+      ]
+    ],
+    [
+      337,
+      [
+        "",
+        "",
+        "Scoring:"
+      ]
+    ],
+    [
+      339,
+      [
+        "",
+        "",
+        "A = 1"
+      ]
+    ],
+    [
+      340,
+      [
+        "",
+        "",
+        "B = 2"
+      ]
+    ],
+    [
+      341,
+      [
+        "",
+        "",
+        "C = 3"
+      ]
+    ],
+    [
+      342,
+      [
+        "",
+        "",
+        "D = 4"
+      ]
+    ],
+    [
+      346,
+      [
+        "",
+        "",
+        "LIFEITUP HOLISTIC WELLNESS ASSESSMENT"
+      ]
+    ],
+    [
+      348,
+      [
+        "",
+        "",
+        "12 Questions Across the 6 Pillars of Life"
+      ]
+    ],
+    [
+      351,
+      [
+        "",
+        "",
+        "“Thinking about the last 30 days, choose the response that best describes you.”"
+      ]
+    ],
+    [
+      354,
+      [
+        "",
+        "",
+        "1️⃣ SOUL – Purpose & Meaning"
+      ]
+    ],
+    [
+      356,
+      [
+        "",
+        "",
+        "Q1. My work feels meaningful and connected to a larger purpose."
+      ]
+    ],
+    [
+      358,
+      [
+        "",
+        "",
+        "Q2. My daily actions align with my deeper values and beliefs."
+      ]
+    ],
+    [
+      362,
+      [
+        "",
+        "",
+        "2️⃣ MIND – Emotional Balance & Mental Clarity"
+      ]
+    ],
+    [
+      364,
+      [
+        "",
+        "",
+        "Q3. I remain calm and composed when facing stressful situations."
+      ]
+    ],
+    [
+      366,
+      [
+        "",
+        "",
+        "Q4. I experience mental clarity and focus during most of my day."
+      ]
+    ],
+    [
+      370,
+      [
+        "",
+        "",
+        "3️⃣ BODY – Energy & Physical Wellbeing"
+      ]
+    ],
+    [
+      372,
+      [
+        "",
+        "",
+        "Q5. I maintain good energy levels throughout the day."
+      ]
+    ],
+    [
+      374,
+      [
+        "",
+        "",
+        "Q6. I regularly practice habits that support my physical wellbeing (sleep, movement, breathing, etc.)."
+      ]
+    ],
+    [
+      378,
+      [
+        "",
+        "",
+        "4️⃣ CAREER – Performance & Professional Growth"
+      ]
+    ],
+    [
+      380,
+      [
+        "",
+        "",
+        "Q7. I make important professional decisions with confidence."
+      ]
+    ],
+    [
+      382,
+      [
+        "",
+        "",
+        "Q8. I feel I am consistently growing and progressing in my professional role."
+      ]
+    ],
+    [
+      386,
+      [
+        "",
+        "",
+        "5️⃣ ENVIRONMENT – Declutter & Healthy Surroundings"
+      ]
+    ],
+    [
+      388,
+      [
+        "",
+        "",
+        "Q9. My physical and digital environments are organised and clutter-free."
+      ]
+    ],
+    [
+      390,
+      [
+        "",
+        "",
+        "Q10. The people and relationships around me support my growth and wellbeing."
+      ]
+    ],
+    [
+      394,
+      [
+        "",
+        "",
+        "6️⃣ CONTRIBUTION – Impact & Service"
+      ]
+    ],
+    [
+      396,
+      [
+        "",
+        "",
+        "Q11. My work positively impacts others in a meaningful way.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Stage1",
+        "Just show the total Score out of total"
+      ]
+    ],
+    [
+      397,
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "And 1 remark"
+      ]
+    ],
+    [
+      398,
+      [
+        "",
+        "",
+        "Q12. I actively contribute to helping others grow or succeed."
+      ]
+    ],
+    [
+      401,
+      [
+        "",
+        "",
+        "Stage1",
+        "Just show the total Score out of total"
+      ]
+    ],
+    [
+      402,
+      [
+        "",
+        "",
+        "",
+        "And 1 remark"
+      ]
+    ],
+    [
+      404,
+      [
+        "",
+        "",
+        "Scoring"
+      ]
+    ],
+    [
+      406,
+      [
+        "",
+        "",
+        "Total score range: 12 – 48"
+      ]
+    ],
+    [
+      408,
+      [
+        "",
+        "LOW",
+        "12–20"
+      ]
+    ],
+    [
+      410,
+      [
+        "",
+        "",
+        "⚠ Significant imbalance across life pillars"
+      ]
+    ],
+    [
+      412,
+      [
+        "",
+        "MODERATE",
+        "21–32"
+      ]
+    ],
+    [
+      414,
+      [
+        "",
+        "",
+        "⚡ Moderate alignment with room for improvement"
+      ]
+    ],
+    [
+      416,
+      [
+        "",
+        "HEALTHY",
+        "33–48"
+      ]
+    ],
+    [
+      420,
+      [
+        "",
+        "",
+        "This design is strong because it is:"
+      ]
+    ],
+    [
+      422,
+      [
+        "",
+        "",
+        "• fast (2 minutes)"
+      ]
+    ],
+    [
+      423,
+      [
+        "",
+        "",
+        "• emotionally reflective"
+      ]
+    ],
+    [
+      424,
+      [
+        "",
+        "",
+        "• easy to score automatically"
+      ]
+    ],
+    [
+      425,
+      [
+        "",
+        "",
+        "• suitable for teachers and professionals"
+      ]
+    ],
+    [
+      430,
+      [
+        "",
+        "Report"
+      ]
+    ],
+    [
+      432,
+      [
+        "",
+        "PAGE 1",
+        "Step 1 – Participant Details (Before Showing Report)"
+      ]
+    ],
+    [
+      434,
+      [
+        "",
+        "",
+        "Before displaying the result, ask for basic details."
+      ]
+    ],
+    [
+      436,
+      [
+        "",
+        "",
+        "Almost Done! Get Your Personalised LIU Holistic Life Report"
+      ]
+    ],
+    [
+      438,
+      [
+        "",
+        "",
+        "Please enter your details so we can send your full report and recommendations."
+      ]
+    ],
+    [
+      440,
+      [
+        "",
+        "",
+        "Full Name"
+      ]
+    ],
+    [
+      441,
+      [
+        "",
+        "",
+        "WhatsApp Number"
+      ]
+    ],
+    [
+      442,
+      [
+        "",
+        "",
+        "Email Address"
+      ]
+    ],
+    [
+      443,
+      [
+        "",
+        "",
+        "Institution / Organisation Name"
+      ]
+    ],
+    [
+      445,
+      [
+        "",
+        "",
+        "Button:"
+      ]
+    ],
+    [
+      447,
+      [
+        "",
+        "",
+        "Get My Holistic Wellness Score & Report"
+      ]
+    ],
+    [
+      451,
+      [
+        "",
+        "PAGE 2",
+        "Step 2 – LifeITUp Holistic Wellness Score & Report"
+      ]
+    ],
+    [
+      453,
+      [
+        "",
+        "",
+        "Your Holistic Wellnes Score & Report"
+      ]
+    ],
+    [
+      455,
+      [
+        "",
+        "",
+        "Score: __ / 48"
+      ]
+    ],
+    [
+      457,
+      [
+        "",
+        "",
+        "This score reflects your current alignment across six important pillars of life."
+      ]
+    ],
+    [
+      459,
+      [
+        "",
+        "",
+        "These pillars are based on research in wellbeing, workplace performance and holistic development."
+      ]
+    ],
+    [
+      463,
+      [
+        "",
+        "PAGE 3",
+        "Step 3 – Score Segments"
+      ]
+    ],
+    [
+      465,
+      [
+        "",
+        "",
+        "12 – 20"
+      ]
+    ],
+    [
+      467,
+      [
+        "",
+        "",
+        "⚠ High Stress / Low Alignment"
+      ]
+    ],
+    [
+      469,
+      [
+        "",
+        "",
+        "You may be experiencing significant imbalance across multiple life areas."
+      ]
+    ],
+    [
+      471,
+      [
+        "",
+        "",
+        "Research from the World Health Organization highlights that chronic stress and burnout are rising globally among professionals."
+      ]
+    ],
+    [
+      475,
+      [
+        "",
+        "",
+        "21 – 32"
+      ]
+    ],
+    [
+      477,
+      [
+        "",
+        "",
+        "⚡ Moderate Balance"
+      ]
+    ],
+    [
+      479,
+      [
+        "",
+        "",
+        "You are managing several aspects of life well, but some areas may need strengthening."
+      ]
+    ],
+    [
+      481,
+      [
+        "",
+        "",
+        "Studies from the Indian Council of Medical Research show that improving lifestyle habits and emotional balance can significantly enhance wellbeing and productivity."
+      ]
+    ],
+    [
+      485,
+      [
+        "",
+        "",
+        "33 – 48"
+      ]
+    ],
+    [
+      487,
+      [
+        "",
+        "",
+        "Progressive Holistic Alignment"
+      ]
+    ],
+    [
+      489,
+      [
+        "",
+        "",
+        "You have built good balance across many life dimensions. But you can make it even better & stronger"
+      ]
+    ],
+    [
+      491,
+      [
+        "",
+        "",
+        "The Gallup workplace research shows that people with strong life alignment tend to perform better and experience higher wellbeing."
+      ]
+    ],
+    [
+      495,
+      [
+        "",
+        "PAGE 4",
+        "Step 4 – Your Holistic Journey"
+      ]
+    ],
+    [
+      497,
+      [
+        "",
+        "",
+        "The goal is not perfection."
+      ]
+    ],
+    [
+      499,
+      [
+        "",
+        "",
+        "The goal is continuous alignment across the six pillars of life:"
+      ]
+    ],
+    [
+      501,
+      [
+        "",
+        "",
+        "• Soul – purpose and values"
+      ]
+    ],
+    [
+      502,
+      [
+        "",
+        "",
+        "• Mind – emotional clarity"
+      ]
+    ],
+    [
+      503,
+      [
+        "",
+        "",
+        "• Body – energy and health"
+      ]
+    ],
+    [
+      504,
+      [
+        "",
+        "",
+        "• Career – growth and contribution"
+      ]
+    ],
+    [
+      505,
+      [
+        "",
+        "",
+        "• Environment – decluttered and supportive surroundings"
+      ]
+    ],
+    [
+      506,
+      [
+        "",
+        "",
+        "• Contribution – meaningful impact"
+      ]
+    ],
+    [
+      508,
+      [
+        "",
+        "",
+        "These areas also align with the holistic development vision of National Education Policy (NEP) 2020 for professionals & educators besides conforming to various global research recommendations."
+      ]
+    ],
+    [
+      512,
+      [
+        "",
+        "",
+        "Step 5 – Invitation to Start"
+      ]
+    ],
+    [
+      514,
+      [
+        "",
+        "",
+        "Awareness is the first step."
+      ]
+    ],
+    [
+      516,
+      [
+        "",
+        "",
+        "To help you start and speed up your holistic health & success journey,  you have been given an exclusive COMPLIMENTARY access to Rs. 1999/-:"
+      ]
+    ],
+    [
+      518,
+      [
+        "",
+        "",
+        "LifeITUp 3-Day Holistic Wellness & Success Launchpad"
+      ]
+    ],
+    [
+      520,
+      [
+        "",
+        "",
+        "In this experience you will learn simple practices to:"
+      ]
+    ],
+    [
+      522,
+      [
+        "",
+        "",
+        "• Reduce stress"
+      ]
+    ],
+    [
+      523,
+      [
+        "",
+        "",
+        "• Improve mental clarity"
+      ]
+    ],
+    [
+      524,
+      [
+        "",
+        "",
+        "• Increase energy and focus"
+      ]
+    ],
+    [
+      525,
+      [
+        "",
+        "",
+        "• Align your life with purpose"
+      ]
+    ],
+    [
+      527,
+      [
+        "",
+        "",
+        "Specially designed for Professionals, Leaders, Educators "
+      ]
+    ],
+    [
+      529,
+      [
+        "",
+        "",
+        "Button:"
+      ]
+    ],
+    [
+      531,
+      [
+        "",
+        "",
+        "Join the 3-Day Launchpad "
+      ]
+    ],
+    [
+      534,
+      [
+        "",
+        "",
+        "Important Tip for Implementation"
+      ]
+    ],
+    [
+      536,
+      [
+        "",
+        "",
+        "Keep the entire process:"
+      ]
+    ],
+    [
+      538,
+      [
+        "",
+        "",
+        "Assessment → Report → Challenge invitation"
+      ]
+    ],
+    [
+      540,
+      [
+        "",
+        "",
+        "within one screen flow so participants don't drop off."
+      ]
+    ],
+    [
+      544,
+      [
+        "",
+        "3 day challenge"
+      ]
+    ],
+    [
+      546,
+      [
+        "",
+        "",
+        "Below is the improved 3-Day Challenge design that explicitly integrates research and recommendations from WHO, NEP 2020, ICMR and Gallup while remaining simple, credible, and conversion-focused."
+      ]
+    ],
+    [
+      550,
+      [
+        "",
+        "",
+        "LIU 3-DAY HOLISTIC RESET CHALLENGE"
+      ]
+    ],
+    [
+      552,
+      [
+        "",
+        "",
+        "(Evidence-Based for Educators & Professionals)"
+      ]
+    ],
+    [
+      554,
+      [
+        "",
+        "",
+        "Goal:"
+      ]
+    ],
+    [
+      555,
+      [
+        "",
+        "",
+        "Give participants quick psychological wins while introducing the 6-pillar holistic framework."
+      ]
+    ],
+    [
+      557,
+      [
+        "",
+        "",
+        "Duration: 45–60 min per day + 1 daily practice"
+      ]
+    ],
+    [
+      561,
+      [
+        "",
+        "",
+        "DAY 1"
+      ]
+    ],
+    [
+      563,
+      [
+        "",
+        "",
+        "Calm the Mind – Stress & Emotional Balance"
+      ]
+    ],
+    [
+      565,
+      [
+        "",
+        "",
+        "Problem Being Addressed"
+      ]
+    ],
+    [
+      567,
+      [
+        "",
+        "",
+        "Stress, anxiety and emotional overload are among the most common workplace challenges today."
+      ]
+    ],
+    [
+      569,
+      [
+        "",
+        "",
+        "Evidence"
+      ]
+    ],
+    [
+      571,
+      [
+        "",
+        "",
+        "The World Health Organization reports that depression and anxiety cause 12 billion lost working days annually worldwide."
+      ]
+    ],
+    [
+      573,
+      [
+        "",
+        "",
+        "WHO also classifies burnout as a syndrome resulting from chronic workplace stress."
+      ]
+    ],
+    [
+      575,
+      [
+        "",
+        "",
+        "NEP 2020 Alignment"
+      ]
+    ],
+    [
+      577,
+      [
+        "",
+        "",
+        "NEP emphasises social-emotional learning and mental wellbeing as part of holistic education."
+      ]
+    ],
+    [
+      579,
+      [
+        "",
+        "",
+        "What Participants Learn"
+      ]
+    ],
+    [
+      581,
+      [
+        "",
+        "",
+        "• How stress affects thinking and behaviour"
+      ]
+    ],
+    [
+      582,
+      [
+        "",
+        "",
+        "• Emotional awareness technique"
+      ]
+    ],
+    [
+      583,
+      [
+        "",
+        "",
+        "• Simple nervous-system reset"
+      ]
+    ],
+    [
+      585,
+      [
+        "",
+        "",
+        "Practice"
+      ]
+    ],
+    [
+      587,
+      [
+        "",
+        "",
+        "2-minute breathing reset routine"
+      ]
+    ],
+    [
+      589,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      591,
+      [
+        "",
+        "",
+        "Participants feel immediate calm and mental clarity."
+      ]
+    ],
+    [
+      595,
+      [
+        "",
+        "",
+        "DAY 2"
+      ]
+    ],
+    [
+      597,
+      [
+        "",
+        "",
+        "Restore Energy – Body & Environment Reset"
+      ]
+    ],
+    [
+      599,
+      [
+        "",
+        "",
+        "Problem Being Addressed"
+      ]
+    ],
+    [
+      601,
+      [
+        "",
+        "",
+        "Low energy, fatigue and unhealthy routines reduce performance and wellbeing."
+      ]
+    ],
+    [
+      603,
+      [
+        "",
+        "",
+        "Evidence"
+      ]
+    ],
+    [
+      605,
+      [
+        "",
+        "",
+        "Lifestyle diseases and sedentary habits are rising among Indian professionals according to Indian Council of Medical Research research."
+      ]
+    ],
+    [
+      607,
+      [
+        "",
+        "",
+        "WHO notes that poor working environments and excessive workloads can harm mental health."
+      ]
+    ],
+    [
+      609,
+      [
+        "",
+        "",
+        "NEP 2020 Alignment"
+      ]
+    ],
+    [
+      611,
+      [
+        "",
+        "",
+        "NEP recommends health, yoga and physical wellbeing practices in education ecosystems."
+      ]
+    ],
+    [
+      613,
+      [
+        "",
+        "",
+        "What Participants Learn"
+      ]
+    ],
+    [
+      615,
+      [
+        "",
+        "",
+        "• Energy management basics"
+      ]
+    ],
+    [
+      616,
+      [
+        "",
+        "",
+        "• Micro-habits for physical wellbeing"
+      ]
+    ],
+    [
+      617,
+      [
+        "",
+        "",
+        "• Decluttering workspace and digital environment"
+      ]
+    ],
+    [
+      619,
+      [
+        "",
+        "",
+        "Practice"
+      ]
+    ],
+    [
+      621,
+      [
+        "",
+        "",
+        "5-minute environment reset exercise"
+      ]
+    ],
+    [
+      623,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      625,
+      [
+        "",
+        "",
+        "Participants gain better energy and focus."
+      ]
+    ],
+    [
+      629,
+      [
+        "",
+        "",
+        "DAY 3"
+      ]
+    ],
+    [
+      631,
+      [
+        "",
+        "",
+        "Align Purpose – Career, Impact & Contribution"
+      ]
+    ],
+    [
+      633,
+      [
+        "",
+        "",
+        "Problem Being Addressed"
+      ]
+    ],
+    [
+      635,
+      [
+        "",
+        "",
+        "Many professionals feel disengaged and lack meaning in their work."
+      ]
+    ],
+    [
+      637,
+      [
+        "",
+        "",
+        "Evidence"
+      ]
+    ],
+    [
+      639,
+      [
+        "",
+        "",
+        "The Gallup workplace studies show widespread employee disengagement and highlight the importance of meaningful work."
+      ]
+    ],
+    [
+      641,
+      [
+        "",
+        "",
+        "NEP 2020 Alignment"
+      ]
+    ],
+    [
+      643,
+      [
+        "",
+        "",
+        "NEP emphasises values, ethics, citizenship and holistic development."
+      ]
+    ],
+    [
+      645,
+      [
+        "",
+        "",
+        "What Participants Learn"
+      ]
+    ],
+    [
+      647,
+      [
+        "",
+        "",
+        "• Aligning work with personal values"
+      ]
+    ],
+    [
+      648,
+      [
+        "",
+        "",
+        "• Decision clarity framework"
+      ]
+    ],
+    [
+      649,
+      [
+        "",
+        "",
+        "• Contribution mindset"
+      ]
+    ],
+    [
+      651,
+      [
+        "",
+        "",
+        "Practice"
+      ]
+    ],
+    [
+      653,
+      [
+        "",
+        "",
+        "Purpose reflection exercise"
+      ]
+    ],
+    [
+      655,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      657,
+      [
+        "",
+        "",
+        "Participants feel renewed motivation and direction."
+      ]
+    ],
+    [
+      661,
+      [
+        "",
+        "",
+        "End of Challenge"
+      ]
+    ],
+    [
+      663,
+      [
+        "",
+        "",
+        "Participants discover the LIU 6-Pillar Holistic Life Framework"
+      ]
+    ],
+    [
+      665,
+      [
+        "",
+        "",
+        "• Soul – Purpose & values"
+      ]
+    ],
+    [
+      666,
+      [
+        "",
+        "",
+        "• Mind – Emotional clarity"
+      ]
+    ],
+    [
+      667,
+      [
+        "",
+        "",
+        "• Body – Energy & health"
+      ]
+    ],
+    [
+      668,
+      [
+        "",
+        "",
+        "• Career – Growth & performance"
+      ]
+    ],
+    [
+      669,
+      [
+        "",
+        "",
+        "• Environment – Decluttered surroundings & healthy relationships"
+      ]
+    ],
+    [
+      670,
+      [
+        "",
+        "",
+        "• Contribution – Meaningful impact"
+      ]
+    ],
+    [
+      672,
+      [
+        "",
+        "",
+        "This model aligns with NEP 2020’s vision of holistic development."
+      ]
+    ],
+    [
+      676,
+      [
+        "",
+        "",
+        "Invitation to Continue"
+      ]
+    ],
+    [
+      678,
+      [
+        "",
+        "",
+        "Participants are invited to join the LIU Holistic Success Membership, where they will:"
+      ]
+    ],
+    [
+      680,
+      [
+        "",
+        "",
+        "• deepen these six pillars"
+      ]
+    ],
+    [
+      681,
+      [
+        "",
+        "",
+        "• participate in a 21-day transformation program"
+      ]
+    ],
+    [
+      682,
+      [
+        "",
+        "",
+        "• attend expert sessions"
+      ]
+    ],
+    [
+      683,
+      [
+        "",
+        "",
+        "• receive certification and community support"
+      ]
+    ],
+    [
+      687,
+      [
+        "",
+        "",
+        "Why This Challenge Works"
+      ]
+    ],
+    [
+      689,
+      [
+        "",
+        "",
+        "It integrates:"
+      ]
+    ],
+    [
+      691,
+      [
+        "",
+        "",
+        "• Stress science (WHO)"
+      ]
+    ],
+    [
+      692,
+      [
+        "",
+        "",
+        "• Holistic education principles (NEP 2020)"
+      ]
+    ],
+    [
+      693,
+      [
+        "",
+        "",
+        "• Health & lifestyle evidence (ICMR)"
+      ]
+    ],
+    [
+      694,
+      [
+        "",
+        "",
+        "• Workplace engagement insights (Gallup)"
+      ]
+    ],
+    [
+      696,
+      [
+        "",
+        "",
+        "This combination makes the program credible, practical and relevant for both educators and working professionals."
+      ]
+    ],
+    [
+      700,
+      [
+        "",
+        "script for day 1"
+      ]
+    ],
+    [
+      702,
+      [
+        "",
+        "",
+        "Since this is a recorded online module, the script must change slightly."
+      ]
+    ],
+    [
+      703,
+      [
+        "",
+        "",
+        "Recorded content must be:"
+      ]
+    ],
+    [
+      705,
+      [
+        "",
+        "",
+        "• shorter"
+      ]
+    ],
+    [
+      706,
+      [
+        "",
+        "",
+        "• tighter"
+      ]
+    ],
+    [
+      707,
+      [
+        "",
+        "",
+        "• interactive even without live chat"
+      ]
+    ],
+    [
+      708,
+      [
+        "",
+        "",
+        "• give quick results within 3–4 minutes"
+      ]
+    ],
+    [
+      710,
+      [
+        "",
+        "",
+        "Below is the optimized recorded-module script for Day 1."
+      ]
+    ],
+    [
+      712,
+      [
+        "",
+        "",
+        "Duration: 12–15 minutes (ideal for completion rates)."
+      ]
+    ],
+    [
+      716,
+      [
+        "",
+        "",
+        "LIU 3-Day Holistic Reset"
+      ]
+    ],
+    [
+      718,
+      [
+        "",
+        "",
+        "Day 1 – Calm the Mind"
+      ]
+    ],
+    [
+      722,
+      [
+        "",
+        "",
+        "1️⃣ Opening Hook (30 seconds)"
+      ]
+    ],
+    [
+      724,
+      [
+        "",
+        "",
+        "Let me ask you a quick question."
+      ]
+    ],
+    [
+      726,
+      [
+        "",
+        "",
+        "On a scale of 1 to 10, how stressed do you feel these days?"
+      ]
+    ],
+    [
+      728,
+      [
+        "",
+        "",
+        "Just pause for a moment and think about it."
+      ]
+    ],
+    [
+      730,
+      [
+        "",
+        "",
+        "If your answer is 5 or above, you are not alone."
+      ]
+    ],
+    [
+      732,
+      [
+        "",
+        "",
+        "According to the World Health Organization, workplace stress has become one of the biggest global health concerns."
+      ]
+    ],
+    [
+      734,
+      [
+        "",
+        "",
+        "Today, we will learn a simple way to reset your mental state in under one minute."
+      ]
+    ],
+    [
+      738,
+      [
+        "",
+        "",
+        "2️⃣ Awareness Exercise (1 minute)"
+      ]
+    ],
+    [
+      740,
+      [
+        "",
+        "",
+        "Think of one stressful situation from the past few days."
+      ]
+    ],
+    [
+      742,
+      [
+        "",
+        "",
+        "Maybe:"
+      ]
+    ],
+    [
+      744,
+      [
+        "",
+        "",
+        "• a difficult conversation"
+      ]
+    ],
+    [
+      745,
+      [
+        "",
+        "",
+        "• work pressure"
+      ]
+    ],
+    [
+      746,
+      [
+        "",
+        "",
+        "• a sudden problem"
+      ]
+    ],
+    [
+      748,
+      [
+        "",
+        "",
+        "Now notice something:"
+      ]
+    ],
+    [
+      750,
+      [
+        "",
+        "",
+        "Was the stress caused by the situation —"
+      ]
+    ],
+    [
+      751,
+      [
+        "",
+        "",
+        "or by how the mind reacted to it?"
+      ]
+    ],
+    [
+      753,
+      [
+        "",
+        "",
+        "Psychologist Daniel Goleman shows that awareness of emotions is the first step toward emotional intelligence."
+      ]
+    ],
+    [
+      757,
+      [
+        "",
+        "",
+        "3️⃣ Instant Stress Reset Practice (2 minutes)"
+      ]
+    ],
+    [
+      759,
+      [
+        "",
+        "",
+        "Let’s try something together."
+      ]
+    ],
+    [
+      761,
+      [
+        "",
+        "",
+        "Sit comfortably."
+      ]
+    ],
+    [
+      763,
+      [
+        "",
+        "",
+        "Now follow these steps."
+      ]
+    ],
+    [
+      765,
+      [
+        "",
+        "",
+        "1️⃣ Slow inhale through your nose."
+      ]
+    ],
+    [
+      767,
+      [
+        "",
+        "",
+        "2️⃣ Pause for a moment."
+      ]
+    ],
+    [
+      769,
+      [
+        "",
+        "",
+        "3️⃣ Long slow exhale."
+      ]
+    ],
+    [
+      771,
+      [
+        "",
+        "",
+        "Repeat this three times."
+      ]
+    ],
+    [
+      773,
+      [
+        "",
+        "",
+        "(Pause to allow them to practice.)"
+      ]
+    ],
+    [
+      775,
+      [
+        "",
+        "",
+        "Neuroscience research from Andrew Huberman shows that controlled breathing helps calm the nervous system."
+      ]
+    ],
+    [
+      777,
+      [
+        "",
+        "",
+        "Many people notice that their mind already feels slightly calmer."
+      ]
+    ],
+    [
+      781,
+      [
+        "",
+        "",
+        "4️⃣ Key Insight (1 minute)"
+      ]
+    ],
+    [
+      783,
+      [
+        "",
+        "",
+        "Notice something important."
+      ]
+    ],
+    [
+      785,
+      [
+        "",
+        "",
+        "Nothing in your life changed in the last minute."
+      ]
+    ],
+    [
+      787,
+      [
+        "",
+        "",
+        "But your mental state changed."
+      ]
+    ],
+    [
+      789,
+      [
+        "",
+        "",
+        "This shows that emotional balance can be trained like a skill."
+      ]
+    ],
+    [
+      793,
+      [
+        "",
+        "",
+        "5️⃣ Introduce the Holistic Model (1 minute)"
+      ]
+    ],
+    [
+      795,
+      [
+        "",
+        "",
+        "At LIU we believe wellbeing comes from balance across six pillars of life:"
+      ]
+    ],
+    [
+      797,
+      [
+        "",
+        "",
+        "• Soul – purpose and values"
+      ]
+    ],
+    [
+      798,
+      [
+        "",
+        "",
+        "• Mind – emotional clarity"
+      ]
+    ],
+    [
+      799,
+      [
+        "",
+        "",
+        "• Body – energy and health"
+      ]
+    ],
+    [
+      800,
+      [
+        "",
+        "",
+        "• Career – professional growth"
+      ]
+    ],
+    [
+      801,
+      [
+        "",
+        "",
+        "• Environment – surroundings and relationships"
+      ]
+    ],
+    [
+      802,
+      [
+        "",
+        "",
+        "• Contribution – meaningful impact"
+      ]
+    ],
+    [
+      804,
+      [
+        "",
+        "",
+        "This idea of holistic development is also emphasized in India’s National Education Policy 2020."
+      ]
+    ],
+    [
+      806,
+      [
+        "",
+        "",
+        "Today we worked on the Mind pillar."
+      ]
+    ],
+    [
+      810,
+      [
+        "",
+        "",
+        "6️⃣ Simple Practice for Today (1 minute)"
+      ]
+    ],
+    [
+      812,
+      [
+        "",
+        "",
+        "For the next 24 hours, try this."
+      ]
+    ],
+    [
+      814,
+      [
+        "",
+        "",
+        "Whenever you feel stressed,"
+      ]
+    ],
+    [
+      816,
+      [
+        "",
+        "",
+        "pause and take three slow breaths."
+      ]
+    ],
+    [
+      818,
+      [
+        "",
+        "",
+        "Just observe how your reaction changes."
+      ]
+    ],
+    [
+      820,
+      [
+        "",
+        "",
+        "Small practices like this can gradually improve emotional balance."
+      ]
+    ],
+    [
+      824,
+      [
+        "",
+        "",
+        "7️⃣ Curiosity for Day 2 (30 seconds)"
+      ]
+    ],
+    [
+      826,
+      [
+        "",
+        "",
+        "Tomorrow we will explore something surprising."
+      ]
+    ],
+    [
+      828,
+      [
+        "",
+        "",
+        "Many people think stress comes only from the mind."
+      ]
+    ],
+    [
+      830,
+      [
+        "",
+        "",
+        "But research from the Indian Council of Medical Research shows that lifestyle habits and daily routines strongly affect stress and energy levels."
+      ]
+    ],
+    [
+      832,
+      [
+        "",
+        "",
+        "In Day 2, you will learn a simple 5-minute routine to improve your daily energy and focus."
+      ]
+    ],
+    [
+      836,
+      [
+        "",
+        "",
+        "8️⃣ Closing (20 seconds)"
+      ]
+    ],
+    [
+      838,
+      [
+        "",
+        "",
+        "Thank you for completing Day 1."
+      ]
+    ],
+    [
+      840,
+      [
+        "",
+        "",
+        "You have already learned a technique that can shift your state in less than a minute."
+      ]
+    ],
+    [
+      842,
+      [
+        "",
+        "",
+        "I’ll see you in Day 2 of the Holistic Reset Challenge."
+      ]
+    ],
+    [
+      846,
+      [
+        "",
+        "",
+        "Why This Structure Works for Recorded Courses"
+      ]
+    ],
+    [
+      848,
+      [
+        "",
+        "",
+        "• Short (12–15 min) → higher completion"
+      ]
+    ],
+    [
+      849,
+      [
+        "",
+        "",
+        "• Immediate exercise → instant value"
+      ]
+    ],
+    [
+      850,
+      [
+        "",
+        "",
+        "• clear daily practice → behavior change"
+      ]
+    ],
+    [
+      851,
+      [
+        "",
+        "",
+        "• curiosity hook → ensures Day-2 continuation"
+      ]
+    ],
+    [
+      854,
+      [
+        "",
+        "Name options"
+      ]
+    ],
+    [
+      855,
+      [
+        "",
+        "3-Day Inner Power Breakthrough Experience"
+      ]
+    ],
+    [
+      857,
+      [
+        "",
+        "",
+        "Here are 5 strong, premium, high-conversion titles you can choose from:"
+      ]
+    ],
+    [
+      859,
+      [
+        "",
+        "",
+        "1️⃣ 3-Day Inner Power Breakthrough"
+      ]
+    ],
+    [
+      860,
+      [
+        "",
+        "",
+        "Build emotional strength, mental clarity and calm performance under pressure."
+      ]
+    ],
+    [
+      862,
+      [
+        "",
+        "",
+        "2️⃣ 3-Day Stress-to-Clarity Blueprint"
+      ]
+    ],
+    [
+      863,
+      [
+        "",
+        "",
+        "A simple, science-backed system to think clearly and stay composed in demanding situations."
+      ]
+    ],
+    [
+      865,
+      [
+        "",
+        "",
+        "3️⃣ 3-Day Calm Mind & Peak Performance Experience"
+      ]
+    ],
+    [
+      866,
+      [
+        "",
+        "",
+        "Learn practical tools to reduce stress and perform with confidence."
+      ]
+    ],
+    [
+      868,
+      [
+        "",
+        "",
+        "4️⃣ 3-Day Inner Stability & Success Accelerator"
+      ]
+    ],
+    [
+      869,
+      [
+        "",
+        "",
+        "Develop resilience, focus and higher energy for work and life."
+      ]
+    ],
+    [
+      871,
+      [
+        "",
+        "",
+        "5️⃣ 3-Day Holistic Performance Launchpad"
+      ]
+    ],
+    [
+      872,
+      [
+        "",
+        "",
+        "Strengthen mind, body and purpose for sustainable success."
+      ]
+    ],
+    [
+      876,
+      [
+        "",
+        "21 day curriculum"
+      ]
+    ],
+    [
+      878,
+      [
+        "",
+        "",
+        "Here is a crisp, shareable 21-Day Curriculum mapped directly to the pain areas and LIU pillars from your table (WHO, ICMR, Gallup, NEP references)."
+      ]
+    ],
+    [
+      879,
+      [
+        "",
+        "",
+        "You can share this with institutions or participants."
+      ]
+    ],
+    [
+      883,
+      [
+        "",
+        "",
+        "LIU 21-Day Holistic Performance Transformation"
+      ]
+    ],
+    [
+      885,
+      [
+        "",
+        "",
+        "(Aligned with WHO, NEP 2020, ICMR & Gallup research)"
+      ]
+    ],
+    [
+      887,
+      [
+        "",
+        "",
+        "Goal: Build emotional resilience, energy, clarity, purpose and contribution across 6 pillars of life."
+      ]
+    ],
+    [
+      889,
+      [
+        "",
+        "",
+        "Daily commitment: 10–15 minutes"
+      ]
+    ],
+    [
+      893,
+      [
+        "",
+        "",
+        "Week 1 — Stabilise Mind & Body"
+      ]
+    ],
+    [
+      895,
+      [
+        "",
+        "",
+        "Pain Areas Addressed"
+      ]
+    ],
+    [
+      897,
+      [
+        "",
+        "",
+        "• Stress & anxiety (WHO)"
+      ]
+    ],
+    [
+      898,
+      [
+        "",
+        "",
+        "• Fatigue & lifestyle imbalance (ICMR)"
+      ]
+    ],
+    [
+      900,
+      [
+        "",
+        "",
+        "Day",
+        "Focus",
+        "Pillar"
+      ]
+    ],
+    [
+      901,
+      [
+        "",
+        "",
+        "Day 1",
+        "Stress awareness & trigger mapping",
+        "Mind"
+      ]
+    ],
+    [
+      902,
+      [
+        "",
+        "",
+        "Day 2",
+        "Emotional pause practice",
+        "Mind"
+      ]
+    ],
+    [
+      903,
+      [
+        "",
+        "",
+        "Day 3",
+        "Breathing reset technique",
+        "Mind"
+      ]
+    ],
+    [
+      904,
+      [
+        "",
+        "",
+        "Day 4",
+        "Overthinking interruption method",
+        "Mind"
+      ]
+    ],
+    [
+      905,
+      [
+        "",
+        "",
+        "Day 5",
+        "Daily energy routine design",
+        "Body"
+      ]
+    ],
+    [
+      906,
+      [
+        "",
+        "",
+        "Day 6",
+        "Sleep & recovery micro habits",
+        "Body"
+      ]
+    ],
+    [
+      907,
+      [
+        "",
+        "",
+        "Day 7",
+        "Reflection + wellbeing score check",
+        "Mind & Body"
+      ]
+    ],
+    [
+      909,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      910,
+      [
+        "",
+        "",
+        "✔ Reduced stress"
+      ]
+    ],
+    [
+      911,
+      [
+        "",
+        "",
+        "✔ Improved emotional control"
+      ]
+    ],
+    [
+      912,
+      [
+        "",
+        "",
+        "✔ Better daily energy"
+      ]
+    ],
+    [
+      916,
+      [
+        "",
+        "",
+        "Week 2 — Clarity & Professional Effectiveness"
+      ]
+    ],
+    [
+      918,
+      [
+        "",
+        "",
+        "Pain Areas Addressed"
+      ]
+    ],
+    [
+      920,
+      [
+        "",
+        "",
+        "• Decision fatigue"
+      ]
+    ],
+    [
+      921,
+      [
+        "",
+        "",
+        "• Workplace conflict & clutter"
+      ]
+    ],
+    [
+      923,
+      [
+        "",
+        "",
+        "Day",
+        "Focus",
+        "Pillar"
+      ]
+    ],
+    [
+      924,
+      [
+        "",
+        "",
+        "Day 8",
+        "Decision clarity framework",
+        "Career"
+      ]
+    ],
+    [
+      925,
+      [
+        "",
+        "",
+        "Day 9",
+        "Cognitive load reduction",
+        "Mind"
+      ]
+    ],
+    [
+      926,
+      [
+        "",
+        "",
+        "Day 10",
+        "Deep focus method",
+        "Career"
+      ]
+    ],
+    [
+      927,
+      [
+        "",
+        "",
+        "Day 11",
+        "Emotional intelligence in communication",
+        "Environment"
+      ]
+    ],
+    [
+      928,
+      [
+        "",
+        "",
+        "Day 12",
+        "Workspace declutter system",
+        "Environment"
+      ]
+    ],
+    [
+      929,
+      [
+        "",
+        "",
+        "Day 13",
+        "Healthy relationship habits",
+        "Environment"
+      ]
+    ],
+    [
+      930,
+      [
+        "",
+        "",
+        "Day 14",
+        "Reflection + performance score check",
+        "Career"
+      ]
+    ],
+    [
+      932,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      933,
+      [
+        "",
+        "",
+        "✔ Sharper thinking"
+      ]
+    ],
+    [
+      934,
+      [
+        "",
+        "",
+        "✔ Improved productivity"
+      ]
+    ],
+    [
+      935,
+      [
+        "",
+        "",
+        "✔ Better workplace relationships"
+      ]
+    ],
+    [
+      939,
+      [
+        "",
+        "",
+        "Week 3 — Purpose, Growth & Contribution"
+      ]
+    ],
+    [
+      941,
+      [
+        "",
+        "",
+        "Pain Areas Addressed"
+      ]
+    ],
+    [
+      943,
+      [
+        "",
+        "",
+        "• Disengagement at work (Gallup)"
+      ]
+    ],
+    [
+      944,
+      [
+        "",
+        "",
+        "• Lack of purpose (NEP emphasis on values)"
+      ]
+    ],
+    [
+      946,
+      [
+        "",
+        "",
+        "Day",
+        "Focus",
+        "Pillar"
+      ]
+    ],
+    [
+      947,
+      [
+        "",
+        "",
+        "Day 15",
+        "Purpose discovery exercise",
+        "Soul"
+      ]
+    ],
+    [
+      948,
+      [
+        "",
+        "",
+        "Day 16",
+        "Personal values clarification",
+        "Soul"
+      ]
+    ],
+    [
+      949,
+      [
+        "",
+        "",
+        "Day 17",
+        "Career alignment reflection",
+        "Career"
+      ]
+    ],
+    [
+      950,
+      [
+        "",
+        "",
+        "Day 18",
+        "Meaningful work framework",
+        "Soul"
+      ]
+    ],
+    [
+      951,
+      [
+        "",
+        "",
+        "Day 19",
+        "Contribution mindset practice",
+        "Contribution"
+      ]
+    ],
+    [
+      952,
+      [
+        "",
+        "",
+        "Day 20",
+        "Holistic life blueprint",
+        "Soul"
+      ]
+    ],
+    [
+      953,
+      [
+        "",
+        "",
+        "Day 21",
+        "Final reflection + reassessment",
+        "All pillars"
+      ]
+    ],
+    [
+      955,
+      [
+        "",
+        "",
+        "Outcome"
+      ]
+    ],
+    [
+      956,
+      [
+        "",
+        "",
+        "✔ Stronger sense of purpose"
+      ]
+    ],
+    [
+      957,
+      [
+        "",
+        "",
+        "✔ Higher motivation"
+      ]
+    ],
+    [
+      958,
+      [
+        "",
+        "",
+        "✔ Holistic life alignment"
+      ]
+    ],
+    [
+      962,
+      [
+        "",
+        "",
+        "Transformation Participants Experience"
+      ]
+    ],
+    [
+      964,
+      [
+        "",
+        "",
+        "After 21 days members typically report:"
+      ]
+    ],
+    [
+      966,
+      [
+        "",
+        "",
+        "• calmer emotional responses"
+      ]
+    ],
+    [
+      967,
+      [
+        "",
+        "",
+        "• clearer thinking"
+      ]
+    ],
+    [
+      968,
+      [
+        "",
+        "",
+        "• higher energy"
+      ]
+    ],
+    [
+      969,
+      [
+        "",
+        "",
+        "• better relationships"
+      ]
+    ],
+    [
+      970,
+      [
+        "",
+        "",
+        "• renewed purpose"
+      ]
+    ],
+    [
+      974,
+      [
+        "",
+        "",
+        "How This Fits the LIU Model"
+      ]
+    ],
+    [
+      976,
+      [
+        "",
+        "",
+        "Assessment → Awareness"
+      ]
+    ],
+    [
+      977,
+      [
+        "",
+        "",
+        "3-Day Breakthrough → Quick results"
+      ]
+    ],
+    [
+      978,
+      [
+        "",
+        "",
+        "21-Day Transformation → Real change"
+      ]
+    ],
+    [
+      982,
+      [
+        "",
+        "",
+        "If you want, I can also give you a very powerful addition used by top cohort programs that can increase completion of the 21-day program from ~15% to 60–70%."
+      ]
+    ],
+    [
+      986,
+      [
+        "",
+        "day 1 content structure"
+      ]
+    ],
+    [
+      988,
+      [
+        "",
+        "",
+        "LIU 21-Day Transformation"
+      ]
+    ],
+    [
+      990,
+      [
+        "",
+        "",
+        "Day 1 Module Structure (Template for All Days)"
+      ]
+    ],
+    [
+      992,
+      [
+        "",
+        "",
+        "Total Duration: 8–12 minutes"
+      ]
+    ],
+    [
+      996,
+      [
+        "",
+        "",
+        "1️⃣ Quick Welcome & Context (1 minute)"
+      ]
+    ],
+    [
+      998,
+      [
+        "",
+        "",
+        "Purpose: remind them why they are here."
+      ]
+    ],
+    [
+      1000,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1002,
+      [
+        "",
+        "",
+        "“Welcome to Day 1 of the LIU 21-Day Holistic Performance Journey."
+      ]
+    ],
+    [
+      1004,
+      [
+        "",
+        "",
+        "Over the next three weeks we will strengthen six pillars of life — Soul, Mind, Body, Career, Environment and Contribution — aligned with global wellbeing research and holistic development principles.”"
+      ]
+    ],
+    [
+      1006,
+      [
+        "",
+        "",
+        "Then connect to the pain area."
+      ]
+    ],
+    [
+      1008,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1010,
+      [
+        "",
+        "",
+        "“Today we start with one of the biggest challenges professionals face — stress and emotional overload.”"
+      ]
+    ],
+    [
+      1014,
+      [
+        "",
+        "",
+        "2️⃣ Insight / Awareness (2 minutes)"
+      ]
+    ],
+    [
+      1016,
+      [
+        "",
+        "",
+        "Explain the core idea simply."
+      ]
+    ],
+    [
+      1018,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1020,
+      [
+        "",
+        "",
+        "“Stress is not always caused by the situation itself but by how the mind reacts to it."
+      ]
+    ],
+    [
+      1022,
+      [
+        "",
+        "",
+        "The World Health Organization identifies chronic stress as a major workplace health risk."
+      ]
+    ],
+    [
+      1024,
+      [
+        "",
+        "",
+        "Learning to regulate emotional reactions is therefore a key life skill.”"
+      ]
+    ],
+    [
+      1028,
+      [
+        "",
+        "",
+        "3️⃣ Experiential Practice (3 minutes)"
+      ]
+    ],
+    [
+      1030,
+      [
+        "",
+        "",
+        "Participants do something immediately."
+      ]
+    ],
+    [
+      1032,
+      [
+        "",
+        "",
+        "Example exercise:"
+      ]
+    ],
+    [
+      1034,
+      [
+        "",
+        "",
+        "Stress Trigger Awareness"
+      ]
+    ],
+    [
+      1036,
+      [
+        "",
+        "",
+        "Ask participants to write down:"
+      ]
+    ],
+    [
+      1038,
+      [
+        "",
+        "",
+        "• one situation that recently caused stress"
+      ]
+    ],
+    [
+      1039,
+      [
+        "",
+        "",
+        "• how they reacted"
+      ]
+    ],
+    [
+      1041,
+      [
+        "",
+        "",
+        "Explain:"
+      ]
+    ],
+    [
+      1043,
+      [
+        "",
+        "",
+        "“Awareness is the first step toward emotional intelligence, a concept popularised by Daniel Goleman.”"
+      ]
+    ],
+    [
+      1047,
+      [
+        "",
+        "",
+        "4️⃣ Practical Tool (2 minutes)"
+      ]
+    ],
+    [
+      1049,
+      [
+        "",
+        "",
+        "Give one small method."
+      ]
+    ],
+    [
+      1051,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1053,
+      [
+        "",
+        "",
+        "3-Breath Reset Technique"
+      ]
+    ],
+    [
+      1055,
+      [
+        "",
+        "",
+        "slow inhale"
+      ]
+    ],
+    [
+      1057,
+      [
+        "",
+        "",
+        "short pause"
+      ]
+    ],
+    [
+      1059,
+      [
+        "",
+        "",
+        "long exhale"
+      ]
+    ],
+    [
+      1061,
+      [
+        "",
+        "",
+        "Repeat three times."
+      ]
+    ],
+    [
+      1063,
+      [
+        "",
+        "",
+        "Explain that breathing helps calm the nervous system."
+      ]
+    ],
+    [
+      1067,
+      [
+        "",
+        "",
+        "5️⃣ Daily Micro-Action (1 minute)"
+      ]
+    ],
+    [
+      1069,
+      [
+        "",
+        "",
+        "Give a small task."
+      ]
+    ],
+    [
+      1071,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1073,
+      [
+        "",
+        "",
+        "“Today, whenever you feel stressed, pause and take three slow breaths before responding.”"
+      ]
+    ],
+    [
+      1075,
+      [
+        "",
+        "",
+        "Small actions drive behaviour change."
+      ]
+    ],
+    [
+      1079,
+      [
+        "",
+        "",
+        "6️⃣ Community Check-In (30 seconds)"
+      ]
+    ],
+    [
+      1081,
+      [
+        "",
+        "",
+        "Ask participants to post in the community."
+      ]
+    ],
+    [
+      1083,
+      [
+        "",
+        "",
+        "Example message format:"
+      ]
+    ],
+    [
+      1085,
+      [
+        "",
+        "",
+        "“Day 1 completed ✔"
+      ]
+    ],
+    [
+      1086,
+      [
+        "",
+        "",
+        "My biggest stress trigger today was ______.”"
+      ]
+    ],
+    [
+      1088,
+      [
+        "",
+        "",
+        "This builds accountability."
+      ]
+    ],
+    [
+      1092,
+      [
+        "",
+        "",
+        "7️⃣ Motivation & Progress (30 seconds)"
+      ]
+    ],
+    [
+      1094,
+      [
+        "",
+        "",
+        "Reinforce progress."
+      ]
+    ],
+    [
+      1096,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1098,
+      [
+        "",
+        "",
+        "“You have taken the first step toward strengthening your emotional resilience.”"
+      ]
+    ],
+    [
+      1102,
+      [
+        "",
+        "",
+        "8️⃣ Teaser for Tomorrow (30 seconds)"
+      ]
+    ],
+    [
+      1104,
+      [
+        "",
+        "",
+        "Build curiosity."
+      ]
+    ],
+    [
+      1106,
+      [
+        "",
+        "",
+        "Example:"
+      ]
+    ],
+    [
+      1108,
+      [
+        "",
+        "",
+        "“Tomorrow we will explore something equally important — daily energy and lifestyle habits, which research from the Indian Council of Medical Research shows strongly affect wellbeing.”"
+      ]
+    ],
+    [
+      1112,
+      [
+        "",
+        "",
+        "Why This Structure Works"
+      ]
+    ],
+    [
+      1114,
+      [
+        "",
+        "",
+        "Every lesson includes:"
+      ]
+    ],
+    [
+      1116,
+      [
+        "",
+        "",
+        "• awareness"
+      ]
+    ],
+    [
+      1117,
+      [
+        "",
+        "",
+        "• experience"
+      ]
+    ],
+    [
+      1118,
+      [
+        "",
+        "",
+        "• practical tool"
+      ]
+    ],
+    [
+      1119,
+      [
+        "",
+        "",
+        "• daily action"
+      ]
+    ],
+    [
+      1120,
+      [
+        "",
+        "",
+        "• community accountability"
+      ]
+    ],
+    [
+      1122,
+      [
+        "",
+        "",
+        "This combination dramatically increases completion and engagement."
+      ]
+    ],
+    [
+      1126,
+      [
+        "",
+        "Justify annual membership"
+      ]
+    ],
+    [
+      1128,
+      [
+        "",
+        "",
+        "To make people pay ₹2,000–₹3,000 per year (instead of a one-time 21-day program), the offering must feel like an ongoing ecosystem, not just a course."
+      ]
+    ],
+    [
+      1130,
+      [
+        "",
+        "",
+        "Successful memberships usually combine four elements:"
+      ]
+    ],
+    [
+      1132,
+      [
+        "",
+        "",
+        "1️⃣ Transformation program"
+      ]
+    ],
+    [
+      1133,
+      [
+        "",
+        "",
+        "2️⃣ Continuous learning"
+      ]
+    ],
+    [
+      1134,
+      [
+        "",
+        "",
+        "3️⃣ Community"
+      ]
+    ],
+    [
+      1135,
+      [
+        "",
+        "",
+        "4️⃣ Recognition / certification"
+      ]
+    ],
+    [
+      1137,
+      [
+        "",
+        "",
+        "Below is the most practical structure for LIU Annual Membership."
+      ]
+    ],
+    [
+      1141,
+      [
+        "",
+        "",
+        "LIU Holistic Success Membership (12 Months)"
+      ]
+    ],
+    [
+      1143,
+      [
+        "",
+        "",
+        "Core Transformation Program"
+      ]
+    ],
+    [
+      1145,
+      [
+        "",
+        "",
+        "21-Day Holistic Performance Program"
+      ]
+    ],
+    [
+      1147,
+      [
+        "",
+        "",
+        "Purpose:"
+      ]
+    ],
+    [
+      1149,
+      [
+        "",
+        "",
+        "• Build daily habits across the 6 pillars"
+      ]
+    ],
+    [
+      1150,
+      [
+        "",
+        "",
+        "• Deliver first visible transformation"
+      ]
+    ],
+    [
+      1154,
+      [
+        "",
+        "",
+        "Ongoing Value After the 21 Days"
+      ]
+    ],
+    [
+      1156,
+      [
+        "",
+        "",
+        "1️⃣ Monthly Expert Sessions"
+      ]
+    ],
+    [
+      1158,
+      [
+        "",
+        "",
+        "1 live session every month with experts in:"
+      ]
+    ],
+    [
+      1160,
+      [
+        "",
+        "",
+        "• emotional intelligence"
+      ]
+    ],
+    [
+      1161,
+      [
+        "",
+        "",
+        "• stress management"
+      ]
+    ],
+    [
+      1162,
+      [
+        "",
+        "",
+        "• leadership"
+      ]
+    ],
+    [
+      1163,
+      [
+        "",
+        "",
+        "• wellness"
+      ]
+    ],
+    [
+      1165,
+      [
+        "",
+        "",
+        "This keeps members engaged for the whole year."
+      ]
+    ],
+    [
+      1169,
+      [
+        "",
+        "",
+        "2️⃣ Quarterly Holistic Life Assessments"
+      ]
+    ],
+    [
+      1171,
+      [
+        "",
+        "",
+        "Members retake the LIU Holistic Life Score Assessment every 3 months."
+      ]
+    ],
+    [
+      1173,
+      [
+        "",
+        "",
+        "Purpose:"
+      ]
+    ],
+    [
+      1175,
+      [
+        "",
+        "",
+        "• track progress"
+      ]
+    ],
+    [
+      1176,
+      [
+        "",
+        "",
+        "• reinforce learning"
+      ]
+    ],
+    [
+      1177,
+      [
+        "",
+        "",
+        "• create accountability"
+      ]
+    ],
+    [
+      1179,
+      [
+        "",
+        "",
+        "Participants receive a new progress report."
+      ]
+    ],
+    [
+      1183,
+      [
+        "",
+        "",
+        "3️⃣ Monthly Micro-Challenges"
+      ]
+    ],
+    [
+      1185,
+      [
+        "",
+        "",
+        "Short 5–7 day challenges."
+      ]
+    ],
+    [
+      1187,
+      [
+        "",
+        "",
+        "Examples:"
+      ]
+    ],
+    [
+      1189,
+      [
+        "",
+        "",
+        "• Digital declutter week"
+      ]
+    ],
+    [
+      1190,
+      [
+        "",
+        "",
+        "• Energy routine challenge"
+      ]
+    ],
+    [
+      1191,
+      [
+        "",
+        "",
+        "• Emotional resilience challenge"
+      ]
+    ],
+    [
+      1193,
+      [
+        "",
+        "",
+        "These maintain habit reinforcement."
+      ]
+    ],
+    [
+      1197,
+      [
+        "",
+        "",
+        "4️⃣ Community Support"
+      ]
+    ],
+    [
+      1199,
+      [
+        "",
+        "",
+        "Private WhatsApp / online community."
+      ]
+    ],
+    [
+      1201,
+      [
+        "",
+        "",
+        "Members share:"
+      ]
+    ],
+    [
+      1203,
+      [
+        "",
+        "",
+        "• progress"
+      ]
+    ],
+    [
+      1204,
+      [
+        "",
+        "",
+        "• reflections"
+      ]
+    ],
+    [
+      1205,
+      [
+        "",
+        "",
+        "• practices"
+      ]
+    ],
+    [
+      1207,
+      [
+        "",
+        "",
+        "Community increases completion and engagement."
+      ]
+    ],
+    [
+      1211,
+      [
+        "",
+        "",
+        "5️⃣ Fortnightly Q&A Sessions"
+      ]
+    ],
+    [
+      1213,
+      [
+        "",
+        "",
+        "Members can ask questions related to:"
+      ]
+    ],
+    [
+      1215,
+      [
+        "",
+        "",
+        "• stress"
+      ]
+    ],
+    [
+      1216,
+      [
+        "",
+        "",
+        "• work challenges"
+      ]
+    ],
+    [
+      1217,
+      [
+        "",
+        "",
+        "• life balance"
+      ]
+    ],
+    [
+      1219,
+      [
+        "",
+        "",
+        "This increases perceived personal support."
+      ]
+    ],
+    [
+      1223,
+      [
+        "",
+        "",
+        "6️⃣ Resource Library"
+      ]
+    ],
+    [
+      1225,
+      [
+        "",
+        "",
+        "Members get access to short videos and guides on:"
+      ]
+    ],
+    [
+      1227,
+      [
+        "",
+        "",
+        "• emotional intelligence"
+      ]
+    ],
+    [
+      1228,
+      [
+        "",
+        "",
+        "• energy management"
+      ]
+    ],
+    [
+      1229,
+      [
+        "",
+        "",
+        "• communication"
+      ]
+    ],
+    [
+      1230,
+      [
+        "",
+        "",
+        "• purpose alignment"
+      ]
+    ],
+    [
+      1232,
+      [
+        "",
+        "",
+        "These resources accumulate over the year."
+      ]
+    ],
+    [
+      1236,
+      [
+        "",
+        "",
+        "7️⃣ Certification"
+      ]
+    ],
+    [
+      1238,
+      [
+        "",
+        "",
+        "After completing:"
+      ]
+    ],
+    [
+      1240,
+      [
+        "",
+        "",
+        "• 21-day program"
+      ]
+    ],
+    [
+      1241,
+      [
+        "",
+        "",
+        "• participation in sessions"
+      ]
+    ],
+    [
+      1243,
+      [
+        "",
+        "",
+        "Members receive:"
+      ]
+    ],
+    [
+      1245,
+      [
+        "",
+        "",
+        "LIU Holistic Wellbeing Practitioner Certificate"
+      ]
+    ],
+    [
+      1247,
+      [
+        "",
+        "",
+        "Certification increases perceived value."
+      ]
+    ],
+    [
+      1251,
+      [
+        "",
+        "",
+        "Institutional Benefits (Important)"
+      ]
+    ],
+    [
+      1253,
+      [
+        "",
+        "",
+        "Schools / organisations receive:"
+      ]
+    ],
+    [
+      1255,
+      [
+        "",
+        "",
+        "• Holistic Wellbeing Participation Report"
+      ]
+    ],
+    [
+      1256,
+      [
+        "",
+        "",
+        "• Participation certificates for staff"
+      ]
+    ],
+    [
+      1257,
+      [
+        "",
+        "",
+        "• Access to expert sessions"
+      ]
+    ],
+    [
+      1259,
+      [
+        "",
+        "",
+        "This helps institutions justify the program."
+      ]
+    ],
+    [
+      1263,
+      [
+        "",
+        "",
+        "Annual Member Journey"
+      ]
+    ],
+    [
+      1265,
+      [
+        "",
+        "",
+        "Month 1"
+      ]
+    ],
+    [
+      1266,
+      [
+        "",
+        "",
+        "21-Day Transformation Program"
+      ]
+    ],
+    [
+      1268,
+      [
+        "",
+        "",
+        "Month 2–12"
+      ]
+    ],
+    [
+      1270,
+      [
+        "",
+        "",
+        "• monthly expert sessions"
+      ]
+    ],
+    [
+      1271,
+      [
+        "",
+        "",
+        "• micro challenges"
+      ]
+    ],
+    [
+      1272,
+      [
+        "",
+        "",
+        "• quarterly assessments"
+      ]
+    ],
+    [
+      1273,
+      [
+        "",
+        "",
+        "• community engagement"
+      ]
+    ],
+    [
+      1277,
+      [
+        "",
+        "",
+        "Why People Will Pay for This"
+      ]
+    ],
+    [
+      1279,
+      [
+        "",
+        "",
+        "They get:"
+      ]
+    ],
+    [
+      1281,
+      [
+        "",
+        "",
+        "✔ a structured program"
+      ]
+    ],
+    [
+      1282,
+      [
+        "",
+        "",
+        "✔ continuous learning"
+      ]
+    ],
+    [
+      1283,
+      [
+        "",
+        "",
+        "✔ community support"
+      ]
+    ],
+    [
+      1284,
+      [
+        "",
+        "",
+        "✔ recognition"
+      ]
+    ],
+    [
+      1286,
+      [
+        "",
+        "",
+        "This turns the program into a wellbeing ecosystem."
+      ]
+    ]
+  ],
+  "notes": [],
+  "Score based report": [
+    [
+      0,
+      [
+        "LIFEITUP HOLISTIC WELLNESS SNAPSHOT"
+      ]
+    ],
+    [
+      1,
+      [
+        "Your Personalised Wellness Report & Pathway"
+      ]
+    ],
+    [
+      3,
+      [
+        "Assessment: 12 questions • 6 life pillars"
+      ]
+    ],
+    [
+      4,
+      [
+        "Your score: XX / 48"
+      ]
+    ],
+    [
+      5,
+      [
+        "Your current zone: XXXX"
+      ]
+    ],
+    [
+      7,
+      [
+        "This is a self-reflection and wellbeing guidance report—not a medical or psychological diagnosis."
+      ]
+    ],
+    [
+      9,
+      [
+        "REPORT 1 — SCORE 12–20"
+      ]
+    ],
+    [
+      10,
+      [
+        "🔴 LOW"
+      ]
+    ],
+    [
+      11,
+      [
+        "A RESET MAY BE NEEDED"
+      ]
+    ],
+    [
+      13,
+      [
+        "Your responses suggest that several areas of your life may currently be competing for your energy, attention and wellbeing."
+      ]
+    ],
+    [
+      15,
+      [
+        "This doesn't mean something is “wrong” with you. It means there may be important signals worth paying attention to before they become bigger problems."
+      ]
+    ],
+    [
+      17,
+      [
+        "Your 6-Pillar Snapshot"
+      ]
+    ],
+    [
+      19,
+      [
+        "SOUL — Purpose & Meaning"
+      ]
+    ],
+    [
+      20,
+      [
+        "You may benefit from reconnecting your daily actions with what genuinely matters to you."
+      ]
+    ],
+    [
+      22,
+      [
+        "MIND — Emotional Balance & Clarity"
+      ]
+    ],
+    [
+      23,
+      [
+        "Stress, emotional load or difficulty maintaining focus may be consuming more mental bandwidth than you'd like."
+      ]
+    ],
+    [
+      25,
+      [
+        "BODY — Energy & Physical Wellbeing"
+      ]
+    ],
+    [
+      26,
+      [
+        "Your daily recovery, movement, sleep and other health-supporting habits may need greater consistency."
+      ]
+    ],
+    [
+      28,
+      [
+        "CAREER — Growth & Performance"
+      ]
+    ],
+    [
+      29,
+      [
+        "Your professional demands may not always be translating into clarity, confidence or sustainable performance."
+      ]
+    ],
+    [
+      31,
+      [
+        "ENVIRONMENT — Surroundings & Relationships"
+      ]
+    ],
+    [
+      32,
+      [
+        "Your physical, digital and social environments can either restore your energy or continuously drain it."
+      ]
+    ],
+    [
+      34,
+      [
+        "CONTRIBUTION — Impact & Service"
+      ]
+    ],
+    [
+      35,
+      [
+        "Meaningful contribution can strengthen connection, purpose and a sense of significance."
+      ]
+    ],
+    [
+      37,
+      [
+        "YOUR FIRST MOVE"
+      ]
+    ],
+    [
+      39,
+      [
+        "Don't try to change everything at once."
+      ]
+    ],
+    [
+      41,
+      [
+        "Identify your lowest-scoring pillar and choose one behaviour to improve for the next 7 days."
+      ]
+    ],
+    [
+      43,
+      [
+        "Your Personalised Pathway"
+      ]
+    ],
+    [
+      45,
+      [
+        "RESET → REBUILD → REPEAT"
+      ]
+    ],
+    [
+      47,
+      [
+        "Your full pathway should identify:"
+      ]
+    ],
+    [
+      48,
+      [
+        "your strongest pillar • your priority growth area • your first recommended actions."
+      ]
+    ],
+    [
+      50,
+      [
+        "Evidence note: WHO describes wellbeing as multidimensional and emphasises healthy behaviours, supportive environments, social connection and the ability to cope with normal stresses and contribute to community."
+      ]
+    ],
+    [
+      52,
+      [
+        "REPORT 2 — SCORE 21–32"
+      ]
+    ],
+    [
+      53,
+      [
+        "🟠 MODERATE"
+      ]
+    ],
+    [
+      54,
+      [
+        "YOU HAVE A FOUNDATION. NOW FIND THE GAP."
+      ]
+    ],
+    [
+      56,
+      [
+        "Your responses suggest that some areas of life are working reasonably well, while others may be quietly limiting your energy, wellbeing or performance."
+      ]
+    ],
+    [
+      58,
+      [
+        "This is often where small, consistent changes can create meaningful momentum."
+      ]
+    ],
+    [
+      60,
+      [
+        "Your 6-Pillar Snapshot"
+      ]
+    ],
+    [
+      62,
+      [
+        "SOUL"
+      ]
+    ],
+    [
+      63,
+      [
+        "You may have a sense of purpose, but greater alignment between values and everyday actions could strengthen it."
+      ]
+    ],
+    [
+      65,
+      [
+        "MIND"
+      ]
+    ],
+    [
+      66,
+      [
+        "You may be functioning well while still carrying stress, distraction or emotional load that deserves attention."
+      ]
+    ],
+    [
+      68,
+      [
+        "BODY"
+      ]
+    ],
+    [
+      69,
+      [
+        "Some healthy habits appear present, but consistency may be the opportunity."
+      ]
+    ],
+    [
+      71,
+      [
+        "CAREER"
+      ]
+    ],
+    [
+      72,
+      [
+        "You may be progressing, while clarity, confidence or meaningful growth could still be strengthened."
+      ]
+    ],
+    [
+      74,
+      [
+        "ENVIRONMENT"
+      ]
+    ],
+    [
+      75,
+      [
+        "Your surroundings and relationships may support you in some areas while draining attention or energy in others."
+      ]
+    ],
+    [
+      77,
+      [
+        "CONTRIBUTION"
+      ]
+    ],
+    [
+      78,
+      [
+        "There may be opportunities to connect your work and everyday life with a stronger sense of positive impact."
+      ]
+    ],
+    [
+      80,
+      [
+        "YOUR FIRST MOVE"
+      ]
+    ],
+    [
+      82,
+      [
+        "Don't improve everything. Find the one pillar with the biggest gap."
+      ]
+    ],
+    [
+      84,
+      [
+        "Then ask:"
+      ]
+    ],
+    [
+      86,
+      [
+        "“What one behaviour, if improved consistently, would make the biggest difference?”"
+      ]
+    ],
+    [
+      88,
+      [
+        "YOUR PATHWAY"
+      ]
+    ],
+    [
+      90,
+      [
+        "IDENTIFY → FOCUS → BUILD"
+      ]
+    ],
+    [
+      92,
+      [
+        "Your personalised report can reveal the pillar where your next improvement may have the greatest value."
+      ]
+    ],
+    [
+      94,
+      [
+        "Evidence note: WHO's health-promoting approach emphasises self-care, healthy habits, supportive environments and connection with others."
+      ]
+    ],
+    [
+      96,
+      [
+        "REPORT 3 — SCORE 33–40"
+      ]
+    ],
+    [
+      97,
+      [
+        "🟢 STABLE"
+      ]
+    ],
+    [
+      98,
+      [
+        "YOU'VE BUILT A FOUNDATION. WHAT'S HOLDING BACK YOUR NEXT LEVEL?"
+      ]
+    ],
+    [
+      100,
+      [
+        "Your responses suggest relatively positive alignment across several dimensions of life."
+      ]
+    ],
+    [
+      102,
+      [
+        "But a good overall score can sometimes hide one neglected area."
+      ]
+    ],
+    [
+      104,
+      [
+        "That is where your next breakthrough may lie."
+      ]
+    ],
+    [
+      106,
+      [
+        "Your 6-Pillar Snapshot"
+      ]
+    ],
+    [
+      108,
+      [
+        "SOUL"
+      ]
+    ],
+    [
+      109,
+      [
+        "Your sense of meaning and values may provide a useful foundation. The opportunity is deeper alignment in everyday choices."
+      ]
+    ],
+    [
+      111,
+      [
+        "MIND"
+      ]
+    ],
+    [
+      112,
+      [
+        "You appear to have reasonable emotional and mental resources, while protecting focus and managing pressure remains important."
+      ]
+    ],
+    [
+      114,
+      [
+        "BODY"
+      ]
+    ],
+    [
+      115,
+      [
+        "Your physical wellbeing habits provide a foundation—but consistency is what makes healthy behaviours sustainable."
+      ]
+    ],
+    [
+      117,
+      [
+        "CAREER"
+      ]
+    ],
+    [
+      118,
+      [
+        "Your professional life may be providing direction and progress. The next question is whether success is also sustainable and meaningful."
+      ]
+    ],
+    [
+      120,
+      [
+        "ENVIRONMENT"
+      ]
+    ],
+    [
+      121,
+      [
+        "Your surroundings and relationships can either reinforce your progress or quietly undermine it."
+      ]
+    ],
+    [
+      123,
+      [
+        "CONTRIBUTION"
+      ]
+    ],
+    [
+      124,
+      [
+        "Connecting achievement with meaningful contribution can add another dimension to wellbeing."
+      ]
+    ],
+    [
+      126,
+      [
+        "YOUR FIRST MOVE"
+      ]
+    ],
+    [
+      128,
+      [
+        "Don't chase more. Identify what's missing."
+      ]
+    ],
+    [
+      130,
+      [
+        "Look for the one pillar significantly below your strongest pillar."
+      ]
+    ],
+    [
+      132,
+      [
+        "That may be your Wellness Opportunity Gap."
+      ]
+    ],
+    [
+      134,
+      [
+        "YOUR PATHWAY"
+      ]
+    ],
+    [
+      136,
+      [
+        "REFINE → STRENGTHEN → SUSTAIN"
+      ]
+    ],
+    [
+      138,
+      [
+        "WHO's whole-person approach recognises that wellbeing is shaped not only by individual behaviour but also by relationships, environments, services and community."
+      ]
+    ],
+    [
+      140,
+      [
+        "REPORT 4 — SCORE 41–48"
+      ]
+    ],
+    [
+      141,
+      [
+        "🔵 BALANCED"
+      ]
+    ],
+    [
+      142,
+      [
+        "YOUR FOUNDATION IS STRONG. NOW PROTECT IT."
+      ]
+    ],
+    [
+      144,
+      [
+        "Your responses suggest consistent positive alignment across the six areas assessed."
+      ]
+    ],
+    [
+      146,
+      [
+        "But high wellbeing isn't a destination."
+      ]
+    ],
+    [
+      148,
+      [
+        "The real challenge is maintaining it when work intensifies, circumstances change and life becomes demanding."
+      ]
+    ],
+    [
+      150,
+      [
+        "Your 6-Pillar Snapshot"
+      ]
+    ],
+    [
+      152,
+      [
+        "SOUL"
+      ]
+    ],
+    [
+      153,
+      [
+        "Purpose and values appear to be relatively well integrated into your life."
+      ]
+    ],
+    [
+      155,
+      [
+        "MIND"
+      ]
+    ],
+    [
+      156,
+      [
+        "Your responses suggest useful emotional balance and mental clarity. Protecting recovery and focus remains important."
+      ]
+    ],
+    [
+      158,
+      [
+        "BODY"
+      ]
+    ],
+    [
+      159,
+      [
+        "You appear to have relatively supportive physical wellbeing habits. Consistency is key."
+      ]
+    ],
+    [
+      161,
+      [
+        "CAREER"
+      ]
+    ],
+    [
+      162,
+      [
+        "Your work appears to provide a relatively positive foundation for growth and performance."
+      ]
+    ],
+    [
+      164,
+      [
+        "ENVIRONMENT"
+      ]
+    ],
+    [
+      165,
+      [
+        "Your surroundings and relationships appear broadly supportive of your wellbeing."
+      ]
+    ],
+    [
+      167,
+      [
+        "CONTRIBUTION"
+      ]
+    ],
+    [
+      168,
+      [
+        "You appear connected to meaningful impact beyond yourself—an important dimension of a holistic life."
+      ]
+    ],
+    [
+      170,
+      [
+        "YOUR FIRST MOVE"
+      ]
+    ],
+    [
+      172,
+      [
+        "Don't become complacent."
+      ]
+    ],
+    [
+      174,
+      [
+        "Ask:"
+      ]
+    ],
+    [
+      176,
+      [
+        "“What would make my life healthier, more meaningful and more sustainable—not simply more successful?”"
+      ]
+    ],
+    [
+      178,
+      [
+        "YOUR PATHWAY"
+      ]
+    ],
+    [
+      180,
+      [
+        "SUSTAIN → DEEPEN → CONTRIBUTE"
+      ]
+    ],
+    [
+      182,
+      [
+        "WHO's whole-school/whole-person wellbeing approach recognises that health is supported through healthy behaviours, supportive relationships and environments, community connection and access to appropriate services."
+      ]
+    ]
+  ]
+}
