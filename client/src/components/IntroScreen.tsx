@@ -19,15 +19,6 @@ const SIX_DIMENSIONS = [
 export const IntroScreen: React.FC<IntroScreenProps> = ({ onStart }) => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-between px-4 py-8 sm:py-12 overflow-hidden">
-      {/* Background Hero Image with Dark Forest Green Tint & Soft Vignette */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity scale-105 pointer-events-none transition-transform duration-1000"
-        style={{ backgroundImage: `url('/hero-bg.png')` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#071b13]/85 via-[#071b13]/80 to-[#071b13] pointer-events-none" />
-
-      {/* Ambient decorative lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Top Header Branding */}
       <header className="relative z-10 w-full max-w-4xl flex justify-center mb-6">

@@ -191,11 +191,20 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#071b13] text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950">
-      {/* View router */}
-      {step === 'intro' && (
-        <IntroScreen onStart={handleStart} />
-      )}
+    <div className="relative min-h-screen bg-[#071b13] text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950 overflow-x-hidden">
+      {/* Pristine high-definition background with leaves, petals, zen stones & natural sunlight */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+        style={{ backgroundImage: `url('/clean-bg.png')` }}
+      />
+      {/* Subtle center-focused vignette: leaves & stones on sides remain 100% clear and bright */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,27,19,0.72)_0%,rgba(7,27,19,0.35)_60%,rgba(7,27,19,0.05)_100%)] pointer-events-none z-0" />
+
+      {/* Main Content Router */}
+      <div className="relative z-10 flex-1 flex flex-col justify-between">
+        {step === 'intro' && (
+          <IntroScreen onStart={handleStart} />
+        )}
 
       {step === 'quiz' && (
         <QuestionScreen
@@ -240,6 +249,8 @@ export function App() {
         >
           <Shield className="w-4 h-4" />
         </button>
+      </div>
+      {/* Close main content container */}
       </div>
 
       {/* Admin & Automation Hub Modal */}
