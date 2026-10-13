@@ -4,7 +4,7 @@
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #05160f;
+    background-color: #04130d;
     color: #f7faf8;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
@@ -16,7 +16,15 @@
   }
 }
 
-/* Soothing Minimalist Theme Background (Pure CSS - Zero Distraction) */
+/* 1. Royal Obsidian & Champagne Gold Theme (Ekdum Premium) */
+.bg-royal-obsidian {
+  background: 
+    radial-gradient(circle at 50% -5%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 15%, rgba(16, 75, 48, 0.45) 0%, rgba(4, 19, 13, 0.85) 65%, #03120c 100%);
+  background-attachment: fixed;
+}
+
+/* 2. Soothing Minimal Theme (Pure Calm Green) */
 .bg-soothing-minimal {
   background: 
     radial-gradient(circle at 50% -10%, rgba(20, 83, 45, 0.45) 0%, rgba(7, 27, 19, 0) 60%),
@@ -26,43 +34,59 @@
   background-attachment: fixed;
 }
 
-/* Midnight Gold Theme Background */
-.bg-midnight-gold {
-  background-color: #041416;
+/* Royal Luxury Glass Card */
+.royal-glass-card {
+  background: linear-gradient(145deg, rgba(8, 28, 19, 0.78) 0%, rgba(4, 18, 12, 0.88) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(254, 243, 199, 0.12);
 }
 
-/* Luxury Glass Card (Ultra-refined, soothing border & soft blur) */
-.luxury-glass-card {
-  background: rgba(9, 28, 19, 0.68);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(52, 211, 153, 0.16);
-  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+.royal-glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
-.luxury-glass-card:hover {
-  border-color: rgba(110, 231, 183, 0.3);
-}
-
-/* Quiz Option Card (Calm, soothing tap targets) */
-.luxury-option-card {
-  background: rgba(8, 25, 17, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(52, 211, 153, 0.18);
+/* Luxury Option Card (Royal Theme) */
+.royal-option-card {
+  background: rgba(6, 22, 15, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.luxury-option-card:hover {
-  background: rgba(14, 42, 29, 0.85);
-  border-color: rgba(110, 231, 183, 0.4);
+.royal-option-card:hover {
+  background: rgba(12, 38, 26, 0.85);
+  border-color: rgba(212, 175, 55, 0.45);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
 }
 
-.luxury-option-card.selected {
-  background: rgba(16, 50, 35, 0.95);
-  border-color: #86efac;
-  box-shadow: 0 0 0 2px rgba(134, 239, 172, 0.35), 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+.royal-option-card.selected {
+  background: linear-gradient(145deg, rgba(14, 46, 32, 0.95) 0%, rgba(8, 30, 20, 0.95) 100%);
+  border-color: #e6ca85;
+  box-shadow: 0 0 0 2px rgba(230, 202, 133, 0.35), 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Brushed Gold Button */
+.btn-royal-gold {
+  background: linear-gradient(135deg, #e6ca85 0%, #f7e3af 50%, #d4af37 100%);
+  color: #04150d;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-royal-gold:hover {
+  box-shadow: 0 16px 38px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-royal-gold:active {
+  transform: translateY(1px) scale(0.99);
 }
 
 /* Subtle breathing glow animation */
@@ -72,13 +96,13 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.5;
-    transform: scale(1.04);
+    opacity: 0.55;
+    transform: scale(1.03);
   }
 }
 
 .animate-calm-pulse {
-  animation: calmPulse 8s ease-in-out infinite;
+  animation: calmPulse 7s ease-in-out infinite;
 }
 
 /* Fade in */
@@ -102,12 +126,12 @@
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #051810;
+  background: #04130d;
 }
 ::-webkit-scrollbar-thumb {
   background: #143e2b;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e593e;
+  background: #23583f;
 }

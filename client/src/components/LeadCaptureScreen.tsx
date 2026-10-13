@@ -7,12 +7,14 @@ interface LeadCaptureScreenProps {
   onSubmit: (formData: LeadFormData) => Promise<void>;
   isLoading: boolean;
   errorMessage: string | null;
+  isRoyal?: boolean;
 }
 
 export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
   onSubmit,
   isLoading,
-  errorMessage
+  errorMessage,
+  isRoyal = true
 }) => {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
@@ -63,20 +65,24 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
   return (
     <div className="relative min-h-screen flex flex-col justify-between items-center px-4 py-8 sm:py-12 max-w-xl mx-auto">
       {/* Ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-emerald-600/15 blur-[130px] pointer-events-none rounded-full" />
+      <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[300px] blur-[130px] pointer-events-none rounded-full ${
+        isRoyal ? 'bg-amber-500/10' : 'bg-emerald-600/15'
+      }`} />
 
       {/* Header */}
       <header className="relative z-10 w-full flex justify-center mb-6">
-        <Logo size="md" showTagline={true} />
+        <Logo size="md" showTagline={true} variant={isRoyal ? 'gold' : 'emerald'} />
       </header>
 
       {/* Form Card */}
-      <main className="relative z-10 w-full luxury-glass-card rounded-3xl p-6 sm:p-9 animate-fade-in border border-emerald-600/30">
+      <main className={`relative z-10 w-full rounded-3xl p-6 sm:p-9 animate-fade-in ${
+        isRoyal ? 'royal-glass-card' : 'luxury-glass-card'
+      }`}>
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-display font-medium text-emerald-50 mb-2">
             Unlock Your Personalised Report
           </h1>
-          <p className="text-emerald-200/80 text-xs sm:text-sm">
+          <p className={`text-xs sm:text-sm ${isRoyal ? 'text-[#dfc282]/85' : 'text-emerald-200/80'}`}>
             Enter your details below to instantly view your Holistic Wellness Score and tailored LifeITUp pathway.
           </p>
         </div>
@@ -93,10 +99,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           {/* Full Name */}
           <div>
             <label className="block text-xs font-medium text-emerald-200 mb-1.5">
-              Full Name <span className="text-lime-400">*</span>
+              Full Name <span className={isRoyal ? 'text-[#e6ca85]' : 'text-lime-400'}>*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-400">
+              <div className={`absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none ${
+                isRoyal ? 'text-[#dfc282]' : 'text-emerald-400'
+              }`}>
                 <User className="w-4 h-4" />
               </div>
               <input
@@ -107,8 +115,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                   if (fieldErrors.fullName) setFieldErrors({ ...fieldErrors, fullName: '' });
                 }}
                 placeholder="e.g. Sarah Jenkins"
-                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-emerald-950/60 border text-emerald-50 placeholder-emerald-600 text-sm focus:outline-none focus:ring-2 focus:ring-lime-400/50 transition-all ${
-                  fieldErrors.fullName ? 'border-rose-500 bg-rose-950/20' : 'border-emerald-700/60 focus:border-lime-400'
+                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#03120c]/60 border text-emerald-50 placeholder-emerald-700/80 text-sm focus:outline-none transition-all ${
+                  fieldErrors.fullName 
+                    ? 'border-rose-500 bg-rose-950/20' 
+                    : isRoyal
+                      ? 'border-[#d4af37]/30 focus:border-[#e6ca85] focus:ring-2 focus:ring-[#d4af37]/30'
+                      : 'border-emerald-700/60 focus:border-lime-400 focus:ring-2 focus:ring-lime-400/50'
                 }`}
               />
             </div>
@@ -120,10 +132,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           {/* Email Address */}
           <div>
             <label className="block text-xs font-medium text-emerald-200 mb-1.5">
-              Email Address <span className="text-lime-400">*</span>
+              Email Address <span className={isRoyal ? 'text-[#e6ca85]' : 'text-lime-400'}>*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-400">
+              <div className={`absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none ${
+                isRoyal ? 'text-[#dfc282]' : 'text-emerald-400'
+              }`}>
                 <Mail className="w-4 h-4" />
               </div>
               <input
@@ -134,8 +148,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                   if (fieldErrors.email) setFieldErrors({ ...fieldErrors, email: '' });
                 }}
                 placeholder="you@example.com"
-                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-emerald-950/60 border text-emerald-50 placeholder-emerald-600 text-sm focus:outline-none focus:ring-2 focus:ring-lime-400/50 transition-all ${
-                  fieldErrors.email ? 'border-rose-500 bg-rose-950/20' : 'border-emerald-700/60 focus:border-lime-400'
+                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#03120c]/60 border text-emerald-50 placeholder-emerald-700/80 text-sm focus:outline-none transition-all ${
+                  fieldErrors.email 
+                    ? 'border-rose-500 bg-rose-950/20' 
+                    : isRoyal
+                      ? 'border-[#d4af37]/30 focus:border-[#e6ca85] focus:ring-2 focus:ring-[#d4af37]/30'
+                      : 'border-emerald-700/60 focus:border-lime-400 focus:ring-2 focus:ring-lime-400/50'
                 }`}
               />
             </div>
@@ -147,10 +165,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           {/* Mobile Number */}
           <div>
             <label className="block text-xs font-medium text-emerald-200 mb-1.5">
-              Mobile Number <span className="text-lime-400">*</span>
+              Mobile Number <span className={isRoyal ? 'text-[#e6ca85]' : 'text-lime-400'}>*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-400">
+              <div className={`absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none ${
+                isRoyal ? 'text-[#dfc282]' : 'text-emerald-400'
+              }`}>
                 <Phone className="w-4 h-4" />
               </div>
               <input
@@ -161,8 +181,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                   if (fieldErrors.mobile) setFieldErrors({ ...fieldErrors, mobile: '' });
                 }}
                 placeholder="+91 98765 43210"
-                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-emerald-950/60 border text-emerald-50 placeholder-emerald-600 text-sm focus:outline-none focus:ring-2 focus:ring-lime-400/50 transition-all ${
-                  fieldErrors.mobile ? 'border-rose-500 bg-rose-950/20' : 'border-emerald-700/60 focus:border-lime-400'
+                className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#03120c]/60 border text-emerald-50 placeholder-emerald-700/80 text-sm focus:outline-none transition-all ${
+                  fieldErrors.mobile 
+                    ? 'border-rose-500 bg-rose-950/20' 
+                    : isRoyal
+                      ? 'border-[#d4af37]/30 focus:border-[#e6ca85] focus:ring-2 focus:ring-[#d4af37]/30'
+                      : 'border-emerald-700/60 focus:border-lime-400 focus:ring-2 focus:ring-lime-400/50'
                 }`}
               />
             </div>
@@ -171,7 +195,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
             )}
           </div>
 
-          {/* Consent Checkbox (Strictly NOT preselected) */}
+          {/* Consent Checkbox */}
           <div className="pt-2">
             <label className="flex items-start gap-3 cursor-pointer select-none">
               <input
@@ -181,9 +205,11 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                   setFormData({ ...formData, consent: e.target.checked });
                   if (fieldErrors.consent) setFieldErrors({ ...fieldErrors, consent: '' });
                 }}
-                className="w-4 h-4 mt-0.5 rounded border-emerald-600 bg-emerald-950 text-lime-400 focus:ring-lime-400 focus:ring-offset-emerald-950 cursor-pointer accent-lime-400"
+                className={`w-4 h-4 mt-0.5 rounded border-emerald-600 bg-emerald-950 cursor-pointer ${
+                  isRoyal ? 'accent-[#d4af37]' : 'accent-lime-400'
+                }`}
               />
-              <span className="text-xs text-emerald-300/80 leading-relaxed">
+              <span className={`text-xs leading-relaxed ${isRoyal ? 'text-[#dfc282]/85' : 'text-emerald-300/80'}`}>
                 I agree to receive my LifeITUp wellness assessment report and relevant communications regarding holistic health.
               </span>
             </label>
@@ -196,7 +222,9 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-lime-300 via-lime-400 to-emerald-400 text-emerald-950 font-bold text-base shadow-[0_10px_25px_rgba(163,230,53,0.35)] hover:shadow-[0_12px_30px_rgba(163,230,53,0.5)] hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-4"
+            className={`w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-base cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-4 ${
+              isRoyal ? 'btn-royal-gold' : 'bg-gradient-to-r from-lime-300 via-lime-400 to-emerald-400 text-emerald-950 shadow-[0_10px_25px_rgba(163,230,53,0.35)] hover:scale-[1.01]'
+            }`}
           >
             {isLoading ? (
               <>
@@ -212,7 +240,9 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           </button>
         </form>
 
-        <div className="flex items-center justify-center gap-1.5 text-[11px] text-emerald-500/70 mt-5">
+        <div className={`flex items-center justify-center gap-1.5 text-[11px] mt-5 ${
+          isRoyal ? 'text-[#dfc282]/70' : 'text-emerald-500/70'
+        }`}>
           <Lock className="w-3 h-3 text-emerald-400" />
           <span>We respect your privacy. No spam, ever.</span>
         </div>

@@ -3,31 +3,39 @@ import React from 'react';
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
   showTagline?: boolean;
+  variant?: 'gold' | 'emerald';
   className?: string;
 }
 
 export const Logo: React.FC<LogoProps> = ({
   size = 'md',
   showTagline = true,
+  variant = 'gold',
   className = ''
 }) => {
   const iconSizes = {
     sm: 'w-6 h-6',
     md: 'w-8 h-8',
-    lg: 'w-10 h-10'
+    lg: 'w-11 h-11'
   };
 
   const textSizes = {
-    sm: 'text-sm tracking-[0.25em]',
-    md: 'text-base sm:text-lg tracking-[0.3em]',
-    lg: 'text-xl sm:text-2xl tracking-[0.35em]'
+    sm: 'text-xs tracking-[0.28em]',
+    md: 'text-sm sm:text-base tracking-[0.32em]',
+    lg: 'text-lg sm:text-xl tracking-[0.38em]'
   };
+
+  const isGold = variant === 'gold';
 
   return (
     <div className={`flex flex-col items-center select-none ${className}`}>
       {/* 3-Leaf LifeITUp Emblem */}
       <svg
-        className={`${iconSizes[size]} text-lime-300 drop-shadow-[0_0_12px_rgba(163,230,53,0.35)] mb-1.5`}
+        className={`${iconSizes[size]} ${
+          isGold 
+            ? 'text-[#e6ca85] drop-shadow-[0_0_14px_rgba(212,175,55,0.4)]' 
+            : 'text-lime-300 drop-shadow-[0_0_12px_rgba(163,230,53,0.35)]'
+        } mb-1.5 transition-colors duration-300`}
         viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -59,17 +67,21 @@ export const Logo: React.FC<LogoProps> = ({
       </svg>
 
       {/* Brand Name with sleek dashes */}
-      <div className="flex items-center gap-3">
-        <span className="w-4 sm:w-6 h-[1px] bg-emerald-400/40"></span>
-        <span className={`font-semibold font-display text-emerald-100 uppercase ${textSizes[size]}`}>
+      <div className="flex items-center gap-2.5 sm:gap-3">
+        <span className={`w-3 sm:w-5 h-[1px] ${isGold ? 'bg-[#d4af37]/50' : 'bg-emerald-400/40'}`}></span>
+        <span className={`font-semibold font-display uppercase ${
+          isGold ? 'text-[#fbf6e2]' : 'text-emerald-100'
+        } ${textSizes[size]}`}>
           LIFEITUP
         </span>
-        <span className="w-4 sm:w-6 h-[1px] bg-emerald-400/40"></span>
+        <span className={`w-3 sm:w-5 h-[1px] ${isGold ? 'bg-[#d4af37]/50' : 'bg-emerald-400/40'}`}></span>
       </div>
 
       {/* Tagline */}
       {showTagline && (
-        <span className="text-[11px] sm:text-xs text-emerald-300/80 font-normal tracking-wide mt-1">
+        <span className={`text-[10px] sm:text-xs font-normal tracking-wider mt-1 ${
+          isGold ? 'text-[#dfc282]/85' : 'text-emerald-300/80'
+        }`}>
           Empowering Your Holistic Success
         </span>
       )}

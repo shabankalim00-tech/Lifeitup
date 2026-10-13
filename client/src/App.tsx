@@ -48,7 +48,7 @@ export function App() {
   const [socialUrls, setSocialUrls] = useState<{ instagram?: string; whatsapp?: string }>({});
 
   const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
-  const [theme, setTheme] = useState<ThemeType>('soothing');
+  const [theme, setTheme] = useState<ThemeType>('royal');
 
   // Initialize unique session ID
   useEffect(() => {
@@ -192,32 +192,35 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const isRoyal = theme === 'royal';
+
   return (
     <div className={`relative min-h-screen text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950 overflow-x-hidden ${
-      theme === 'soothing' ? 'bg-[#05160f]' : theme === 'midnight' ? 'bg-[#041416]' : 'bg-[#071b13]'
+      theme === 'royal' ? 'bg-[#03120c]' : theme === 'soothing' ? 'bg-[#05160f]' : 'bg-[#071b13]'
     }`}>
-      {/* 1. SOOTHING MINIMAL THEME (Default: Pure calm, velvety dark green, zero clutter/leaves) */}
+      {/* 1. ROYAL OBSIDIAN & GOLD THEME (DEFAULT: Ekdum Premium Luxury) */}
+      {theme === 'royal' && (
+        <>
+          <div 
+            className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+            style={{ backgroundImage: `url('/classy-premium.jpg')` }}
+          />
+          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(3,18,12,0.72)_0%,rgba(3,18,12,0.42)_60%,rgba(3,18,12,0.1)_100%)] pointer-events-none z-0" />
+          {/* Subtle warm champagne halo */}
+          <div className="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none z-0 animate-calm-pulse" />
+        </>
+      )}
+
+      {/* 2. SOOTHING MINIMAL THEME (Pure Calm Green, Zero Distraction) */}
       {theme === 'soothing' && (
         <>
           <div className="fixed inset-0 bg-soothing-minimal pointer-events-none z-0" />
-          {/* Gentle, soft breathing ambient light from above */}
           <div className="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none z-0 animate-calm-pulse" />
           <div className="fixed bottom-0 right-1/4 w-[500px] h-[300px] bg-teal-500/5 blur-[130px] rounded-full pointer-events-none z-0" />
         </>
       )}
 
-      {/* 2. MIDNIGHT GOLD THEME (Deep executive teal with warm morning light) */}
-      {theme === 'midnight' && (
-        <>
-          <div 
-            className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/eucalyptus-gold.jpg')` }}
-          />
-          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(4,20,22,0.8)_0%,rgba(4,20,22,0.45)_65%,rgba(4,20,22,0.1)_100%)] pointer-events-none z-0" />
-        </>
-      )}
-
-      {/* 3. BOTANICAL ZEN THEME (Natural foliage and zen stones) */}
+      {/* 3. BOTANICAL ZEN THEME (Natural Foliage and Zen Stones) */}
       {theme === 'botanical' && (
         <>
           <div 
@@ -236,7 +239,7 @@ export function App() {
       {/* Main Content Router */}
       <div className="relative z-10 flex-1 flex flex-col justify-between pt-2">
         {step === 'intro' && (
-          <IntroScreen onStart={handleStart} />
+          <IntroScreen onStart={handleStart} isRoyal={isRoyal} />
         )}
 
       {step === 'quiz' && (
@@ -246,6 +249,7 @@ export function App() {
           totalQuestions={questions.length}
           selectedAnswer={answers[questions[currentQuestionIndex].id]}
           options={options}
+          isRoyal={isRoyal}
           onSelectAnswer={handleSelectAnswer}
           onNext={handleNext}
           onBack={handleBack}
@@ -253,7 +257,7 @@ export function App() {
       )}
 
       {step === 'completed' && (
-        <CompletionScreen onOpenLeadCapture={handleOpenLeadCapture} />
+        <CompletionScreen onOpenLeadCapture={handleOpenLeadCapture} isRoyal={isRoyal} />
       )}
 
       {step === 'lead_capture' && (
@@ -261,6 +265,7 @@ export function App() {
           onSubmit={handleLeadSubmit}
           isLoading={isLoading}
           errorMessage={errorMessage}
+          isRoyal={isRoyal}
         />
       )}
 
@@ -269,6 +274,7 @@ export function App() {
           report={reportData}
           userName={submittedLead?.fullName || 'Valued Seeker'}
           socialUrls={socialUrls}
+          isRoyal={isRoyal}
           onRetake={handleRetake}
         />
       )}
