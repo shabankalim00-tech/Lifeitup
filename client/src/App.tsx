@@ -6,6 +6,7 @@ import { CompletionScreen } from './components/CompletionScreen';
 import { LeadCaptureScreen } from './components/LeadCaptureScreen';
 import { ReportScreen } from './components/ReportScreen';
 import { AdminModal } from './components/AdminModal';
+import { ThemeSwitcher, type ThemeType } from './components/ThemeSwitcher';
 import { Shield } from 'lucide-react';
 
 // Fallback questions directly from prompt in case offline / initial load
@@ -47,6 +48,7 @@ export function App() {
   const [socialUrls, setSocialUrls] = useState<{ instagram?: string; whatsapp?: string }>({});
 
   const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
+  const [theme, setTheme] = useState<ThemeType>('soothing');
 
   // Initialize unique session ID
   useEffect(() => {
@@ -191,17 +193,48 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#071b13] text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950 overflow-x-hidden">
-      {/* Pristine high-definition background with leaves, petals, zen stones & natural sunlight */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-        style={{ backgroundImage: `url('/clean-bg.png')` }}
-      />
-      {/* Subtle center-focused vignette: leaves & stones on sides remain 100% clear and bright */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,27,19,0.72)_0%,rgba(7,27,19,0.35)_60%,rgba(7,27,19,0.05)_100%)] pointer-events-none z-0" />
+    <div className={`relative min-h-screen text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950 overflow-x-hidden ${
+      theme === 'soothing' ? 'bg-[#05160f]' : theme === 'midnight' ? 'bg-[#041416]' : 'bg-[#071b13]'
+    }`}>
+      {/* 1. SOOTHING MINIMAL THEME (Default: Pure calm, velvety dark green, zero clutter/leaves) */}
+      {theme === 'soothing' && (
+        <>
+          <div className="fixed inset-0 bg-soothing-minimal pointer-events-none z-0" />
+          {/* Gentle, soft breathing ambient light from above */}
+          <div className="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none z-0 animate-calm-pulse" />
+          <div className="fixed bottom-0 right-1/4 w-[500px] h-[300px] bg-teal-500/5 blur-[130px] rounded-full pointer-events-none z-0" />
+        </>
+      )}
+
+      {/* 2. MIDNIGHT GOLD THEME (Deep executive teal with warm morning light) */}
+      {theme === 'midnight' && (
+        <>
+          <div 
+            className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+            style={{ backgroundImage: `url('/eucalyptus-gold.jpg')` }}
+          />
+          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(4,20,22,0.8)_0%,rgba(4,20,22,0.45)_65%,rgba(4,20,22,0.1)_100%)] pointer-events-none z-0" />
+        </>
+      )}
+
+      {/* 3. BOTANICAL ZEN THEME (Natural foliage and zen stones) */}
+      {theme === 'botanical' && (
+        <>
+          <div 
+            className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+            style={{ backgroundImage: `url('/clean-bg.png')` }}
+          />
+          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,27,19,0.72)_0%,rgba(7,27,19,0.35)_60%,rgba(7,27,19,0.05)_100%)] pointer-events-none z-0" />
+        </>
+      )}
+
+      {/* Top Floating Theme Switcher */}
+      <div className="fixed top-4 right-4 z-40">
+        <ThemeSwitcher currentTheme={theme} onThemeChange={setTheme} />
+      </div>
 
       {/* Main Content Router */}
-      <div className="relative z-10 flex-1 flex flex-col justify-between">
+      <div className="relative z-10 flex-1 flex flex-col justify-between pt-2">
         {step === 'intro' && (
           <IntroScreen onStart={handleStart} />
         )}
