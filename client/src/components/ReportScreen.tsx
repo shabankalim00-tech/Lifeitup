@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Logo } from './Logo';
 import type { ReportPayload } from '../types';
 import confetti from 'canvas-confetti';
-import { Sparkles, ArrowRight, ShieldCheck, Compass, Info, MessageCircle, Download } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Compass, Info, MessageCircle } from 'lucide-react';
 
 interface ReportScreenProps {
   report: ReportPayload;
@@ -20,8 +20,6 @@ interface ReportScreenProps {
 export const ReportScreen: React.FC<ReportScreenProps> = ({
   report,
   userName,
-  leadId,
-  userMobile,
   isRoyal = true,
   socialUrls,
   onRetake
@@ -88,43 +86,7 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
           </div>
         </div>
 
-        {/* Quick Action Buttons: Download PDF & WhatsApp */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {leadId && (
-            <a
-              href={`/api/leads/${leadId}/pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-3.5 rounded-2xl font-semibold text-xs sm:text-sm bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-500/40 text-emerald-100 transition-all shadow-md hover:scale-[1.01]"
-            >
-              <Download className="w-4 h-4 text-emerald-400" />
-              <span>Download Official PDF Report</span>
-            </a>
-          )}
 
-          {(() => {
-            const cleanPhone = (userMobile || '').replace(/[^\d]/g, '');
-            const pdfUrl = typeof window !== 'undefined' && leadId ? `${window.location.origin}/api/leads/${leadId}/pdf` : '';
-            const waText = encodeURIComponent(
-              `🌿 *LifeITUp Wellbeing Assessment Report*\n\nHello *${userName}*,\n\nThank you for participating in the *LifeITUp 2-Minute Holistic Wellbeing Check*.\n\n📊 *Your Holistic Wellbeing Score:* *${score} / ${maxScore}*\n✨ *Status:* *${scoreBand.zone}* — *${scoreBand.title}*\n\n${scoreBand.headline}\n\n🎯 *YOUR FIRST MOVE (Next 7 Days):*\n*${scoreBand.firstMoveRule}*\n${scoreBand.firstMoveAdvice}\n\n📋 *YOUR PERSONALISED PATHWAY:*\n${(scoreBand.pathwaySteps || []).join(' → ')}\n\n${pdfUrl ? `📄 *Download Your Official 2-Page PDF Report:*\n${pdfUrl}\n\n` : ''}_Empowering Your Holistic Success — LifeITUp_`
-            );
-            const waTarget = cleanPhone 
-              ? `https://api.whatsapp.com/send?phone=${cleanPhone.startsWith('91') ? cleanPhone : '91' + cleanPhone}&text=${waText}`
-              : `https://api.whatsapp.com/send?text=${waText}`;
-
-            return (
-              <a
-                href={waTarget}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 p-3.5 rounded-2xl font-semibold text-xs sm:text-sm bg-[#128c7e]/30 hover:bg-[#128c7e]/50 border border-[#25d366]/40 text-[#a7f3d0] transition-all shadow-md hover:scale-[1.01]"
-              >
-                <MessageCircle className="w-4 h-4 text-[#25d366]" />
-                <span>Open / Send on WhatsApp</span>
-              </a>
-            );
-          })()}
-        </div>
 
         {/* Score Card */}
         <div className={`rounded-3xl p-6 sm:p-8 text-center ${
