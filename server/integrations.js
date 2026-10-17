@@ -1,7 +1,16 @@
 const nodemailer = require('nodemailer');
 const { dbHelpers } = require('./db');
 const { generateReportPdf } = require('./reportPdf');
-const { sendWhatsApp, isBaileysConnected } = require('./baileysService');
+let sendWhatsApp = async () => ({ success: false });
+let isBaileysConnected = () => false;
+
+if (!process.env.VERCEL) {
+  try {
+    const baileys = require('./baileysService');
+    sendWhatsApp = baileys.sendWhatsApp;
+    isBaileysConnected = baileys.isBaileysConnected;
+  } catch (_) {}
+}
 
 async function getSetting(key) {
   const row = await dbHelpers.get('SELECT value FROM settings WHERE key = ?', [key]);

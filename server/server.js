@@ -13,7 +13,20 @@ const {
   logIntegration 
 } = require('./integrations');
 const { generateReportPdf } = require('./reportPdf');
-const { initBaileys, getStatus: getBaileysStatus, logout: logoutBaileys } = require('./baileysService');
+let getBaileysStatus = () => ({ connected: false, phone: null, qr: null });
+let logoutBaileys = async () => ({ success: true });
+let initBaileys = () => {};
+
+if (!process.env.VERCEL) {
+  try {
+    const baileys = require('./baileysService');
+    initBaileys = baileys.initBaileys;
+    getBaileysStatus = baileys.getStatus;
+    logoutBaileys = baileys.logout;
+  } catch (bErr) {
+    console.warn('Baileys not loaded:', bErr.message);
+  }
+}
 
 
 const app = express();
@@ -207,7 +220,36 @@ app.post('/api/leads', async (req, res) => {
       state: clientState
     };
 
-    // Return the complete personalised score-based report immediately (instant UI response)
+    // Dispatch integrations concurrently in parallel
+    const crmPromise = dispatchToCrm(leadRecord).then(r => 
+      dbHelpers.run('UPDATE leads SET crm_status = ? WHERE id = ?', [r.status, leadId])
+    ).catch(err => console.error('CRM error:', err));
+
+    const emailPromise = dispatchToEmail(leadRecord, assessmentResult.scoreBand).then(r => 
+      dbHelpers.run('UPDATE leads SET email_status = ? WHERE id = ?', [r.status, leadId])
+    ).catch(err => console.error('Email error:', err));
+
+    const waPromise = dispatchToWhatsapp(leadRecord, assessmentResult.scoreBand).then(r => 
+      dbHelpers.run('UPDATE leads SET whatsapp_status = ? WHERE id = ?', [r.status, leadId])
+    ).catch(err => console.error('WA error:', err));
+
+    const mcPromise = dispatchToMailchimp(leadRecord, assessmentResult.scoreBand).then(async r => {
+      if (r.status === 'success') {
+        await dbHelpers.run('UPDATE leads SET crm_status = ? WHERE id = ?', ['mailchimp_synced', leadId]);
+        if (r.emailSent) {
+          await dbHelpers.run('UPDATE leads SET email_status = ? WHERE id = ?', ['mailchimp_sent', leadId]);
+        }
+      }
+    }).catch(err => console.error('Mailchimp error:', err));
+
+    const sheetPromise = dispatchToGoogleSheet(leadRecord).then(r => 
+      dbHelpers.run('UPDATE leads SET sheet_status = ? WHERE id = ?', [r.status, leadId])
+    ).catch(err => console.error('Google Sheet error:', err));
+
+    // Await all parallel dispatches so serverless runtime doesn't terminate early
+    await Promise.allSettled([crmPromise, emailPromise, waPromise, mcPromise, sheetPromise]);
+
+    // Return the complete personalised score-based report
     res.json({
       success: true,
       lead: {
@@ -225,44 +267,10 @@ app.post('/api/leads', async (req, res) => {
         scoreBand: assessmentResult.scoreBand
       },
       integrations: {
-        crm: 'processing',
-        email: 'processing',
-        whatsapp: 'processing',
-        googleSheet: 'processing'
-      }
-    });
-
-    // Run integrations concurrently in background without blocking user UI
-    setImmediate(async () => {
-      try {
-        const crmPromise = dispatchToCrm(leadRecord).then(r => 
-          dbHelpers.run('UPDATE leads SET crm_status = ? WHERE id = ?', [r.status, leadId])
-        ).catch(err => console.error('CRM error:', err));
-
-        const emailPromise = dispatchToEmail(leadRecord, assessmentResult.scoreBand).then(r => 
-          dbHelpers.run('UPDATE leads SET email_status = ? WHERE id = ?', [r.status, leadId])
-        ).catch(err => console.error('Email error:', err));
-
-        const waPromise = dispatchToWhatsapp(leadRecord, assessmentResult.scoreBand).then(r => 
-          dbHelpers.run('UPDATE leads SET whatsapp_status = ? WHERE id = ?', [r.status, leadId])
-        ).catch(err => console.error('WA error:', err));
-
-        const mcPromise = dispatchToMailchimp(leadRecord, assessmentResult.scoreBand).then(async r => {
-          if (r.status === 'success') {
-            await dbHelpers.run('UPDATE leads SET crm_status = ? WHERE id = ?', ['mailchimp_synced', leadId]);
-            if (r.emailSent) {
-              await dbHelpers.run('UPDATE leads SET email_status = ? WHERE id = ?', ['mailchimp_sent', leadId]);
-            }
-          }
-        }).catch(err => console.error('Mailchimp error:', err));
-
-        const sheetPromise = dispatchToGoogleSheet(leadRecord).then(r => 
-          dbHelpers.run('UPDATE leads SET sheet_status = ? WHERE id = ?', [r.status, leadId])
-        ).catch(err => console.error('Google Sheet error:', err));
-
-        await Promise.allSettled([crmPromise, emailPromise, waPromise, mcPromise, sheetPromise]);
-      } catch (bgErr) {
-        console.error('Background dispatch execution error:', bgErr);
+        crm: 'completed',
+        email: 'completed',
+        whatsapp: 'completed',
+        googleSheet: 'completed'
       }
     });
   } catch (err) {
