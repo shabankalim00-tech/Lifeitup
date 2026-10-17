@@ -2,7 +2,9 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 
-const DB_PATH = path.join(__dirname, 'lifeitup.db');
+const DB_PATH = process.env.VERCEL
+  ? path.join('/tmp', 'lifeitup.db')
+  : path.join(__dirname, 'lifeitup.db');
 
 const db = new sqlite3.Database(DB_PATH, (err) => {
   if (err) {
@@ -76,16 +78,19 @@ db.serialize(() => {
     { key: 'crm_webhook_url', value: '' },
     { key: 'crm_api_key', value: '' },
     { key: 'email_provider', value: 'smtp' }, // 'smtp', 'webhook', 'none'
-    { key: 'smtp_host', value: '' },
-    { key: 'smtp_port', value: '587' },
-    { key: 'smtp_user', value: '' },
-    { key: 'smtp_pass', value: '' },
-    { key: 'smtp_from', value: 'wellness@lifeitup.com' },
-    { key: 'whatsapp_provider', value: 'webhook' }, // 'webhook', 'interakt', 'none'
+    { key: 'smtp_host', value: 'smtp.gmail.com' },
+    { key: 'smtp_port', value: '465' },
+    { key: 'smtp_user', value: 'ho@lifeitupworldwide.com' },
+    { key: 'smtp_pass', value: 'mjsbaymzausfnlgv' },
+    { key: 'smtp_from', value: 'LifeITUp WorldWide <ho@lifeitupworldwide.com>' },
+    { key: 'whatsapp_provider', value: 'webhook' },
     { key: 'whatsapp_webhook_url', value: '' },
     { key: 'whatsapp_api_token', value: '' },
-    { key: 'social_instagram_url', value: '' }, // e.g., 'https://instagram.com/lifeitup'
-    { key: 'social_whatsapp_url', value: '' },  // e.g., 'https://chat.whatsapp.com/...'
+    { key: 'ultramsg_instance_id', value: 'instance194619' },
+    { key: 'ultramsg_token', value: '8bi0f2seyeslpgn4' },
+    { key: 'google_sheet_url', value: 'https://script.google.com/macros/s/AKfycbzkgPYVKxGx_lHR3VIJ03qIXOIwth5_tbvQNLKqtAyFzsJ7ZP7TTpvvV74O7FT6iBAFRw/exec' },
+    { key: 'social_instagram_url', value: '' },
+    { key: 'social_whatsapp_url', value: '' },
   ];
 
   defaultSettings.forEach(({ key, value }) => {

@@ -549,19 +549,24 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Start local WhatsApp service
-initBaileys();
-
-// Serve static frontend build if available
+// Serve static frontend build if available locally
 const clientDistPath = path.join(__dirname, '../client/dist');
-app.use(express.static(clientDistPath));
+if (require('fs').existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('{*path}', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
 
-app.get('{*path}', (req, res, next) => {
-  if (req.path.startsWith('/api')) return next();
-  res.sendFile(path.join(clientDistPath, 'index.html'));
-});
+// Start local WhatsApp service & server listener when running locally (not in serverless Vercel)
+if (!process.env.VERCEL) {
+  initBaileys();
 
-app.listen(PORT, () => {
-  console.log(`LifeITUp Server running on port ${PORT}`);
-});
+  app.listen(PORT, () => {
+    console.log(`LifeITUp Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
 
