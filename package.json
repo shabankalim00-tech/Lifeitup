@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "build": "npm --prefix client install && npm --prefix client run build",
-    "vercel-build": "npm --prefix client install && npm --prefix client run build",
+    "build": "node -e \"const fs=require('fs'),cp=require('child_process'); if(fs.existsSync('client/package.json')){cp.execSync('cd client && npm install && npm run build',{stdio:'inherit'});}else{cp.execSync('npm run build',{stdio:'inherit'});}\"",
+    "vercel-build": "node -e \"const fs=require('fs'),cp=require('child_process'); if(fs.existsSync('client/package.json')){cp.execSync('cd client && npm install && npm run build',{stdio:'inherit'});}else{cp.execSync('npm run build',{stdio:'inherit'});}\"",
     "dev:server": "node server/server.js",
     "dev:client": "npm --prefix client run dev"
   },
