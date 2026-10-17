@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Logo } from './Logo';
-import type { LeadFormData } from '../types';
+import type { LeadFormData, ScoreBand } from '../types';
 import { User, Mail, Phone, Lock, ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
 
 interface LeadCaptureScreenProps {
@@ -8,19 +8,24 @@ interface LeadCaptureScreenProps {
   isLoading: boolean;
   errorMessage: string | null;
   isRoyal?: boolean;
+  score?: number;
+  scoreBand?: ScoreBand | null;
 }
 
 export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
   onSubmit,
   isLoading,
   errorMessage,
-  isRoyal = true
+  isRoyal = true,
+  score,
+  scoreBand
 }) => {
+
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
     email: '',
     mobile: '',
-    consent: false
+    consent: true
   });
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -78,26 +83,29 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
       <main className={`relative z-10 w-full rounded-3xl p-6 sm:p-9 animate-fade-in ${
         isRoyal ? 'royal-glass-card' : 'luxury-glass-card'
       }`}>
-        {/* Unlocked Teaser Pill */}
+        {/* Unlocked Teaser Pill with Score Continuity */}
         <div className="flex justify-center mb-5">
-          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold ${
+          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold ${
             isRoyal 
               ? 'bg-[#0a2318] border border-[#d4af37]/40 text-[#fde68a]' 
               : 'bg-emerald-950 border border-emerald-500/40 text-lime-300'
           }`}>
-            <Lock className="w-3.5 h-3.5" />
-            <span>Report Ready to Deliver</span>
+            <Lock className="w-3.5 h-3.5 text-[#e6ca85]" />
+            <span>Status: <strong>{scoreBand?.zone || 'STABLE'}</strong> ({score || 36}/48)</span>
+            <span className="opacity-40">|</span>
+            <span>Full Report Locked</span>
           </div>
         </div>
 
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-display font-medium text-emerald-50 mb-2">
-            Unlock Your Holistic Report
+            Unlock Your Full Report
           </h1>
           <p className={`text-xs sm:text-sm ${isRoyal ? 'text-[#dfc282]/85' : 'text-emerald-200/80'}`}>
-            Enter your details below to instantly view your Holistic Wellness Score and tailored LifeITUp pathway.
+            Your preliminary <strong>{scoreBand?.zone || 'Holistic'}</strong> score is calculated. Enter your details below to unlock your complete 6-pillar breakdown & 7-day action plan.
           </p>
         </div>
+
 
         {/* Global Error Banner */}
         {errorMessage && (

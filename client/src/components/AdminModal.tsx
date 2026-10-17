@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { LeadRecord } from '../types';
-import { X, Download, RefreshCw, Key, Send, Database, Settings, Shield, Clock } from 'lucide-react';
+import { X, Download, RefreshCw, Key, Send, Database, Settings, Shield, Clock, FileText, MessageSquare } from 'lucide-react';
 
 interface AdminModalProps {
   isOpen: boolean;
@@ -67,7 +67,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  const handleTestIntegration = async (service: 'crm' | 'email' | 'whatsapp') => {
+  const handleTestIntegration = async (service: 'crm' | 'email' | 'whatsapp' | 'mailchimp' | 'google_sheet') => {
     setTestingService(service);
     setTestResult(null);
     try {
@@ -192,10 +192,12 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                         <th className="p-3">Mobile</th>
                         <th className="p-3">Score</th>
                         <th className="p-3">Zone</th>
-                        <th className="p-3">CRM</th>
+                        <th className="p-3">State</th>
                         <th className="p-3">Email</th>
-                        <th className="p-3">WhatsApp</th>
+                        <th className="p-3">Google Sheet</th>
+                        <th className="p-3">CRM / MC</th>
                         <th className="p-3">Date</th>
+                        <th className="p-3 text-center">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-emerald-900/40 text-emerald-200">
@@ -212,28 +214,68 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                             </span>
                           </td>
                           <td className="p-3">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
-                              l.crm_status === 'success' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
-                            }`}>
-                              {l.crm_status}
+                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-950 border border-emerald-700/60 text-emerald-200">
+                              {l.state || 'Delhi'}
                             </span>
                           </td>
                           <td className="p-3">
                             <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
-                              l.email_status === 'success' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
+                              l.email_status === 'success' || l.email_status === 'mailchimp_sent' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
                             }`}>
                               {l.email_status}
                             </span>
                           </td>
                           <td className="p-3">
                             <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
-                              l.whatsapp_status === 'success' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
+                              l.sheet_status === 'success' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
                             }`}>
-                              {l.whatsapp_status}
+                              {l.sheet_status || 'pending'}
+                            </span>
+                          </td>
+                          <td className="p-3">
+                            <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
+                              l.crm_status === 'mailchimp_synced' || l.crm_status === 'success' ? 'bg-emerald-800 text-emerald-100' : 'bg-stone-800 text-stone-400'
+                            }`}>
+                              {l.crm_status}
                             </span>
                           </td>
                           <td className="p-3 text-[11px] text-emerald-400/60 whitespace-nowrap">
                             {new Date(l.created_at).toLocaleDateString()}
+                          </td>
+                          <td className="p-3 text-center whitespace-nowrap">
+                            <div className="flex items-center justify-center gap-1.5">
+                              <a
+                                href={`/api/leads/${l.id}/pdf`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Download/View Official PDF Report"
+                                className="p-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-emerald-300 hover:text-white border border-emerald-700/50 transition-colors"
+                              >
+                                <FileText className="w-3.5 h-3.5" />
+                              </a>
+                              {(() => {
+                                const cleanPhone = String(l.mobile || '').replace(/[^\d]/g, '');
+                                const toPhone = cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone;
+                                const pdfUrl = `${window.location.origin}/api/leads/${l.id}/pdf`;
+                                const waMsg = encodeURIComponent(
+                                  `🌿 *LifeITUp Wellbeing Assessment Report*\n\nHello *${l.full_name}*,\n\nThank you for participating in the *LifeITUp 2-Minute Holistic Wellbeing Check*.\n\n📊 *Your Holistic Wellbeing Score:* *${l.score} / 48*\n✨ *Status:* *${l.score_band_name}*\n\n📄 *Download Your Official 2-Page PDF Report:*\n${pdfUrl}\n\n_Empowering Your Holistic Success — LifeITUp_`
+                                );
+                                const waUrl = toPhone 
+                                  ? `https://api.whatsapp.com/send?phone=${toPhone}&text=${waMsg}`
+                                  : `https://api.whatsapp.com/send?text=${waMsg}`;
+                                return (
+                                  <a
+                                    href={waUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Send Report from My WhatsApp"
+                                    className="p-1.5 rounded-lg bg-[#25d366]/20 hover:bg-[#25d366]/40 text-[#25d366] hover:text-white border border-[#25d366]/50 transition-colors"
+                                  >
+                                    <MessageSquare className="w-3.5 h-3.5" />
+                                  </a>
+                                );
+                              })()}
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -247,6 +289,89 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
           {/* TAB 2: INTEGRATIONS & SETTINGS */}
           {activeTab === 'settings' && (
             <form onSubmit={handleSaveSettings} className="space-y-6">
+              {/* Mailchimp Section */}
+              <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-800/80 shadow-md">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-amber-400 text-stone-900 flex items-center justify-center font-bold text-sm shadow-sm">
+                      🐵
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-emerald-100 flex items-center gap-2">
+                        <span>Mailchimp Automation & Audience Sync</span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-800/80 text-emerald-200 font-medium">Connected</span>
+                      </h3>
+                      <p className="text-[11px] text-emerald-400/80">
+                        Automatically syncs leads, Holistic Scores, & Wellness Zones into your LifeITUp Audience
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleTestIntegration('mailchimp')}
+                    disabled={testingService === 'mailchimp'}
+                    className="text-xs px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition-all disabled:opacity-50 cursor-pointer font-medium"
+                  >
+                    {testingService === 'mailchimp' ? 'Testing...' : 'Test Mailchimp Sync'}
+                  </button>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <label className="block text-emerald-300 mb-1">Mailchimp API Key</label>
+                    <input
+                      type="password"
+                      value={settings.mailchimp_api_key || ''}
+                      onChange={(e) => setSettings({ ...settings, mailchimp_api_key: e.target.value })}
+                      placeholder="e.g. 2452d6bce...-us3"
+                      className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-emerald-300 mb-1">Audience / List ID</label>
+                    <input
+                      type="text"
+                      value={settings.mailchimp_list_id || ''}
+                      onChange={(e) => setSettings({ ...settings, mailchimp_list_id: e.target.value })}
+                      placeholder="e.g. 0e7cd84597"
+                      className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Google Sheets Section */}
+              <div className="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-800/60">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold text-emerald-100 flex items-center gap-2">
+                    <Database className="w-4 h-4 text-emerald-400" />
+                    <span>Google Sheets Real-Time Sync</span>
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => handleTestIntegration('google_sheet')}
+                    disabled={testingService === 'google_sheet'}
+                    className="text-xs px-2.5 py-1 rounded-lg bg-emerald-800 text-emerald-200 hover:bg-emerald-700 disabled:opacity-50 cursor-pointer font-medium"
+                  >
+                    {testingService === 'google_sheet' ? 'Testing...' : 'Test Sheet Sync'}
+                  </button>
+                </div>
+                <div className="space-y-3 text-xs">
+                  <div>
+                    <label className="block text-emerald-300 mb-1">Google Apps Script Webhook URL</label>
+                    <input
+                      type="url"
+                      value={settings.google_sheet_url || ''}
+                      onChange={(e) => setSettings({ ...settings, google_sheet_url: e.target.value })}
+                      placeholder="https://script.google.com/macros/s/AKfycb.../exec"
+                      className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
+                    />
+                    <p className="text-[11px] text-emerald-400/80 mt-1.5">
+                      Columns automatically synced: <strong>Timestamp, Full Name, Mobile, Email, Score, Status, State (from IP)</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* CRM Section */}
               <div className="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-800/60">
                 <div className="flex items-center justify-between mb-3">
@@ -254,6 +379,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                     <Database className="w-4 h-4 text-lime-400" />
                     <span>CRM Integration (Make.com, Zapier, MailerLite, Interakt, HubSpot)</span>
                   </h3>
+
                   <button
                     type="button"
                     onClick={() => handleTestIntegration('crm')}
@@ -348,9 +474,9 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                     <label className="block text-emerald-300 mb-1">From Sender Address</label>
                     <input
                       type="text"
-                      value={settings.smtp_from || 'wellness@lifeitup.com'}
+                      value={settings.smtp_from || 'ho@lifeitupworldwide.com'}
                       onChange={(e) => setSettings({ ...settings, smtp_from: e.target.value })}
-                      placeholder="LifeITUp <wellness@lifeitup.com>"
+                      placeholder="LifeITUp <ho@lifeitupworldwide.com>"
                       className="w-full p-2 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100"
                     />
                   </div>
@@ -362,7 +488,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-sm font-semibold text-emerald-100 flex items-center gap-2">
                     <Key className="w-4 h-4 text-lime-400" />
-                    <span>WhatsApp Business Automation (Interakt / Webhook / Cloud API)</span>
+                    <span>WhatsApp Personal Automation (UltraMsg QR Linked)</span>
                   </h3>
                   <button
                     type="button"
@@ -374,24 +500,60 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                   </button>
                 </div>
                 <div className="space-y-3 text-xs">
-                  <div>
-                    <label className="block text-emerald-300 mb-1">WhatsApp Webhook / Interakt Endpoint URL</label>
+                  <div className="p-3.5 rounded-xl bg-[#08281a] border border-[#d4af37]/40 text-xs">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <div className="font-semibold text-lime-300 flex items-center gap-1.5">
+                          <span>⚡ Local WhatsApp Direct Link (Zero 3rd-party setup)</span>
+                        </div>
+                        <p className="text-[11px] text-emerald-300/80 mt-0.5">
+                          Scan QR code once from your normal WhatsApp app (Linked Devices). Whenever someone clicks "Send Me", report + PDF are sent directly from your number!
+                        </p>
+                      </div>
+                      <a
+                        href="/api/whatsapp/qr-page"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-2 rounded-xl bg-lime-400 text-emerald-950 font-bold hover:bg-lime-300 text-xs whitespace-nowrap shadow-md cursor-pointer"
+                      >
+                        Open QR Scanner ➔
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 rounded-lg bg-emerald-900/30 border border-emerald-700/40 text-[11px] text-emerald-300">
+                    💡 <strong>Alternative (UltraMsg Cloud):</strong> Paste your UltraMsg Instance ID &amp; Token below if using cloud server.
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-emerald-300 mb-1">UltraMsg Instance ID</label>
+                      <input
+                        type="text"
+                        value={settings.ultramsg_instance_id || ''}
+                        onChange={(e) => setSettings({ ...settings, ultramsg_instance_id: e.target.value })}
+                        placeholder="e.g. instance12345"
+                        className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-emerald-300 mb-1">UltraMsg Token</label>
+                      <input
+                        type="password"
+                        value={settings.ultramsg_token || ''}
+                        onChange={(e) => setSettings({ ...settings, ultramsg_token: e.target.value })}
+                        placeholder="e.g. abcd1234ef..."
+                        className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
+                      />
+                    </div>
+                  </div>
+                  <div className="pt-2 border-t border-emerald-800/40">
+                    <label className="block text-emerald-300 mb-1">Or Generic Webhook / Interakt Endpoint URL</label>
                     <input
                       type="url"
                       value={settings.whatsapp_webhook_url || ''}
                       onChange={(e) => setSettings({ ...settings, whatsapp_webhook_url: e.target.value })}
                       placeholder="https://api.interakt.ai/v1/public/message/..."
                       className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-emerald-300 mb-1">WhatsApp API Token (Optional)</label>
-                    <input
-                      type="password"
-                      value={settings.whatsapp_api_token || ''}
-                      onChange={(e) => setSettings({ ...settings, whatsapp_api_token: e.target.value })}
-                      placeholder="Bearer token"
-                      className="w-full p-2.5 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-100 font-mono"
                     />
                   </div>
                 </div>

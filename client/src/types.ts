@@ -74,5 +74,7 @@ export interface LeadRecord {
   crm_status: string;
   email_status: string;
   whatsapp_status: string;
+  sheet_status?: string;
+  state?: string;
   created_at: string;
 }

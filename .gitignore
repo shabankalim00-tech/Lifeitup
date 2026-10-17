@@ -3,3 +3,9 @@ client/node_modules/
 client/dist/
 *.log
 .DS_Store
+server/lifeitup.db
+*.db
+server/baileys_auth/
+.env
+qr.png
+

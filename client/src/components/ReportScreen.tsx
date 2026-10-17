@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { Logo } from './Logo';
 import type { ReportPayload } from '../types';
 import confetti from 'canvas-confetti';
-import { Sparkles, ArrowRight, ShieldCheck, Compass, Info, MessageCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Compass, Info, MessageCircle, Download } from 'lucide-react';
 
 interface ReportScreenProps {
   report: ReportPayload;
   userName: string;
+  leadId?: number;
+  userMobile?: string;
   isRoyal?: boolean;
   socialUrls?: {
     instagram?: string;
@@ -18,6 +20,8 @@ interface ReportScreenProps {
 export const ReportScreen: React.FC<ReportScreenProps> = ({
   report,
   userName,
+  leadId,
+  userMobile,
   isRoyal = true,
   socialUrls,
   onRetake
@@ -67,6 +71,61 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
 
       {/* Main Report Container */}
       <main className="relative z-10 w-full space-y-6 animate-fade-in">
+        {/* Email Dispatched Confirmation Banner */}
+        <div className={`flex items-center gap-3 p-4 rounded-2xl border text-sm backdrop-blur-md ${
+          isRoyal 
+            ? 'bg-[#062419]/90 border-[#d4af37]/40 text-[#fde68a]' 
+            : 'bg-emerald-950/90 border-emerald-500/40 text-emerald-200'
+        }`}>
+          <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center shrink-0">
+            <span className="text-base">✉️</span>
+          </div>
+          <div className="text-left flex-1">
+            <p className="font-semibold text-emerald-100">Report Dispatched to Your Email!</p>
+            <p className={`text-xs ${isRoyal ? 'text-[#e6ca85]' : 'text-emerald-300/80'}`}>
+              Your report and PDF have been dispatched from <strong>ho@lifeitupworldwide.com</strong>.
+            </p>
+          </div>
+        </div>
+
+        {/* Quick Action Buttons: Download PDF & WhatsApp */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {leadId && (
+            <a
+              href={`/api/leads/${leadId}/pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 p-3.5 rounded-2xl font-semibold text-xs sm:text-sm bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-500/40 text-emerald-100 transition-all shadow-md hover:scale-[1.01]"
+            >
+              <Download className="w-4 h-4 text-emerald-400" />
+              <span>Download Official PDF Report</span>
+            </a>
+          )}
+
+          {(() => {
+            const cleanPhone = (userMobile || '').replace(/[^\d]/g, '');
+            const pdfUrl = typeof window !== 'undefined' && leadId ? `${window.location.origin}/api/leads/${leadId}/pdf` : '';
+            const waText = encodeURIComponent(
+              `🌿 *LifeITUp Wellbeing Assessment Report*\n\nHello *${userName}*,\n\nThank you for participating in the *LifeITUp 2-Minute Holistic Wellbeing Check*.\n\n📊 *Your Holistic Wellbeing Score:* *${score} / ${maxScore}*\n✨ *Status:* *${scoreBand.zone}* — *${scoreBand.title}*\n\n${scoreBand.headline}\n\n🎯 *YOUR FIRST MOVE (Next 7 Days):*\n*${scoreBand.firstMoveRule}*\n${scoreBand.firstMoveAdvice}\n\n📋 *YOUR PERSONALISED PATHWAY:*\n${(scoreBand.pathwaySteps || []).join(' → ')}\n\n${pdfUrl ? `📄 *Download Your Official 2-Page PDF Report:*\n${pdfUrl}\n\n` : ''}_Empowering Your Holistic Success — LifeITUp_`
+            );
+            const waTarget = cleanPhone 
+              ? `https://api.whatsapp.com/send?phone=${cleanPhone.startsWith('91') ? cleanPhone : '91' + cleanPhone}&text=${waText}`
+              : `https://api.whatsapp.com/send?text=${waText}`;
+
+            return (
+              <a
+                href={waTarget}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 p-3.5 rounded-2xl font-semibold text-xs sm:text-sm bg-[#128c7e]/30 hover:bg-[#128c7e]/50 border border-[#25d366]/40 text-[#a7f3d0] transition-all shadow-md hover:scale-[1.01]"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25d366]" />
+                <span>Open / Send on WhatsApp</span>
+              </a>
+            );
+          })()}
+        </div>
+
         {/* Score Card */}
         <div className={`rounded-3xl p-6 sm:p-8 text-center ${
           isRoyal ? 'royal-glass-card border border-[#d4af37]/35' : 'luxury-glass-card border border-emerald-500/30'

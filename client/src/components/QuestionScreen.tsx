@@ -130,10 +130,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
                     {option.label}
                   </span>
                 </div>
-
-                <span className={`text-xs font-mono ${isRoyal ? 'text-[#dfc282]/60' : 'text-emerald-400/50'}`}>
-                  {option.value} {option.value === 1 ? 'pt' : 'pts'}
-                </span>
               </button>
             );
           })}
