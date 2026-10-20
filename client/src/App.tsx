@@ -291,20 +291,20 @@ export function App() {
 
   return (
     <div className={`relative min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white overflow-x-hidden ${
-      theme === 'royal' ? 'bg-[#03120c] text-stone-100' : theme === 'soothing' ? 'bg-[#05160f] text-stone-100' : 'bg-white text-slate-800'
+      theme === 'royal' ? 'bg-[#03120c] text-stone-100' : theme === 'soothing' ? 'bg-[#05160f] text-stone-100' : 'bg-[#FAF6EE] text-[#1A2E24]'
     }`}>
-      {/* 1. BOTANICAL ZEN THEME (DEFAULT & OFFICIAL: Clean White with Botanical Corner Leaves) */}
+      {/* 1. BOTANICAL ZEN THEME (DEFAULT & OFFICIAL: Warm Soothing Cream with Natural Botanical Foliage) */}
       {theme === 'botanical' && (
         <>
           {/* Desktop & Tablet Background */}
           <div 
             className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/botanical-white-bg.jpg')` }}
+            style={{ backgroundImage: `url('/botanical-cream-bg.jpg')` }}
           />
           {/* Mobile Portrait Background (Leaves framing top & bottom) */}
           <div 
             className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/botanical-white-mobile.jpg')` }}
+            style={{ backgroundImage: `url('/botanical-cream-mobile.jpg')` }}
           />
         </>
       )}

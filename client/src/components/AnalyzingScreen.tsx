@@ -44,12 +44,12 @@ export const AnalyzingScreen: React.FC<AnalyzingScreenProps> = ({ onComplete, is
         <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
           <div className="absolute inset-0 rounded-full animate-ping opacity-25 bg-emerald-400" />
           <div className="absolute inset-1 rounded-full border-2 border-dashed animate-spin border-emerald-500/50" style={{ animationDuration: '6s' }} />
-          <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-md bg-emerald-50 border border-emerald-300 text-[#047857]">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-md bg-[#EBF5EE] border border-[#C2E3CD] text-[#047857]">
             <Sparkles className="w-6 h-6 animate-pulse" />
           </div>
         </div>
 
-        <h2 className="text-xl sm:text-2xl font-display font-medium text-[#0c2a1c] mb-2">
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold text-[#0A2618] mb-2 tracking-tight">
           Synthesizing Your Assessment
         </h2>
 
@@ -64,10 +64,10 @@ export const AnalyzingScreen: React.FC<AnalyzingScreenProps> = ({ onComplete, is
                 key={step}
                 className={`flex items-center gap-3 p-2.5 rounded-xl text-xs sm:text-[13px] transition-all duration-300 ${
                   isDone 
-                    ? 'text-emerald-800 bg-emerald-50/70' 
+                    ? 'text-[#065F46] bg-[#EBF5EE] font-medium' 
                     : isCurrent 
-                      ? 'text-[#064e3b] bg-emerald-100/60 border border-emerald-300/80 font-semibold' 
-                      : 'text-slate-400 opacity-50'
+                      ? 'text-[#0A2618] bg-white border border-[#047857]/40 font-bold shadow-2xs' 
+                      : 'text-[#8A9C91] opacity-60'
                 }`}
               >
                 <div className="w-4 h-4 shrink-0 flex items-center justify-center">
@@ -76,7 +76,7 @@ export const AnalyzingScreen: React.FC<AnalyzingScreenProps> = ({ onComplete, is
                   ) : isCurrent ? (
                     <div className="w-2 h-2 rounded-full animate-ping bg-[#047857]" />
                   ) : (
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#DDD5C5]" />
                   )}
                 </div>
                 <span>{step}</span>

@@ -4,102 +4,109 @@
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #1e293b;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FAF6EE;
+    color: #1A2E24;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
   }
 }
 
-/* 1. Botanical Zen Theme (Clean Pure White with Crisp Botanical Accents) */
+/* 1. Botanical Cream Background */
 .bg-botanical-clean {
-  background-color: #ffffff;
+  background-color: #FAF6EE;
 }
 
-/* 2. Royal Luxury Glass Card (Clean White / Soft Botanical Ivory) */
+/* 2. Executive Luxury Glass Card (Warm Cream Tone) */
 .royal-glass-card {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(13, 56, 38, 0.14);
+  border: 1px solid #EBE5D8;
   box-shadow: 
-    0 16px 36px -10px rgba(12, 42, 28, 0.08),
-    0 2px 6px 0 rgba(0, 0, 0, 0.03);
+    0 16px 36px -12px rgba(26, 46, 36, 0.08),
+    0 2px 6px 0 rgba(0, 0, 0, 0.02);
 }
 
 .royal-glass-card:hover {
-  border-color: rgba(13, 56, 38, 0.25);
+  border-color: #D8CEBD;
 }
 
 /* Luxury Card */
 .luxury-glass-card {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(16, 185, 129, 0.18);
-  box-shadow: 0 14px 30px -10px rgba(6, 40, 26, 0.07);
+  border: 1px solid #E5DFD3;
+  box-shadow: 0 14px 30px -10px rgba(26, 46, 36, 0.06);
 }
 
-/* Answer Option Card (Themes 1 & 2 Boxed Effect with Clean Hover) */
+/* Answer Option Card (Clean Boxed Effect with Warm Cream Border & Hover) */
 .royal-option-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: #FFFFFF;
+  border: 1.5px solid #E5DFD3;
   border-radius: 1rem;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 4px rgba(26, 46, 36, 0.02);
 }
 
 .royal-option-card:hover {
-  background: #f0fdf4;
+  background: #F3F8F4;
   border-color: #059669;
   transform: translateY(-1.5px);
-  box-shadow: 0 8px 18px -4px rgba(5, 150, 105, 0.16);
+  box-shadow: 0 6px 16px -4px rgba(5, 150, 105, 0.16);
 }
 
 .royal-option-card.selected {
-  background: #ecfdf5;
+  background: #EDF7F1;
   border-color: #047857;
-  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.25), 0 8px 20px -6px rgba(5, 150, 105, 0.18);
+  box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.2), 0 6px 18px -4px rgba(4, 120, 87, 0.16);
 }
 
 /* Luxury Option Card Fallback */
 .luxury-option-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: #FFFFFF;
+  border: 1.5px solid #E5DFD3;
   border-radius: 1rem;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 4px rgba(26, 46, 36, 0.02);
 }
 
 .luxury-option-card:hover {
-  background: #f0fdf4;
+  background: #F3F8F4;
   border-color: #059669;
   transform: translateY(-1.5px);
-  box-shadow: 0 8px 18px -4px rgba(5, 150, 105, 0.16);
+  box-shadow: 0 6px 16px -4px rgba(5, 150, 105, 0.16);
 }
 
 .luxury-option-card.selected {
-  background: #ecfdf5;
+  background: #EDF7F1;
   border-color: #047857;
-  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.25), 0 8px 20px -6px rgba(5, 150, 105, 0.18);
+  box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.2), 0 6px 18px -4px rgba(4, 120, 87, 0.16);
 }
 
-/* Brushed Gold & Forest Green Action Button */
+/* Executive Forest Emerald Action Button */
 .btn-royal-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #e6ca85 50%, #c59b27 100%);
-  color: #0c2a1c;
+  background: linear-gradient(135deg, #064E3B 0%, #047857 55%, #059669 100%);
+  color: #FFFFFF;
   font-weight: 700;
-  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.35);
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 22px rgba(4, 120, 87, 0.28);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-royal-gold:hover {
-  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 12px 28px rgba(4, 120, 87, 0.38);
   transform: translateY(-1px) scale(1.01);
 }
 
@@ -144,12 +151,12 @@
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #FAF6EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #D8CEBD;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #B8AC98;
 }

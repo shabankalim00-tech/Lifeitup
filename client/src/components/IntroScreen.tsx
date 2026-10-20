@@ -24,49 +24,49 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onStart, isRoyal = tru
       {/* 2. Main Hero Container (Compact Single-View Layout) */}
       <main className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center my-auto animate-fade-in py-2">
         {/* Prestige Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider mb-3 bg-emerald-50 border border-emerald-200/80 text-emerald-800 shadow-xs">
-          <Clock className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider mb-3 bg-[#EBF5EE] border border-[#C2E3CD] text-[#065F46] shadow-2xs">
+          <Clock className="w-3.5 h-3.5 text-[#047857]" />
           <span>2-MINUTE FULL WELLBEING CHECK</span>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-medium text-[#0c2a1c] tracking-tight leading-[1.15] mb-2 sm:mb-2.5">
+        {/* Main Heading (Authoritative, Clean & Professional) */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#0A2618] tracking-tight leading-[1.12] mb-2 sm:mb-2.5">
           Holistic Wellness <br className="hidden sm:inline" />
-          <span className="italic font-normal text-[#065f46]">
+          <span className="text-[#047857]">
             Assessment
           </span>
         </h1>
 
         {/* Supporting Subhead */}
-        <div className="text-xs sm:text-sm text-slate-600 mb-4 sm:mb-5 max-w-lg">
-          <p className="font-normal leading-relaxed">
+        <div className="text-xs sm:text-sm text-[#2E4337] mb-4 sm:mb-5 max-w-lg">
+          <p className="font-medium leading-relaxed">
             Discover your Wellbeing Score across 6 dimensions of life.
           </p>
-          <div className="inline-flex items-center gap-2 sm:gap-3 mt-1.5 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-[11px] sm:text-xs text-slate-600 font-medium">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mt-1.5 px-3 py-1 rounded-full bg-white/80 border border-[#E5DFD3] text-[11px] sm:text-xs text-[#2E4337] font-medium shadow-2xs">
             <span>12 questions</span>
             <span>•</span>
             <span>2 minutes</span>
             <span>•</span>
-            <span className="text-[#047857] font-semibold">Personalised Report</span>
+            <span className="text-[#047857] font-bold">Personalised Report</span>
           </div>
         </div>
 
-        {/* 3. "Before you begin…" Card (Compact & Reduced Line Spacing) */}
+        {/* 3. "Before you begin…" Card (Compact & Professional) */}
         <div className="w-full max-w-lg rounded-2xl p-4 sm:p-5 mb-5 sm:mb-6 text-left royal-glass-card shadow-sm">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#065f46] mb-2.5">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#065F46] mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>Before you begin…</span>
           </div>
-          <ul className="space-y-2 text-xs sm:text-[13px] text-slate-700 leading-snug">
-            <li className="flex items-start gap-2.5">
+          <ul className="space-y-2 text-xs sm:text-[13px] text-[#1A2E24] leading-snug">
+            <li className="flex items-start gap-2.5 font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0 text-[#059669] mt-0.5" />
               <span>Think about your life over the past 30 days—not your ideal self.</span>
             </li>
-            <li className="flex items-start gap-2.5">
+            <li className="flex items-start gap-2.5 font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0 text-[#059669] mt-0.5" />
               <span>There are no right or wrong answers.</span>
             </li>
-            <li className="flex items-start gap-2.5">
+            <li className="flex items-start gap-2.5 font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0 text-[#059669] mt-0.5" />
               <span>Choose the response that most honestly reflects your experience.</span>
             </li>
@@ -83,7 +83,7 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onStart, isRoyal = tru
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-200" />
           </button>
 
-          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-500 mt-2.5">
+          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#4A6354] font-medium mt-2.5">
             <ShieldCheck className="w-4 h-4 text-[#059669]" />
             <span>Private & confidential · Results generated instantly</span>
           </div>
@@ -91,7 +91,7 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onStart, isRoyal = tru
       </main>
 
       {/* 5. Footer Branding */}
-      <footer className="relative z-10 w-full max-w-4xl text-center text-[11px] sm:text-xs text-slate-400 pb-2">
+      <footer className="relative z-10 w-full max-w-4xl text-center text-[11px] sm:text-xs text-[#6B8074] pb-2">
         <p>© LifeITUp. Empowering Your Holistic Success.</p>
       </footer>
     </div>

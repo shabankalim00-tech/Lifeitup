@@ -41,14 +41,14 @@ export const CompletionScreen: React.FC<CompletionScreenProps> = ({
   const getZoneBadgeClass = (zone: string) => {
     switch (zone) {
       case 'MODERATE':
-        return 'bg-amber-50 text-amber-800 border-amber-300';
+        return 'bg-amber-50 text-amber-900 border-amber-300';
       case 'STABLE':
-        return 'bg-emerald-50 text-emerald-800 border-emerald-300';
+        return 'bg-emerald-50 text-emerald-900 border-emerald-300';
       case 'BALANCED':
-        return 'bg-sky-50 text-sky-800 border-sky-300';
+        return 'bg-sky-50 text-sky-900 border-sky-300';
       case 'LOW':
       default:
-        return 'bg-rose-50 text-rose-800 border-rose-300';
+        return 'bg-rose-50 text-rose-900 border-rose-300';
     }
   };
 
@@ -64,12 +64,12 @@ export const CompletionScreen: React.FC<CompletionScreenProps> = ({
         {/* Visual Score Dial & Status Tier */}
         <div className="flex flex-col items-center mb-4">
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full flex flex-col items-center justify-center p-2 mb-3 bg-white border-3 border-[#047857] shadow-md">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Your Score</span>
+            <span className="text-[10px] uppercase tracking-wider text-[#5C7265] font-bold">Your Score</span>
             <div className="flex items-baseline gap-1 my-0.5">
-              <span className="text-3xl sm:text-4xl font-display font-bold text-[#0c2a1c]">{score}</span>
-              <span className="text-xs text-slate-500 font-mono">/ 48</span>
+              <span className="text-3xl sm:text-4xl font-display font-extrabold text-[#0A2618]">{score}</span>
+              <span className="text-xs text-[#5C7265] font-mono">/ 48</span>
             </div>
-            <span className="text-[10px] text-[#059669] font-semibold">Holistic Scale</span>
+            <span className="text-[10px] text-[#047857] font-bold">Holistic Scale</span>
           </div>
 
           {/* Status Badge */}
@@ -81,20 +81,20 @@ export const CompletionScreen: React.FC<CompletionScreenProps> = ({
 
         {/* Workbook Title & Headline Insights */}
         <div className="text-center mb-4 max-w-md">
-          <h1 className="text-base sm:text-lg font-display font-semibold text-[#0c2a1c] leading-snug mb-2">
+          <h1 className="text-base sm:text-lg font-display font-bold text-[#0A2618] leading-snug mb-2 tracking-tight">
             "{activeBand.title}"
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#2E4337] leading-relaxed">
             {activeBand.headline}
           </p>
         </div>
 
-        {/* Research Credibility Lines (Item 14) */}
-        <div className="w-full max-w-md mb-6 p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
-          <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+        {/* Research Credibility Lines */}
+        <div className="w-full max-w-md mb-6 p-3.5 sm:p-4 rounded-xl bg-[#FAF6EE] border border-[#E5DFD3] text-center shadow-2xs">
+          <p className="text-xs sm:text-[13px] text-[#1A2E24] leading-relaxed">
             This is basis research in <strong>wellbeing, workplace performance and holistic development</strong>.
           </p>
-          <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-1.5">
+          <p className="text-[11px] sm:text-xs text-[#5C7265] font-semibold mt-1.5">
             Framework based on the references from WHO • UNICEF • OECD • NEP 2020 • NCF-SE 2023
           </p>
         </div>
@@ -108,14 +108,14 @@ export const CompletionScreen: React.FC<CompletionScreenProps> = ({
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
         </button>
 
-        <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-3">
+        <div className="flex items-center gap-1.5 text-xs text-[#5C7265] font-medium mt-3">
           <ShieldCheck className="w-4 h-4 text-[#059669]" />
           <span>Includes personal score breakdown & evidence-based pathway</span>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 w-full text-center text-xs text-slate-400 pt-4">
+      <footer className="relative z-10 w-full text-center text-xs text-[#6B8074] pt-4">
         <p>© LifeITUp. Empowering Your Holistic Success.</p>
       </footer>
     </div>
