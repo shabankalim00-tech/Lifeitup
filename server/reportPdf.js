@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const PDFDocument = require('pdfkit');
 
 const PILLAR_CONFIG = [
@@ -208,8 +210,20 @@ function generateReportPdf(leadData, scoreBand) {
 
       // 1. Header Bar
       doc.rect(36, 18, contentWidth, 46).fill(primaryEmerald);
-      doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 50, 25, { characterSpacing: 1.5, lineBreak: false });
-      doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
+      try {
+        const logoPath = path.join(__dirname, 'logo-emblem.png');
+        if (fs.existsSync(logoPath)) {
+          doc.image(logoPath, 46, 21, { width: 38, height: 38 });
+          doc.fillColor('#34d399').fontSize(14).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 92, 25, { characterSpacing: 1.5, lineBreak: false });
+          doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 92, 44, { characterSpacing: 0.8, lineBreak: false });
+        } else {
+          doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 50, 25, { characterSpacing: 1.5, lineBreak: false });
+          doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
+        }
+      } catch (_) {
+        doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 50, 25, { characterSpacing: 1.5, lineBreak: false });
+        doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
+      }
 
       // Right-aligned header metadata
       const todayStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -284,8 +298,20 @@ function generateReportPdf(leadData, scoreBand) {
 
       // Top Mini Header
       doc.rect(36, 18, contentWidth, 30).fill(primaryEmerald);
-      doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
-      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 48, 38, { lineBreak: false });
+      try {
+        const logoPath = path.join(__dirname, 'logo-emblem.png');
+        if (fs.existsSync(logoPath)) {
+          doc.image(logoPath, 46, 21, { width: 24, height: 24 });
+          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 76, 24, { lineBreak: false });
+          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 76, 37, { lineBreak: false });
+        } else {
+          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
+          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 48, 38, { lineBreak: false });
+        }
+      } catch (_) {
+        doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
+        doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 48, 38, { lineBreak: false });
+      }
 
       currentY = 56;
 
