@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const nodemailer = require('nodemailer');
 const { dbHelpers } = require('./db');
 const { generateReportPdf } = require('./reportPdf');
@@ -121,31 +123,29 @@ async function dispatchToEmail(leadData, reportDetails) {
     const sanitizedName = (leadData.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
     const attachmentFilename = `LifeITUp_Assessment_Report_${sanitizedName}.pdf`;
 
-    const emailHtml = `
+    let templateHtml = await getSetting('email_html_template');
+    if (!templateHtml) {
+      try {
+        const templatePath = path.join(__dirname, 'emailTemplate.html');
+        if (fs.existsSync(templatePath)) {
+          templateHtml = fs.readFileSync(templatePath, 'utf8');
+        }
+      } catch (tErr) {
+        console.error('Error loading emailTemplate.html:', tErr);
+      }
+    }
+
+    let emailHtml = templateHtml || `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b; max-width: 560px; margin: 0 auto; padding: 24px; font-size: 15px; line-height: 1.6;">
         <div style="margin-bottom: 20px; border-bottom: 2px solid #059669; padding-bottom: 12px;">
           <h2 style="color: #064e3b; margin: 0 0 4px 0; letter-spacing: 1.5px; font-size: 20px;">LIFEITUP WORLDWIDE</h2>
           <p style="color: #64748b; font-size: 12px; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Empowering Your Holistic Success</p>
         </div>
-        
-        <p style="margin-top: 0;">Hello <strong>${leadData.full_name}</strong>,</p>
-        
-        <p>
-          Thank you for participating in the <strong>LifeITUp 2-Minute Holistic Wellbeing Check</strong>.
-        </p>
-        
-        <p>
-          Your official personalised assessment report has been generated and is attached to this email as a PDF document (<strong>${attachmentFilename}</strong>).
-        </p>
-        
-        <p>
-          Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your priority focus area, and your personalised 7-day action pathway.
-        </p>
-        
-        <p style="color: #64748b; font-size: 13px; margin: 24px 0 20px 0;">
-          If you have any questions or would like guidance on your pathway, please feel free to reply directly to this email.
-        </p>
-        
+        <p style="margin-top: 0;">Hello <strong>{{fullName}}</strong>,</p>
+        <p>Thank you for participating in the <strong>LifeITUp 2-Minute Holistic Wellbeing Check</strong>.</p>
+        <p>Your official personalised assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
+        <p>Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your priority focus area, and your personalised 7-day action pathway.</p>
+        <p style="color: #64748b; font-size: 13px; margin: 24px 0 20px 0;">If you have any questions or would like guidance on your pathway, please feel free to reply directly to this email.</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 24px;">
           <p style="margin: 0; font-size: 14px; color: #334155;">
             Wishing you holistic health and success,<br>
@@ -155,6 +155,15 @@ async function dispatchToEmail(leadData, reportDetails) {
         </div>
       </div>
     `;
+
+    emailHtml = emailHtml
+      .replace(/\{\{fullName\}\}/g, leadData.full_name || 'Participant')
+      .replace(/\{\{score\}\}/g, String(leadData.score || 0))
+      .replace(/\{\{zone\}\}/g, (reportDetails && reportDetails.zone) || 'STABLE')
+      .replace(/\{\{title\}\}/g, (reportDetails && reportDetails.title) || '')
+      .replace(/\{\{attachmentFilename\}\}/g, attachmentFilename)
+      .replace(/\{\{firstMoveRule\}\}/g, (reportDetails && reportDetails.firstMoveRule) || '')
+      .replace(/\{\{firstMoveAdvice\}\}/g, (reportDetails && reportDetails.firstMoveAdvice) || '');
 
     const info = await transporter.sendMail({
       from: senderAddress,

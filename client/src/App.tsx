@@ -290,26 +290,22 @@ export function App() {
   const isRoyal = theme === 'royal' || theme === 'botanical';
 
   return (
-    <div className={`relative min-h-screen text-stone-100 flex flex-col justify-between selection:bg-lime-400 selection:text-emerald-950 overflow-x-hidden ${
-      theme === 'royal' ? 'bg-[#03120c]' : theme === 'soothing' ? 'bg-[#05160f]' : 'bg-[#071b13]'
+    <div className={`relative min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white overflow-x-hidden ${
+      theme === 'royal' ? 'bg-[#03120c] text-stone-100' : theme === 'soothing' ? 'bg-[#05160f] text-stone-100' : 'bg-white text-slate-800'
     }`}>
-      {/* 1. BOTANICAL ZEN THEME (DEFAULT & OFFICIAL: River Stones & Natural Leaves from User Asset) */}
+      {/* 1. BOTANICAL ZEN THEME (DEFAULT & OFFICIAL: Clean White with Botanical Corner Leaves) */}
       {theme === 'botanical' && (
         <>
           {/* Desktop & Tablet Background */}
           <div 
             className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/clean-bg.png')` }}
+            style={{ backgroundImage: `url('/botanical-white-bg.jpg')` }}
           />
-          {/* Mobile Portrait Background (Leaves on top, zen stones at bottom) */}
+          {/* Mobile Portrait Background (Leaves framing top & bottom) */}
           <div 
             className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/clean-bg-mobile.png')` }}
+            style={{ backgroundImage: `url('/botanical-white-mobile.jpg')` }}
           />
-          {/* Soft center vignette to keep text sharp while leaves & zen stones remain 100% visible */}
-          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(4,18,12,0.62)_0%,rgba(4,18,12,0.22)_55%,rgba(4,18,12,0.02)_100%)] pointer-events-none z-0" />
-          {/* Ambient sunlight aura */}
-          <div className="fixed top-0 right-0 w-[550px] h-[350px] bg-amber-400/10 blur-[130px] rounded-full pointer-events-none z-0 animate-calm-pulse" />
         </>
       )}
 

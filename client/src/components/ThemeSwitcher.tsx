@@ -10,49 +10,48 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ currentTheme, onThemeChange }) => {
   return (
-    <div className="inline-flex items-center p-1 rounded-full bg-[#03150e]/85 border border-emerald-700/40 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
-      {/* 1. Botanical Zen (Default & Official Asset) */}
+    <div className="inline-flex items-center p-1 rounded-full bg-white/90 border border-slate-200/90 backdrop-blur-md shadow-md">
+      {/* 1. Botanical Zen (Default White with Corner Botanical Foliage) */}
       <button
         onClick={() => onThemeChange('botanical')}
-        title="Botanical Zen (With natural leaves & stacked meditation river stones)"
+        title="Botanical White (Default clean aesthetic with corner botanical leaves)"
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
           currentTheme === 'botanical'
-            ? 'bg-gradient-to-r from-emerald-600/40 to-lime-500/30 text-lime-300 shadow-sm border border-emerald-400/60'
-            : 'text-emerald-300/70 hover:text-emerald-100'
+            ? 'bg-emerald-50 text-[#047857] shadow-xs border border-emerald-300'
+            : 'text-slate-500 hover:text-slate-800'
         }`}
       >
-        <Leaf className="w-3.5 h-3.5 text-lime-400" />
+        <Leaf className="w-3.5 h-3.5 text-[#059669]" />
         <span>Botanical Zen</span>
       </button>
 
       {/* 2. Eucalyptus & Gold */}
       <button
         onClick={() => onThemeChange('royal')}
-        title="Eucalyptus & Gold (Executive luxury with dewy eucalyptus & golden sunbeams)"
+        title="Eucalyptus & Gold (Luxury dark obsidian)"
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
           currentTheme === 'royal'
-            ? 'bg-gradient-to-r from-[#d4af37]/35 to-[#f3e5ab]/20 text-[#fde68a] shadow-sm border border-[#d4af37]/60'
-            : 'text-emerald-300/70 hover:text-amber-200'
+            ? 'bg-[#0a2318] text-[#fde68a] shadow-xs border border-[#d4af37]/60'
+            : 'text-slate-500 hover:text-slate-800'
         }`}
       >
-        <Sparkles className="w-3.5 h-3.5 text-[#e6ca85]" />
+        <Sparkles className="w-3.5 h-3.5 text-amber-500" />
         <span>Eucalyptus Gold</span>
       </button>
 
       {/* 3. Lotus Sanctuary */}
       <button
         onClick={() => onThemeChange('soothing')}
-        title="Lotus Sanctuary (White lotus flowers, soft petals & palm fronds)"
+        title="Lotus Sanctuary"
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
           currentTheme === 'soothing'
-            ? 'bg-emerald-500/25 text-emerald-200 shadow-sm border border-emerald-300/50'
-            : 'text-emerald-300/70 hover:text-emerald-100'
+            ? 'bg-emerald-900 text-emerald-200 shadow-xs border border-emerald-700'
+            : 'text-slate-500 hover:text-slate-800'
         }`}
       >
-        <Flower2 className="w-3.5 h-3.5 text-pink-300" />
+        <Flower2 className="w-3.5 h-3.5 text-pink-500" />
         <span>Lotus Petals</span>
       </button>
     </div>
   );
 };
-
