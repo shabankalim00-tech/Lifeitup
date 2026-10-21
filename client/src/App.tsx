@@ -7,7 +7,6 @@ import { CompletionScreen } from './components/CompletionScreen';
 import { LeadCaptureScreen } from './components/LeadCaptureScreen';
 import { ReportScreen } from './components/ReportScreen';
 import { AdminModal } from './components/AdminModal';
-import { ThemeSwitcher, type ThemeType } from './components/ThemeSwitcher';
 import { Shield } from 'lucide-react';
 
 // Fallback questions directly from prompt in case offline / initial load
@@ -50,7 +49,6 @@ export function App() {
   const [socialUrls, setSocialUrls] = useState<{ instagram?: string; whatsapp?: string }>({});
 
   const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
-  const [theme, setTheme] = useState<ThemeType>('botanical');
 
 
   // Initialize unique session ID
@@ -287,64 +285,21 @@ export function App() {
   };
 
 
-  const isRoyal = theme === 'royal' || theme === 'botanical';
+  const isRoyal = true;
 
   return (
-    <div className={`relative min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white overflow-x-hidden ${
-      theme === 'royal' ? 'bg-[#03120c] text-stone-100' : theme === 'soothing' ? 'bg-[#05160f] text-stone-100' : 'bg-[#FAF6EE] text-[#1A2E24]'
-    }`}>
-      {/* 1. BOTANICAL ZEN THEME (DEFAULT & OFFICIAL: Warm Soothing Cream with Natural Botanical Foliage) */}
-      {theme === 'botanical' && (
-        <>
-          {/* Desktop & Tablet Background */}
-          <div 
-            className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/botanical-cream-bg.jpg')` }}
-          />
-          {/* Mobile Portrait Background (Leaves framing top & bottom) */}
-          <div 
-            className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/botanical-cream-mobile.jpg')` }}
-          />
-        </>
-      )}
-
-      {/* 2. EUCALYPTUS & GOLD THEME (Executive Luxury with Dewy Leaves & Sunlight) */}
-      {theme === 'royal' && (
-        <>
-          <div 
-            className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/eucalyptus-gold.jpg')` }}
-          />
-          <div 
-            className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/eucalyptus-gold-mobile.jpg')` }}
-          />
-          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(3,18,12,0.62)_0%,rgba(3,18,12,0.22)_55%,rgba(3,18,12,0.02)_100%)] pointer-events-none z-0" />
-          <div className="fixed top-[-5%] left-1/4 w-[600px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none z-0 animate-calm-pulse" />
-        </>
-      )}
-
-      {/* 3. LOTUS SANCTUARY THEME (Serene Lotus Petals & Palm Fronds) */}
-      {theme === 'soothing' && (
-        <>
-          <div 
-            className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/sage-lotus.jpg')` }}
-          />
-          <div 
-            className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
-            style={{ backgroundImage: `url('/sage-lotus-mobile.jpg')` }}
-          />
-          <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,22,14,0.6)_0%,rgba(5,22,14,0.2)_55%,rgba(5,22,14,0.02)_100%)] pointer-events-none z-0" />
-          <div className="fixed bottom-0 left-1/3 w-[500px] h-[300px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none z-0" />
-        </>
-      )}
-
-      {/* Top Floating Theme Switcher */}
-      <div className="fixed top-4 right-4 z-40">
-        <ThemeSwitcher currentTheme={theme} onThemeChange={setTheme} />
-      </div>
+    <div className="relative min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white overflow-x-hidden bg-[#FAF6EE] text-[#1A2E24]">
+      {/* Official Botanical Zen Cream Theme */}
+      {/* Desktop & Tablet Background */}
+      <div 
+        className="fixed inset-0 hidden md:block bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+        style={{ backgroundImage: `url('/botanical-cream-bg.jpg')` }}
+      />
+      {/* Mobile Portrait Background (Leaves framing top & bottom) */}
+      <div 
+        className="fixed inset-0 block md:hidden bg-cover bg-center bg-no-repeat pointer-events-none z-0"
+        style={{ backgroundImage: `url('/botanical-cream-mobile.jpg')` }}
+      />
 
       {/* Main Content Router */}
       <div className="relative z-10 flex-1 flex flex-col justify-between pt-2">
