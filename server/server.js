@@ -108,11 +108,16 @@ app.post('/api/assessments', async (req, res) => {
 // 3. Lead Capture & Personalized Report Delivery
 app.post('/api/leads', async (req, res) => {
   try {
-    const { sessionId, fullName, email, mobile, consent, answers } = req.body;
+    const { sessionId, fullName, organization, institution, email, mobile, consent, answers } = req.body;
+    const orgName = (organization || institution || '').trim();
 
     // Field validation
     if (!fullName || typeof fullName !== 'string' || fullName.trim().length < 2) {
       return res.status(400).json({ error: 'Please enter your full name (at least 2 characters).' });
+    }
+
+    if (!orgName || orgName.length < 2) {
+      return res.status(400).json({ error: 'Please enter your institution / organisation name.' });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -120,9 +125,10 @@ app.post('/api/leads', async (req, res) => {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
+    const digitsOnly = mobile ? String(mobile).replace(/\D/g, '') : '';
     const phoneClean = mobile ? String(mobile).replace(/[^\d+]/g, '') : '';
-    if (!phoneClean || phoneClean.length < 8) {
-      return res.status(400).json({ error: 'Please enter a valid mobile number.' });
+    if (!digitsOnly || digitsOnly.length < 10) {
+      return res.status(400).json({ error: 'Please enter a valid mobile number (minimum 10 digits).' });
     }
 
     if (!consent) {
@@ -158,6 +164,7 @@ app.post('/api/leads', async (req, res) => {
       await dbHelpers.run(
         `UPDATE leads SET
           full_name = ?,
+          organization = ?,
           email = ?,
           mobile = ?,
           score = ?,
@@ -171,6 +178,7 @@ app.post('/api/leads', async (req, res) => {
          WHERE id = ?`,
         [
           fullName.trim(),
+          orgName,
           email.trim(),
           phoneClean,
           assessmentResult.score,
@@ -186,11 +194,12 @@ app.post('/api/leads', async (req, res) => {
       leadId = existingLead.id;
     } else {
       const insertResult = await dbHelpers.run(
-        `INSERT INTO leads (session_id, full_name, email, mobile, score, score_band_id, score_band_name, answers_json, consent, ip_address, state)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO leads (session_id, full_name, organization, email, mobile, score, score_band_id, score_band_name, answers_json, consent, ip_address, state)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           sessionId,
           fullName.trim(),
+          orgName,
           email.trim(),
           phoneClean,
           assessmentResult.score,
@@ -209,6 +218,7 @@ app.post('/api/leads', async (req, res) => {
       id: leadId,
       session_id: sessionId,
       full_name: fullName.trim(),
+      organization: orgName,
       email: email.trim(),
       mobile: phoneClean,
       score: assessmentResult.score,

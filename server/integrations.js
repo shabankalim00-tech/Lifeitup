@@ -144,7 +144,11 @@ async function dispatchToEmail(leadData, reportDetails) {
         <p style="margin-top: 0;">Hello <strong>{{fullName}}</strong>,</p>
         <p>Thank you for participating in the <strong>LifeITUp 2-Minute Holistic Wellbeing Check</strong>.</p>
         <p>Your official personalised assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
-        <p>Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your priority focus area, and your personalised 7-day action pathway.</p>
+        <p>Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your score analysis, and your key focus areas.</p>
+        <div style="background-color: #fffbeb; border: 2px solid #d97706; border-radius: 8px; padding: 14px 18px; margin: 20px 0;">
+          <p style="margin: 0 0 6px 0; color: #b45309; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">⚠️ CALL TO ACTION</p>
+          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Please DO REPLY, &quot;RECEIVED&quot; once you get your report, to AVOID getting duplicate mails.</p>
+        </div>
         <p style="color: #64748b; font-size: 13px; margin: 24px 0 20px 0;">If you have any questions or would like guidance on your pathway, please feel free to reply directly to this email.</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 24px;">
           <p style="margin: 0; font-size: 14px; color: #334155;">
@@ -216,7 +220,7 @@ Thank you for completing your 2-Minute Holistic Wellbeing Check.
 
 ${reportDetails.headline}
 
-🎯 *YOUR FIRST MOVE (Next 7 Days):*
+🎯 *YOUR FIRST STRATEGIC MOVE:*
 *${reportDetails.firstMoveRule || ''}*
 ${reportDetails.firstMoveAdvice || ''}
 
@@ -444,7 +448,7 @@ async function dispatchToMailchimp(leadData, reportDetails) {
 
                   <div style="background-color: #081d14; border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 10px; padding: 18px; margin-bottom: 24px;">
                     <h3 style="color: #34d399; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0;">
-                      🎯 YOUR FIRST MOVE (Next 7 Days)
+                      🎯 YOUR FIRST STRATEGIC MOVE
                     </h3>
                     <p style="color: #f8fafc; font-weight: 700; font-size: 14px; margin: 0 0 6px 0;">
                       ${reportDetails.firstMoveRule || ''}
@@ -632,6 +636,8 @@ async function dispatchToGoogleSheet(leadData) {
   const payload = {
     timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
     fullName: leadData.full_name,
+    organization: leadData.organization || '',
+    institution: leadData.organization || '',
     mobile: leadData.mobile,
     email: leadData.email,
     score: `${leadData.score} / 48`,

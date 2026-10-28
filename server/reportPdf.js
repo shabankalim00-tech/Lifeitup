@@ -21,7 +21,7 @@ const DETAILED_BAND_CONTENT = {
     headline: 'Your responses suggest that several areas of your life may currently be competing for your energy, attention and wellbeing.',
     reassurance: "This doesn't mean something is wrong with you. It may mean that your current demands are taking more from you than you are consistently able to restore. The goal is not to change everything at once. It is to understand where your wellbeing needs attention first.",
     firstMoveRule: "Don't try to change everything at once.",
-    firstMoveAdvice: 'Identify your lowest-scoring pillar and choose one behaviour to improve for the next 7 days.',
+    firstMoveAdvice: 'Identify your lowest-scoring pillar and choose one behaviour to improve consistently.',
     pathwaySteps: ['RESET', 'REBUILD', 'REPEAT'],
     pathwayDescription: 'Your full pathway identifies: your strongest pillar • your priority growth area • your first recommended actions.',
     evidenceNote: 'The World Health Organization describes mental wellbeing as involving the ability to cope with normal stresses, realise one\'s abilities, learn and work effectively, and contribute to the community.',
@@ -303,14 +303,14 @@ function generateReportPdf(leadData, scoreBand) {
         if (fs.existsSync(logoPath)) {
           doc.image(logoPath, 46, 21, { width: 24, height: 24 });
           doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 76, 24, { lineBreak: false });
-          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 76, 37, { lineBreak: false });
+          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 76, 37, { lineBreak: false });
         } else {
           doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
-          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 48, 38, { lineBreak: false });
+          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
         }
       } catch (_) {
         doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
-        doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Your 7-Day Strategy & Action Pathway', 48, 38, { lineBreak: false });
+        doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
       }
 
       currentY = 56;
@@ -342,11 +342,11 @@ function generateReportPdf(leadData, scoreBand) {
         currentY += cardHeight + 7;
       });
 
-      // 4. YOUR FIRST MOVE BOX
+      // 4. YOUR FIRST STRATEGIC MOVE BOX
       currentY += 2;
       const firstMoveHeight = 66;
       doc.roundedRect(36, currentY, contentWidth, firstMoveHeight, 4).lineWidth(1.2).strokeColor('#10b981').fillAndStroke('#ecfdf5', '#10b981');
-      doc.fillColor('#065f46').fontSize(9).font('Helvetica-Bold').text('YOUR FIRST MOVE (NEXT 7 DAYS)', 48, currentY + 8, { lineBreak: false });
+      doc.fillColor('#065f46').fontSize(9).font('Helvetica-Bold').text('YOUR FIRST STRATEGIC MOVE', 48, currentY + 8, { lineBreak: false });
       doc.fillColor(textDark).fontSize(10.5).font('Helvetica-Bold').text(bandContent.firstMoveRule, 48, currentY + 22, { lineBreak: false });
       doc.fillColor('#1e293b').fontSize(11).font('Helvetica').text(bandContent.firstMoveAdvice, 48, currentY + 36, { width: contentWidth - 24, lineGap: 1.2, height: 26 });
 
@@ -373,12 +373,18 @@ function generateReportPdf(leadData, scoreBand) {
       doc.fillColor(primaryEmerald).fontSize(7.5).font('Helvetica-Bold').text('EVIDENCE & FRAMEWORK ALIGNMENT (WHO • UNICEF • OECD • NEP 2020 • NCF-SE 2023)', 46, currentY + 5, { lineBreak: false });
       doc.fillColor(textMuted).fontSize(7).font('Helvetica').text(bandContent.evidenceNote, 46, currentY + 16, { width: contentWidth - 20, lineGap: 1, height: 16 });
 
-      // 7. LifeITUp Worldwide Signature Strip
+      // 7. LifeITUp Worldwide Signature Strip (Clean Non-Overlapping Layout)
       currentY += evidenceHeight + 7;
-      doc.roundedRect(36, currentY, contentWidth, 34, 3).fill(primaryEmerald);
-      doc.fillColor('#6ee7b7').fontSize(8.5).font('Helvetica-Bold').text('YOUR SCORE IS ONLY THE BEGINNING.', 48, currentY + 6, { lineBreak: false });
-      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Your wellbeing doesn\'t change in one assessment—it changes through what you do next.', 48, currentY + 19, { lineBreak: false });
-      doc.fillColor('#a7f3d0').fontSize(7.5).font('Helvetica-Bold').text('LifeITUp Worldwide  •  ho@lifeitupworldwide.com', 320, currentY + 19, { width: 190, align: 'right', lineBreak: false });
+      const signatureHeight = 36;
+      doc.roundedRect(36, currentY, contentWidth, signatureHeight, 3).fill(primaryEmerald);
+      
+      // Left block: Motivational anchor
+      doc.fillColor('#6ee7b7').fontSize(8.5).font('Helvetica-Bold').text('YOUR SCORE IS ONLY THE BEGINNING.', 48, currentY + 7, { lineBreak: false });
+      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Real transformation begins with your next consistent step.', 48, currentY + 20, { width: 280, lineBreak: false });
+      
+      // Right block: Brand and contact info with dedicated bounding box (zero collision)
+      doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica-Bold').text('LifeITUp Worldwide', 330, currentY + 7, { width: 215, align: 'right', lineBreak: false });
+      doc.fillColor('#e2e8f0').fontSize(7.5).font('Helvetica').text('ho@lifeitupworldwide.com', 330, currentY + 20, { width: 215, align: 'right', lineBreak: false });
 
       // Page 2 Footer
       doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITUp Worldwide  •  Page 2 of 2  •  Confidential Holistic Assessment', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });

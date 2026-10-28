@@ -246,6 +246,7 @@ export function App() {
         body: JSON.stringify({
           sessionId,
           fullName: formData.fullName,
+          organization: formData.organization,
           email: formData.email,
           mobile: formData.mobile,
           consent: formData.consent,

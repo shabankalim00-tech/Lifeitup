@@ -56,6 +56,7 @@ export interface AssessmentMeta {
 
 export interface LeadFormData {
   fullName: string;
+  organization: string;
   email: string;
   mobile: string;
   consent: boolean;

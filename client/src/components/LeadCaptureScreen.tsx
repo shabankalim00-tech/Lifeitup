@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Logo } from './Logo';
 import type { LeadFormData, ScoreBand } from '../types';
-import { User, Mail, Phone, Lock, ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
+import { User, Building2, Mail, Phone, Lock, ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
 
 interface LeadCaptureScreenProps {
   onSubmit: (formData: LeadFormData) => Promise<void>;
@@ -23,6 +23,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
 
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
+    organization: '',
     email: '',
     mobile: '',
     consent: true
@@ -39,6 +40,12 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
       errors.fullName = 'Name must be at least 2 characters.';
     }
 
+    if (!formData.organization.trim()) {
+      errors.organization = 'Institution / Organisation Name is required.';
+    } else if (formData.organization.trim().length < 2) {
+      errors.organization = 'Institution / Organisation Name must be at least 2 characters.';
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       errors.email = 'Email Address is required.';
@@ -46,11 +53,11 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
       errors.email = 'Please enter a valid email address.';
     }
 
-    const phoneClean = formData.mobile.replace(/[^\d+]/g, '');
+    const digitsOnly = formData.mobile.replace(/\D/g, '');
     if (!formData.mobile.trim()) {
       errors.mobile = 'Mobile Number is required.';
-    } else if (phoneClean.length < 8) {
-      errors.mobile = 'Please enter a valid mobile number (min 8 digits).';
+    } else if (digitsOnly.length < 10) {
+      errors.mobile = 'Please enter a valid mobile number (minimum 10 digits).';
     }
 
     if (!formData.consent) {
@@ -91,7 +98,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
             Unlock Your Full Report
           </h1>
           <p className="text-xs sm:text-sm text-[#2E4337]">
-            Your preliminary <strong>{scoreBand?.zone || 'Holistic'}</strong> score is ready. Enter your details below to receive your complete 6-pillar breakdown & 7-day action plan.
+            Your preliminary <strong>{scoreBand?.zone || 'Holistic'}</strong> score is ready. Enter your details below to receive your complete 6-pillar breakdown & personalized action pathway.
           </p>
         </div>
 
@@ -130,6 +137,35 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
             </div>
             {fieldErrors.fullName && (
               <p className="text-rose-600 text-xs mt-1">{fieldErrors.fullName}</p>
+            )}
+          </div>
+
+          {/* Institution / Organisation Name */}
+          <div>
+            <label className="block text-xs font-bold text-[#1A2E24] mb-1">
+              Institution / Organisation Name <span className="text-rose-500">*</span>
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#73887C]">
+                <Building2 className="w-4 h-4" />
+              </div>
+              <input
+                type="text"
+                value={formData.organization}
+                onChange={(e) => {
+                  setFormData({ ...formData, organization: e.target.value });
+                  if (fieldErrors.organization) setFieldErrors({ ...fieldErrors, organization: '' });
+                }}
+                placeholder="e.g. LifeITUp Academy / ABC High School / Tech Corp"
+                className={`w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-white border text-[#0A2618] placeholder-[#9A8F7E] text-sm focus:outline-none transition-all ${
+                  fieldErrors.organization 
+                    ? 'border-rose-400 bg-rose-50/30' 
+                    : 'border-[#DDD5C5] focus:border-[#047857] focus:ring-2 focus:ring-[#047857]/20'
+                }`}
+              />
+            </div>
+            {fieldErrors.organization && (
+              <p className="text-rose-600 text-xs mt-1">{fieldErrors.organization}</p>
             )}
           </div>
 

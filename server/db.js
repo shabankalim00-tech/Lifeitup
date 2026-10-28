@@ -61,6 +61,7 @@ if (!process.env.VERCEL) {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             session_id TEXT UNIQUE NOT NULL,
             full_name TEXT NOT NULL,
+            organization TEXT DEFAULT '',
             email TEXT NOT NULL,
             mobile TEXT NOT NULL,
             score INTEGER NOT NULL,
@@ -79,6 +80,9 @@ if (!process.env.VERCEL) {
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
           )
         `);
+
+        // Safely attempt migration if organization column doesn't exist in existing SQLite DB
+        db.run(`ALTER TABLE leads ADD COLUMN organization TEXT DEFAULT ''`, () => {});
 
         db.run(`
           CREATE TABLE IF NOT EXISTS settings (
