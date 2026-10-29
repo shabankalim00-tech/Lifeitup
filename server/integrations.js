@@ -229,6 +229,70 @@ ${reportDetails.pathwaySteps ? reportDetails.pathwaySteps.join(' → ') : ''}
 
 _Empowering Your Holistic Success — LifeITUp_`;
 
+  // 0. Interakt WhatsApp Business API (Official Meta Cloud API)
+  const interaktApiKey = ((await getSetting('interakt_api_key')) || '').trim();
+  const interaktTemplateName = ((await getSetting('interakt_template_name')) || 'lifeitup_assessment_report').trim();
+
+  if (interaktApiKey) {
+    let countryCode = '+91';
+    let phoneDigits = cleanPhone;
+    if (phoneDigits.length === 12 && phoneDigits.startsWith('91')) {
+      countryCode = '+91';
+      phoneDigits = phoneDigits.substring(2);
+    } else if (phoneDigits.length === 11 && phoneDigits.startsWith('0')) {
+      countryCode = '+91';
+      phoneDigits = phoneDigits.substring(1);
+    } else if (phoneDigits.length > 10) {
+      countryCode = '+' + phoneDigits.substring(0, phoneDigits.length - 10);
+      phoneDigits = phoneDigits.slice(-10);
+    }
+
+    const interaktPayload = {
+      countryCode: countryCode,
+      phoneNumber: phoneDigits,
+      type: 'Template',
+      template: {
+        name: interaktTemplateName,
+        languageCode: 'en',
+        bodyValues: [
+          leadData.full_name || 'Participant',
+          String(leadData.score || 0),
+          reportDetails.zone || 'STABLE'
+        ]
+      }
+    };
+
+    try {
+      const res = await fetch('https://api.interakt.ai/v1/public/message/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${interaktApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(interaktPayload)
+      });
+
+      const responseData = await res.json().catch(() => ({}));
+      const success = res.ok && responseData.result !== false;
+      await logIntegration(
+        leadData.id,
+        'whatsapp',
+        success ? 'success' : 'failure',
+        { to: `${countryCode}${phoneDigits}`, provider: 'interakt', template: interaktTemplateName },
+        JSON.stringify(responseData)
+      );
+
+      if (success) {
+        return { status: 'success', provider: 'interakt', response: responseData };
+      } else {
+        console.warn('[Interakt WhatsApp API Warning]', responseData);
+      }
+    } catch (interaktErr) {
+      console.error('[Interakt WhatsApp API Error]', interaktErr);
+      await logIntegration(leadData.id, 'whatsapp', 'failure', { to: cleanPhone, provider: 'interakt' }, interaktErr.message);
+    }
+  }
+
   // 1. Direct Local WhatsApp Dispatch (Sends from user's personal WhatsApp number via Baileys)
   if (isBaileysConnected()) {
     try {
