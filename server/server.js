@@ -305,7 +305,10 @@ app.get('/api/leads', async (req, res) => {
 // 4b. Download or view Lead PDF Report
 app.get('/api/leads/:id/pdf', async (req, res) => {
   try {
-    const lead = await dbHelpers.get('SELECT * FROM leads WHERE id = ?', [req.params.id]);
+    let lead = await dbHelpers.get('SELECT * FROM leads WHERE id = ?', [req.params.id]);
+    if (!lead) {
+      lead = await dbHelpers.get('SELECT * FROM leads WHERE session_id = ?', [req.params.id]);
+    }
     if (!lead) return res.status(404).send('Report not found');
 
     const band = SCORE_BANDS.find(b => b.id === lead.score_band_id) || SCORE_BANDS[1];

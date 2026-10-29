@@ -247,13 +247,20 @@ _Empowering Your Holistic Success — LifeITUp_`;
       phoneDigits = phoneDigits.slice(-10);
     }
 
-    const interaktPayload = {
+    const pdfPublicUrl = `https://lifeitup.vercel.app/api/leads/${leadData.id || leadData.session_id}/pdf`;
+    const sanitizedName = (leadData.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
+    const fileName = `LifeITUp_Report_${sanitizedName}.pdf`;
+
+    // Try sending with PDF document attachment first (if template was created with Document Header)
+    let interaktPayload = {
       countryCode: countryCode,
       phoneNumber: phoneDigits,
       type: 'Template',
       template: {
         name: interaktTemplateName,
         languageCode: 'en',
+        headerValues: [pdfPublicUrl],
+        fileName: fileName,
         bodyValues: [
           leadData.full_name || 'Participant',
           String(leadData.score || 0),
@@ -263,7 +270,7 @@ _Empowering Your Holistic Success — LifeITUp_`;
     };
 
     try {
-      const res = await fetch('https://api.interakt.ai/v1/public/message/', {
+      let res = await fetch('https://api.interakt.ai/v1/public/message/', {
         method: 'POST',
         headers: {
           'Authorization': `Basic ${interaktApiKey}`,
@@ -272,13 +279,29 @@ _Empowering Your Holistic Success — LifeITUp_`;
         body: JSON.stringify(interaktPayload)
       });
 
-      const responseData = await res.json().catch(() => ({}));
+      let responseData = await res.json().catch(() => ({}));
+      
+      // If template was created without a Document header, retry cleanly as text-only body
+      if (responseData && responseData.message && responseData.message.toLowerCase().includes('header')) {
+        delete interaktPayload.template.headerValues;
+        delete interaktPayload.template.fileName;
+        res = await fetch('https://api.interakt.ai/v1/public/message/', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Basic ${interaktApiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(interaktPayload)
+        });
+        responseData = await res.json().catch(() => ({}));
+      }
+
       const success = res.ok && responseData.result !== false;
       await logIntegration(
         leadData.id,
         'whatsapp',
         success ? 'success' : 'failure',
-        { to: `${countryCode}${phoneDigits}`, provider: 'interakt', template: interaktTemplateName },
+        { to: `${countryCode}${phoneDigits}`, provider: 'interakt', template: interaktTemplateName, attachment: fileName },
         JSON.stringify(responseData)
       );
 
