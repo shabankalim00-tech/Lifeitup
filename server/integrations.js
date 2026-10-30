@@ -231,7 +231,7 @@ _Empowering Your Holistic Success — LifeITUp_`;
 
   // 0. Interakt WhatsApp Business API (Official Meta Cloud API)
   const interaktApiKey = ((await getSetting('interakt_api_key')) || '').trim();
-  const interaktTemplateName = ((await getSetting('interakt_template_name')) || 'lifeitup').trim();
+  const interaktTemplateName = ((await getSetting('interakt_template_name')) || 'lifeitup_report').trim();
 
   if (interaktApiKey) {
     let countryCode = '+91';
