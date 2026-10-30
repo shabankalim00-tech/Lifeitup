@@ -181,7 +181,22 @@ const DETAILED_BAND_CONTENT = {
 function generateReportPdf(leadData, scoreBand) {
   return new Promise((resolve, reject) => {
     try {
-      const bandKey = (scoreBand && scoreBand.id) || (leadData.score <= 20 ? 'low' : leadData.score <= 32 ? 'moderate' : leadData.score <= 40 ? 'stable' : 'balanced');
+      // Ensure score is valid integer between 0 and 48
+      let verifiedScore = Number(leadData.score);
+      if (isNaN(verifiedScore) || verifiedScore > 48 || verifiedScore < 0) {
+        if (leadData.answers_json) {
+          try {
+            const ansObj = typeof leadData.answers_json === 'string' ? JSON.parse(leadData.answers_json) : leadData.answers_json;
+            verifiedScore = Object.values(ansObj).reduce((sum, v) => sum + (Number(v) || 0), 0);
+          } catch (_) {
+            verifiedScore = 24;
+          }
+        } else {
+          verifiedScore = 24;
+        }
+      }
+
+      const bandKey = (scoreBand && scoreBand.id) || (verifiedScore <= 20 ? 'low' : verifiedScore <= 32 ? 'moderate' : verifiedScore <= 40 ? 'stable' : 'balanced');
       const bandContent = DETAILED_BAND_CONTENT[bandKey] || DETAILED_BAND_CONTENT.moderate;
 
       const doc = new PDFDocument({
@@ -242,7 +257,7 @@ function generateReportPdf(leadData, scoreBand) {
       // Score dial block (Left)
       doc.roundedRect(48, currentY + 10, 96, 58, 4).fill(primaryEmerald);
       doc.fillColor('#a7f3d0').fontSize(7).font('Helvetica-Bold').text('OVERALL SCORE', 48, currentY + 16, { width: 96, align: 'center', lineBreak: false });
-      doc.fillColor('#ffffff').fontSize(22).font('Helvetica-Bold').text(String(leadData.score || 0), 48, currentY + 26, { width: 96, align: 'center', lineBreak: false });
+      doc.fillColor('#ffffff').fontSize(22).font('Helvetica-Bold').text(String(verifiedScore), 48, currentY + 26, { width: 96, align: 'center', lineBreak: false });
       doc.fillColor('#6ee7b7').fontSize(8).font('Helvetica').text('OUT OF 48', 48, currentY + 51, { width: 96, align: 'center', lineBreak: false });
 
       // Diagnosis text (Right)

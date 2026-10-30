@@ -193,16 +193,17 @@ const dbHelpers = {
         id: newId,
         session_id: params[0],
         full_name: params[1],
-        email: params[2],
-        mobile: params[3],
-        score: params[4],
-        score_band_id: params[5],
-        score_band_name: params[6],
-        answers_json: params[7],
-        consent: params[8] || 1,
-        source: params[9] || 'web',
-        state: params[10] || '',
-        ip_address: params[11] || '',
+        organization: params[2] || '',
+        email: params[3],
+        mobile: params[4],
+        score: Number(params[5]) || 0,
+        score_band_id: params[6],
+        score_band_name: params[7],
+        answers_json: params[8],
+        consent: params[9] || 1,
+        ip_address: params[10] || '',
+        state: params[11] || '',
+        source: 'web',
         crm_status: 'pending',
         email_status: 'pending',
         whatsapp_status: 'pending',
@@ -211,6 +212,26 @@ const dbHelpers = {
       };
       memoryStore.leads.push(leadObj);
       return Promise.resolve({ lastID: newId, changes: 1 });
+    }
+
+    if (sqlLower.includes('update leads set') && sqlLower.includes('full_name =')) {
+      const id = params[params.length - 1];
+      const lead = memoryStore.leads.find(l => l.id == id);
+      if (lead) {
+        lead.full_name = params[0];
+        lead.organization = params[1] || '';
+        lead.email = params[2];
+        lead.mobile = params[3];
+        lead.score = Number(params[4]) || 0;
+        lead.score_band_id = params[5];
+        lead.score_band_name = params[6];
+        lead.answers_json = params[7];
+        lead.consent = params[8] || 1;
+        lead.ip_address = params[9] || '';
+        lead.state = params[10] || '';
+        lead.updated_at = new Date().toISOString();
+      }
+      return Promise.resolve({ changes: 1 });
     }
 
     if (sqlLower.includes('update leads set email_status =')) {
