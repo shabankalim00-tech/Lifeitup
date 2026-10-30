@@ -59,15 +59,15 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
 
       {/* Main Report Container */}
       <main className="relative z-10 w-full space-y-5 animate-fade-in">
-        {/* Email Dispatched Confirmation Banner */}
+        {/* Dispatched Confirmation Banner */}
         <div className="flex items-center gap-3 p-4 rounded-2xl border border-[#C2E3CD] bg-[#EBF5EE] text-sm shadow-xs">
           <div className="w-8 h-8 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center shrink-0">
-            <span className="text-base">✉️</span>
+            <span className="text-base">✨</span>
           </div>
           <div className="text-left flex-1">
-            <p className="font-bold text-[#064E3B]">Report Dispatched to Your Email!</p>
+            <p className="font-bold text-[#064E3B]">Report Dispatched to Your Email and WhatsApp!</p>
             <p className="text-xs text-[#1A4D37] mt-0.5">
-              Your official personalised PDF report has been dispatched to your email address from <strong>ho@lifeitupworldwide.com</strong>.
+              Your official personalised PDF report has been dispatched to your Email and WhatsApp.
             </p>
           </div>
         </div>
