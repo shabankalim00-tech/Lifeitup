@@ -262,7 +262,32 @@ www.lifeitupworldwide.com`;
     const sanitizedName = (leadData.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
     const fileName = `LifeITUp_Report_${sanitizedName}.pdf`;
 
-    // Try sending with PDF document attachment first (if template was created with Document Header)
+    // Step 1: Pre-register & track contact in Interakt CRM before dispatching message
+    try {
+      await fetch('https://api.interakt.ai/v1/public/track/users/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${interaktApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          phoneNumber: phoneDigits,
+          countryCode: countryCode,
+          traits: {
+            name: leadData.full_name || 'Participant',
+            email: leadData.email || '',
+            organization: leadData.organization || '',
+            score: String(leadData.score || 0),
+            status: reportDetails.zone || 'STABLE'
+          },
+          tags: ['LifeITup Assessment']
+        })
+      });
+    } catch (trackErr) {
+      console.warn('[Interakt User Track Warning]', trackErr.message);
+    }
+
+    // Step 2: Try sending with PDF document attachment first (if template was created with Document Header)
     let interaktPayload = {
       countryCode: countryCode,
       phoneNumber: phoneDigits,

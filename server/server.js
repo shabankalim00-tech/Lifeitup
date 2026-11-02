@@ -503,6 +503,36 @@ app.get('/api/integration-logs', async (req, res) => {
   }
 });
 
+// 9b. Interakt Delivery Status Webhook
+app.post(['/api/integrations/interakt/webhook', '/api/webhook'], async (req, res) => {
+  try {
+    const payload = req.body || {};
+    const eventType = payload.type || payload.event || 'unknown';
+    const customer = payload.data?.customer || {};
+    const message = payload.data?.message || {};
+    const failureReason = message.failure_reason || payload.message || '';
+
+    console.log(`[Interakt Webhook] Event: ${eventType}, Phone: ${customer.phone_number}, Reason: ${failureReason}`);
+
+    await dbHelpers.run(
+      `INSERT INTO integration_logs (lead_id, service, status, request_payload, response_payload)
+       VALUES (?, ?, ?, ?, ?)`,
+      [
+        null,
+        'interakt_webhook',
+        eventType,
+        JSON.stringify({ eventType, phone: customer.phone_number, reason: failureReason }),
+        JSON.stringify(payload)
+      ]
+    );
+
+    res.status(200).json({ success: true });
+  } catch (err) {
+    console.error('[Interakt Webhook Error]:', err);
+    res.status(200).json({ success: false, error: err.message });
+  }
+});
+
 // 10. WhatsApp Local Status & QR Endpoints
 app.get('/api/whatsapp/status', (req, res) => {
   res.json({ success: true, ...getBaileysStatus() });
