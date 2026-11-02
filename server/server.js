@@ -309,7 +309,18 @@ app.get('/api/leads/:id/pdf', async (req, res) => {
     if (!lead) {
       lead = await dbHelpers.get('SELECT * FROM leads WHERE session_id = ?', [req.params.id]);
     }
-    if (!lead) return res.status(404).send('Report not found');
+    if (!lead) {
+      const qScore = Number(req.query.score) || 30;
+      const qName = req.query.name || 'Participant';
+      const qBandId = req.query.band || (qScore <= 20 ? 'low' : qScore <= 32 ? 'moderate' : qScore <= 40 ? 'stable' : 'balanced');
+      lead = {
+        full_name: qName,
+        score: qScore,
+        score_band_id: qBandId,
+        score_band_name: qBandId.toUpperCase(),
+        answers_json: {}
+      };
+    }
 
     const band = SCORE_BANDS.find(b => b.id === lead.score_band_id) || SCORE_BANDS[1];
     const pdfBuffer = await generateReportPdf(lead, band);
@@ -317,9 +328,36 @@ app.get('/api/leads/:id/pdf', async (req, res) => {
 
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `inline; filename="LifeITUp_Assessment_Report_${sanitizedName}.pdf"`);
+    res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
     res.send(pdfBuffer);
   } catch (err) {
     res.status(500).send('Error generating PDF: ' + err.message);
+  }
+});
+
+// 4c. Stateless Direct PDF Generator (Zero DB dependency, 100% resilient on Vercel & WhatsApp CDN)
+app.get('/api/report/:encoded/LifeITUp_Report.pdf', async (req, res) => {
+  try {
+    const rawStr = Buffer.from(req.params.encoded, 'base64url').toString('utf8');
+    const data = JSON.parse(rawStr);
+    const band = SCORE_BANDS.find(b => b.id === data.band) || SCORE_BANDS[1];
+    const pdfLead = {
+      full_name: data.name || 'Participant',
+      score: data.score || 24,
+      score_band_id: band.id,
+      score_band_name: band.zone,
+      answers_json: data.answers || {}
+    };
+    const pdfBuffer = await generateReportPdf(pdfLead, band);
+    const sanitizedName = (pdfLead.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `inline; filename="LifeITUp_Report_${sanitizedName}.pdf"`);
+    res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+    res.send(pdfBuffer);
+  } catch (err) {
+    console.error('Error generating stateless PDF:', err);
+    res.status(500).send('Error generating PDF');
   }
 });
 

@@ -247,7 +247,14 @@ _Empowering Your Holistic Success — LifeITUp_`;
       phoneDigits = phoneDigits.slice(-10);
     }
 
-    const pdfPublicUrl = `https://lifeitup.vercel.app/api/leads/${leadData.id || leadData.session_id}/pdf`;
+    const payloadData = {
+      name: leadData.full_name || 'Participant',
+      score: leadData.score || 24,
+      band: (reportDetails && reportDetails.zone ? reportDetails.zone.toLowerCase() : 'moderate'),
+      answers: leadData.answers_json || {}
+    };
+    const encodedPayload = Buffer.from(JSON.stringify(payloadData)).toString('base64url');
+    const pdfPublicUrl = `https://lifeitup.vercel.app/api/report/${encodedPayload}/LifeITUp_Report.pdf`;
     const sanitizedName = (leadData.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
     const fileName = `LifeITUp_Report_${sanitizedName}.pdf`;
 
