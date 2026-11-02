@@ -37,27 +37,27 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     <div className="relative h-[100dvh] max-h-[100dvh] flex flex-col justify-between px-3.5 sm:px-4 py-2 sm:py-3 max-w-xl mx-auto overflow-hidden select-none">
       {/* Header section with branding & heading */}
       <header className="relative z-10 flex flex-col items-center pt-0.5 sm:pt-1 shrink-0">
-        <Logo size="sm" showTagline={false} variant={isRoyal ? 'gold' : 'emerald'} className="mb-1 scale-90 sm:scale-100" />
+        <Logo size="sm" showTagline={false} variant={isRoyal ? 'gold' : 'emerald'} className="mb-0.5" />
         
-        <h2 className="text-[10px] sm:text-xs font-bold tracking-widest uppercase font-display text-[#065F46]">
-          LIFEITUP WELLBEING CHECK
+        <h2 className="text-[11px] sm:text-xs font-bold tracking-widest uppercase font-display text-[#065F46]">
+          LifeITup Wellbeing Check
         </h2>
 
         {/* Bigger & Bolder Progress Container */}
         <div className="w-full mt-1.5 sm:mt-2.5">
           <div className="flex items-center justify-between mb-1">
-            {/* Question Counter */}
-            <span className="text-xs sm:text-base font-bold text-[#0A2618] tracking-tight">
+            {/* Question Counter (Bigger & More Prominent) */}
+            <span className="text-sm sm:text-lg font-black text-[#0A2618] tracking-tight font-display">
               Question {currentStep} of {totalQuestions}
             </span>
-            {/* % Complete */}
-            <span className="font-mono text-xs sm:text-sm font-bold text-[#047857]">
+            {/* % Complete (Bigger & More Prominent) */}
+            <span className="font-mono text-xs sm:text-base font-black text-[#047857]">
               {progressPercent}% Complete
             </span>
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full h-1.5 sm:h-2.5 bg-[#EBE5D8] rounded-full overflow-hidden border border-[#DDD5C5] p-[1px]">
+          <div className="w-full h-2 sm:h-2.5 bg-[#EBE5D8] rounded-full overflow-hidden border border-[#DDD5C5] p-[1px]">
             <div
               className="h-full rounded-full transition-all duration-300 ease-out bg-gradient-to-r from-emerald-500 to-[#047857]"
               style={{ width: `${progressPercent}%` }}
@@ -68,10 +68,10 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
       {/* Main Single Question Container */}
       <main className="relative z-10 flex-1 flex flex-col justify-center my-auto min-h-0 animate-fade-in">
-        {/* Pillar indicator badge */}
-        <div className="inline-flex items-center gap-1.5 self-start px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold mb-1.5 sm:mb-2 bg-[#EBF5EE] border border-[#C2E3CD] text-[#065F46] shadow-2xs">
-          <PillarIcon pillarId={question.pillarId} className="w-3.5 h-3.5 text-[#047857]" />
-          <span>{question.pillarName}</span>
+        {/* Pillar indicator badge (Bigger & Clearer Visible) */}
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-extrabold mb-2 bg-[#EBF5EE] border-2 border-[#A7D7B5] text-[#064E3B] shadow-xs">
+          <PillarIcon pillarId={question.pillarId} className="w-4 h-4 text-[#047857]" />
+          <span className="tracking-wide uppercase font-display">{question.pillarName}</span>
         </div>
 
         {/* Question Text */}

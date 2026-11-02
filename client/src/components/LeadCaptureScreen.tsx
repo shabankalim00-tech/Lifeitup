@@ -55,9 +55,9 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
 
     const digitsOnly = formData.mobile.replace(/\D/g, '');
     if (!formData.mobile.trim()) {
-      errors.mobile = 'Mobile Number is required.';
+      errors.mobile = 'Mobile Number (10 digits) is required.';
     } else if (digitsOnly.length < 10) {
-      errors.mobile = 'Please enter a valid mobile number (minimum 10 digits).';
+      errors.mobile = 'Please enter a valid 10-digit mobile number.';
     }
 
     if (!formData.consent) {
@@ -201,7 +201,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
           {/* Mobile Number */}
           <div>
             <label className="block text-xs font-bold text-[#1A2E24] mb-1">
-              Mobile Number <span className="text-rose-500">*</span>
+              Mobile Number (10 digits) <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#73887C]">
@@ -214,7 +214,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                   setFormData({ ...formData, mobile: e.target.value });
                   if (fieldErrors.mobile) setFieldErrors({ ...fieldErrors, mobile: '' });
                 }}
-                placeholder="+91 98765 43210"
+                placeholder="e.g. 9876543210 (10 digits)"
                 className={`w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-white border text-[#0A2618] placeholder-[#9A8F7E] text-sm focus:outline-none transition-all ${
                   fieldErrors.mobile 
                     ? 'border-rose-400 bg-rose-50/30' 
@@ -240,7 +240,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
                 className="w-4 h-4 mt-0.5 rounded border-[#DDD5C5] text-[#047857] focus:ring-[#047857] cursor-pointer accent-[#047857]"
               />
               <span className="text-xs text-[#2E4337] font-medium leading-snug">
-                I agree to receive my LifeITUp wellness assessment report and relevant communications regarding holistic health.
+                I agree to receive my LifeITup wellness assessment report and relevant communications regarding holistic health to receive on email and whatsapp.
               </span>
             </label>
             {fieldErrors.consent && (
@@ -276,7 +276,7 @@ export const LeadCaptureScreen: React.FC<LeadCaptureScreenProps> = ({
 
       {/* Footer */}
       <footer className="relative z-10 w-full text-center text-xs text-[#6B8074] pt-4">
-        <p>© LifeITUp. Empowering Your Holistic Success.</p>
+        <p>© LifeITup. <a href="https://lifeitupworldwide.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#047857] underline underline-offset-2">www.lifeitupworldwide.com</a></p>
       </footer>
     </div>
   );

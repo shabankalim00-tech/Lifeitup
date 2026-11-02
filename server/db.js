@@ -71,6 +71,7 @@ if (!process.env.VERCEL) {
             score_band_name TEXT NOT NULL,
             answers_json TEXT NOT NULL,
             consent INTEGER NOT NULL DEFAULT 1,
+            consent_remark TEXT DEFAULT 'YES',
             source TEXT DEFAULT 'web',
             crm_status TEXT DEFAULT 'pending',
             email_status TEXT DEFAULT 'pending',
@@ -83,8 +84,9 @@ if (!process.env.VERCEL) {
           )
         `);
 
-        // Safely attempt migration if organization column doesn't exist in existing SQLite DB
+        // Safely attempt migration if organization or consent_remark columns don't exist in existing SQLite DB
         db.run(`ALTER TABLE leads ADD COLUMN organization TEXT DEFAULT ''`, () => {});
+        db.run(`ALTER TABLE leads ADD COLUMN consent_remark TEXT DEFAULT 'YES'`, () => {});
 
         db.run(`
           CREATE TABLE IF NOT EXISTS settings (
@@ -201,8 +203,9 @@ const dbHelpers = {
         score_band_name: params[7],
         answers_json: params[8],
         consent: params[9] || 1,
-        ip_address: params[10] || '',
-        state: params[11] || '',
+        consent_remark: params[10] || 'YES',
+        ip_address: params[11] || '',
+        state: params[12] || '',
         source: 'web',
         crm_status: 'pending',
         email_status: 'pending',
@@ -227,8 +230,9 @@ const dbHelpers = {
         lead.score_band_name = params[6];
         lead.answers_json = params[7];
         lead.consent = params[8] || 1;
-        lead.ip_address = params[9] || '';
-        lead.state = params[10] || '';
+        lead.consent_remark = params[9] || 'YES';
+        lead.ip_address = params[10] || '';
+        lead.state = params[11] || '';
         lead.updated_at = new Date().toISOString();
       }
       return Promise.resolve({ changes: 1 });

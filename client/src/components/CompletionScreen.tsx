@@ -116,7 +116,7 @@ export const CompletionScreen: React.FC<CompletionScreenProps> = ({
 
       {/* Footer */}
       <footer className="relative z-10 w-full text-center text-xs text-[#6B8074] pt-4">
-        <p>© LifeITUp. Empowering Your Holistic Success.</p>
+        <p>© LifeITup. <a href="https://lifeitupworldwide.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#047857] underline underline-offset-2">www.lifeitupworldwide.com</a></p>
       </footer>
     </div>
   );

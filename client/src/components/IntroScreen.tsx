@@ -92,7 +92,7 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onStart, isRoyal = tru
 
       {/* 5. Footer Branding */}
       <footer className="relative z-10 w-full max-w-4xl text-center text-[11px] sm:text-xs text-[#6B8074] pb-2">
-        <p>© LifeITUp. Empowering Your Holistic Success.</p>
+        <p>© LifeITup. <a href="https://lifeitupworldwide.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#047857] underline underline-offset-2">www.lifeitupworldwide.com</a></p>
       </footer>
     </div>
   );

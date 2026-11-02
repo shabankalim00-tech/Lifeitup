@@ -138,23 +138,24 @@ async function dispatchToEmail(leadData, reportDetails) {
     let emailHtml = templateHtml || `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b; max-width: 560px; margin: 0 auto; padding: 24px; font-size: 15px; line-height: 1.6;">
         <div style="margin-bottom: 20px; border-bottom: 2px solid #059669; padding-bottom: 12px;">
-          <h2 style="color: #064e3b; margin: 0 0 4px 0; letter-spacing: 1.5px; font-size: 20px;">LIFEITUP WORLDWIDE</h2>
+          <h2 style="color: #064e3b; margin: 0 0 4px 0; letter-spacing: 1.5px; font-size: 20px;">LifeITup WorldWide</h2>
           <p style="color: #64748b; font-size: 12px; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Empowering Your Holistic Success</p>
         </div>
         <p style="margin-top: 0;">Hello <strong>{{fullName}}</strong>,</p>
-        <p>Thank you for participating in the <strong>LifeITUp 2-Minute Holistic Wellbeing Check</strong>.</p>
+        <p>Thank you for participating in the <strong>LifeITup 2-Minute Holistic Wellbeing Check</strong>.</p>
         <p>Your official personalised assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
         <p>Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your score analysis, and your key focus areas.</p>
         <div style="background-color: #fffbeb; border: 2px solid #d97706; border-radius: 8px; padding: 14px 18px; margin: 20px 0;">
           <p style="margin: 0 0 6px 0; color: #b45309; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">⚠️ CALL TO ACTION</p>
-          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Please DO REPLY, &quot;RECEIVED&quot; once you get your report, to AVOID getting duplicate mails.</p>
+          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Please DO REPLY, &quot;RECEIVED&quot; once you get your report, to AVOID getting REPEAT mails.</p>
         </div>
         <p style="color: #64748b; font-size: 13px; margin: 24px 0 20px 0;">If you have any questions or would like guidance on your pathway, please feel free to reply directly to this email.</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 24px;">
           <p style="margin: 0; font-size: 14px; color: #334155;">
             Wishing you holistic health and success,<br>
-            <strong>LifeITUp WorldWide Team</strong><br>
-            <a href="mailto:ho@lifeitupworldwide.com" style="color: #059669; text-decoration: none; font-size: 13px;">ho@lifeitupworldwide.com</a>
+            <strong>Team LifeITup</strong><br>
+            <a href="mailto:ho@lifeitupworldwide.com" style="color: #059669; text-decoration: none; font-size: 13px;">ho@lifeitupworldwide.com</a><br>
+            <a href="https://lifeitupworldwide.com" target="_blank" style="color: #059669; text-decoration: underline; font-size: 13px; font-weight: bold;">www.lifeitupworldwide.com</a>
           </p>
         </div>
       </div>
@@ -209,7 +210,7 @@ async function dispatchToWhatsapp(leadData, reportDetails) {
   // Clean phone number (e.g. +91 98765 43210 -> 919876543210)
   const cleanPhone = String(leadData.mobile || '').replace(/[^\d]/g, '');
 
-  const messageText = `🌿 *LifeITUp Wellbeing Assessment Report*
+  const messageText = `🌿 *LifeITup Wellbeing Assessment Report*
 
 Hello *${leadData.full_name}*,
 
@@ -220,6 +221,8 @@ Thank you for completing your 2-Minute Holistic Wellbeing Check.
 
 ${reportDetails.headline}
 
+*Urgent - Please DO REPLY "RECEIVED" to avoid getting REPEAT messages.*
+
 🎯 *YOUR FIRST STRATEGIC MOVE:*
 *${reportDetails.firstMoveRule || ''}*
 ${reportDetails.firstMoveAdvice || ''}
@@ -227,7 +230,8 @@ ${reportDetails.firstMoveAdvice || ''}
 📋 *YOUR PERSONALISED PATHWAY:*
 ${reportDetails.pathwaySteps ? reportDetails.pathwaySteps.join(' → ') : ''}
 
-_Empowering Your Holistic Success — LifeITUp_`;
+Best wishes, Team LifeITup
+www.lifeitupworldwide.com`;
 
   // 0. Interakt WhatsApp Business API (Official Meta Cloud API)
   const interaktApiKey = ((await getSetting('interakt_api_key')) || '').trim();
@@ -727,6 +731,7 @@ async function dispatchToGoogleSheet(leadData) {
     return { status: 'not_configured', message: 'Google Sheet webhook not configured.' };
   }
 
+  const consentValue = leadData.consent_remark || (leadData.consent ? 'YES' : 'NO');
   const payload = {
     timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
     fullName: leadData.full_name,
@@ -736,7 +741,9 @@ async function dispatchToGoogleSheet(leadData) {
     email: leadData.email,
     score: `${leadData.score} / 48`,
     status: leadData.score_band_name,
-    state: leadData.state || 'Delhi'
+    state: leadData.state || 'Delhi',
+    consent: consentValue,
+    consent_remark: consentValue
   };
 
   try {

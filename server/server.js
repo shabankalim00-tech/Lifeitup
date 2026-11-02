@@ -160,6 +160,8 @@ app.post('/api/leads', async (req, res) => {
     clientIp = clientIp.replace(/^.*:/, '').trim();
     const clientState = await resolveStateFromIp(clientIp);
 
+    const consentRemark = (consent === true || consent === 1 || consent === 'YES' || consent === 'true') ? 'YES' : 'NO';
+
     if (existingLead) {
       await dbHelpers.run(
         `UPDATE leads SET
@@ -172,6 +174,7 @@ app.post('/api/leads', async (req, res) => {
           score_band_name = ?,
           answers_json = ?,
           consent = ?,
+          consent_remark = ?,
           ip_address = ?,
           state = ?,
           updated_at = CURRENT_TIMESTAMP
@@ -186,6 +189,7 @@ app.post('/api/leads', async (req, res) => {
           assessmentResult.scoreBand.zone,
           JSON.stringify(assessmentResult.answers),
           consent ? 1 : 0,
+          consentRemark,
           clientIp,
           clientState,
           existingLead.id
@@ -194,8 +198,8 @@ app.post('/api/leads', async (req, res) => {
       leadId = existingLead.id;
     } else {
       const insertResult = await dbHelpers.run(
-        `INSERT INTO leads (session_id, full_name, organization, email, mobile, score, score_band_id, score_band_name, answers_json, consent, ip_address, state)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO leads (session_id, full_name, organization, email, mobile, score, score_band_id, score_band_name, answers_json, consent, consent_remark, ip_address, state)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           sessionId,
           fullName.trim(),
@@ -207,6 +211,7 @@ app.post('/api/leads', async (req, res) => {
           assessmentResult.scoreBand.zone,
           JSON.stringify(assessmentResult.answers),
           consent ? 1 : 0,
+          consentRemark,
           clientIp,
           clientState
         ]
@@ -226,6 +231,7 @@ app.post('/api/leads', async (req, res) => {
       score_band_name: assessmentResult.scoreBand.zone,
       answers_json: assessmentResult.answers,
       consent: consent ? 1 : 0,
+      consent_remark: consentRemark,
       ip_address: clientIp,
       state: clientState
     };

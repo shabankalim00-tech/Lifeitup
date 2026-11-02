@@ -7,18 +7,17 @@ import { CompletionScreen } from './components/CompletionScreen';
 import { LeadCaptureScreen } from './components/LeadCaptureScreen';
 import { ReportScreen } from './components/ReportScreen';
 import { AdminModal } from './components/AdminModal';
-import { Shield } from 'lucide-react';
 
 // Fallback questions directly from prompt in case offline / initial load
 const FALLBACK_QUESTIONS = [
-  { id: 1, pillarId: 'soul', pillarName: 'Pillar 1 — Soul / Purpose', text: 'My life feels connected to something meaningful beyond simply getting through the day.' },
-  { id: 2, pillarId: 'soul', pillarName: 'Pillar 1 — Soul / Purpose', text: 'The way I spend my time reflects what truly matters to me.' },
+  { id: 1, pillarId: 'soul', pillarName: 'Pillar 1 — Soul / Purpose', text: 'My daily life is connected to a clear, bigger purpose' },
+  { id: 2, pillarId: 'soul', pillarName: 'Pillar 1 — Soul / Purpose', text: 'The way I spend my time reflects, what truly matters to me.' },
   { id: 3, pillarId: 'mind', pillarName: 'Pillar 2 — Mind / Inner Calm', text: 'I can stay calm and think clearly when life becomes stressful.' },
-  { id: 4, pillarId: 'mind', pillarName: 'Pillar 2 — Mind / Inner Calm', text: 'I can focus on what matters without feeling constantly mentally pulled in different directions.' },
-  { id: 5, pillarId: 'body', pillarName: 'Pillar 3 — Body / Energy', text: 'I usually have enough physical energy to do the things that matter to me.' },
-  { id: 6, pillarId: 'body', pillarName: 'Pillar 3 — Body / Energy', text: 'My everyday habits—sleep, movement, food and recovery—support my wellbeing.' },
-  { id: 7, pillarId: 'career', pillarName: 'Pillar 4 — Career / Growth', text: 'I feel confident making important decisions about my work and life.' },
-  { id: 8, pillarId: 'career', pillarName: 'Pillar 4 — Career / Growth', text: 'I feel that I am growing, learning or moving forward in an area that matters to me.' },
+  { id: 4, pillarId: 'mind', pillarName: 'Pillar 2 — Mind / Inner Calm', text: 'I can focus on that matters, without constant distractions' },
+  { id: 5, pillarId: 'body', pillarName: 'Pillar 3 — Body / Energy', text: 'I feel energetic throughout the day' },
+  { id: 6, pillarId: 'body', pillarName: 'Pillar 3 — Body / Energy', text: 'My everyday habits—sleep, movement, food - nutrition & recovery are in ideal zone.' },
+  { id: 7, pillarId: 'career', pillarName: 'Pillar 4 — Career / Growth', text: 'I have clarity & confidence in making important career decisions' },
+  { id: 8, pillarId: 'career', pillarName: 'Pillar 4 — Career / Growth', text: 'I feel that I am learning, moving, growing in an area that matters to me.' },
   { id: 9, pillarId: 'environment', pillarName: 'Pillar 5 — Environment / Connection', text: 'My physical and digital surroundings help me feel organised, calm and in control.' },
   { id: 10, pillarId: 'environment', pillarName: 'Pillar 5 — Environment / Connection', text: 'The people closest to me generally support my wellbeing, growth and sense of belonging.' },
   { id: 11, pillarId: 'contribution', pillarName: 'Pillar 6 — Contribution / Impact', text: 'I feel that what I do makes a positive difference to other people.' },
@@ -359,16 +358,6 @@ export function App() {
         />
       )}
 
-      {/* Discrete Admin Link in Footer */}
-      <div className="fixed bottom-3 right-3 z-40">
-        <button
-          onClick={() => setIsAdminOpen(true)}
-          title="Admin & Automation Portal"
-          className="p-2 rounded-full bg-emerald-950/70 border border-emerald-800/60 text-emerald-500 hover:text-lime-300 hover:border-lime-400/50 hover:bg-emerald-900/90 transition-all opacity-40 hover:opacity-100 backdrop-blur-sm cursor-pointer shadow-lg"
-        >
-          <Shield className="w-4 h-4" />
-        </button>
-      </div>
       {/* Close main content container */}
       </div>
 

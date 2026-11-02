@@ -73,6 +73,22 @@ async function initBaileys() {
         console.log(`\n✅ [WHATSAPP CONNECTED] Successfully connected as: +${cleanUser}\n`);
       }
     });
+
+    // Auto-reply to incoming WhatsApp messages (Item 26)
+    sock.ev.on('messages.upsert', async (m) => {
+      try {
+        if (m.type !== 'notify') return;
+        for (const msg of m.messages) {
+          if (!msg.key.fromMe && msg.key.remoteJid && !msg.key.remoteJid.includes('@g.us') && !msg.key.remoteJid.includes('status@broadcast')) {
+            const senderJid = msg.key.remoteJid;
+            const autoReplyText = `Thank you for your message, we will get back to you on priority, you may also check our website for more information. - www.lifeitupworldwide.com`;
+            await sock.sendMessage(senderJid, { text: autoReplyText });
+          }
+        }
+      } catch (err) {
+        console.error('[Baileys Auto-Reply Error]:', err);
+      }
+    });
   } catch (err) {
     console.error('[Baileys] Initialization error:', err);
     isInitializing = false;

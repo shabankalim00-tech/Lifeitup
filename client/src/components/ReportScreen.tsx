@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Logo } from './Logo';
 import type { ReportPayload } from '../types';
 import confetti from 'canvas-confetti';
-import { Sparkles, ArrowRight, ShieldCheck, Compass, Info, MessageCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Compass, MessageCircle } from 'lucide-react';
 
 interface ReportScreenProps {
   report: ReportPayload;
@@ -14,7 +14,7 @@ interface ReportScreenProps {
     instagram?: string;
     whatsapp?: string;
   };
-  onRetake: () => void;
+  onRetake?: () => void;
 }
 
 export const ReportScreen: React.FC<ReportScreenProps> = ({
@@ -22,7 +22,7 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
   userName,
   isRoyal = true,
   socialUrls,
-  onRetake
+  onRetake: _onRetake
 }) => {
   const { score, maxScore, scoreBand } = report;
 
@@ -59,15 +59,15 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
 
       {/* Main Report Container */}
       <main className="relative z-10 w-full space-y-5 animate-fade-in">
-        {/* Dispatched Confirmation Banner */}
+        {/* Email Dispatched Confirmation Banner */}
         <div className="flex items-center gap-3 p-4 rounded-2xl border border-[#C2E3CD] bg-[#EBF5EE] text-sm shadow-xs">
           <div className="w-8 h-8 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center shrink-0">
-            <span className="text-base">✨</span>
+            <span className="text-base">✉️</span>
           </div>
           <div className="text-left flex-1">
-            <p className="font-bold text-[#064E3B]">Report Dispatched to Your Email and WhatsApp!</p>
+            <p className="font-bold text-[#064E3B]">Report Dispatched to Your Email!</p>
             <p className="text-xs text-[#1A4D37] mt-0.5">
-              Your official personalised PDF report has been dispatched to your Email and WhatsApp.
+              Your official personalised PDF report has been dispatched to your email address from <strong>ho@lifeitupworldwide.com</strong>.
             </p>
           </div>
         </div>
@@ -101,6 +101,19 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
             <span className="font-display font-bold text-[#0A2618]">
               {scoreBand.title}
             </span>
+          </div>
+
+          {/* Official Website Link below score */}
+          <div className="pt-4">
+            <a
+              href="https://lifeitupworldwide.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#EBF5EE] border border-[#C2E3CD] text-[#064E3B] text-xs sm:text-sm font-extrabold hover:bg-[#d8eedf] transition-all shadow-2xs"
+            >
+              <span>Visit our Official Website: www.lifeitupworldwide.com</span>
+              <ArrowRight className="w-4 h-4 text-[#047857]" />
+            </a>
           </div>
         </div>
 
@@ -152,12 +165,6 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
           </p>
         </div>
 
-        {/* Evidence Note */}
-        <div className="rounded-2xl p-4 bg-[#FAF6EE] border border-[#E5DFD3] flex items-start gap-3 text-xs text-[#2E4337] leading-relaxed">
-          <Info className="w-4 h-4 shrink-0 mt-0.5 text-[#047857]" />
-          <span>{scoreBand.evidenceNote}</span>
-        </div>
-
         {/* Official Social Media Links */}
         {(hasInstagram || hasWhatsapp) && (
           <div className="pt-2 flex items-center justify-center gap-4">
@@ -189,16 +196,6 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
             )}
           </div>
         )}
-
-        {/* Retake Assessment option */}
-        <div className="text-center pt-2">
-          <button
-            onClick={onRetake}
-            className="text-xs text-[#5C7265] hover:text-[#047857] font-semibold underline underline-offset-4 transition-colors cursor-pointer"
-          >
-            Retake Assessment
-          </button>
-        </div>
       </main>
 
       {/* Footer */}
@@ -207,7 +204,7 @@ export const ReportScreen: React.FC<ReportScreenProps> = ({
           <ShieldCheck className="w-3.5 h-3.5 text-[#047857]" />
           <span>Self-reflection & guidance report aligned with WHO wellbeing standards.</span>
         </div>
-        <p>© LifeITUp. Empowering Your Holistic Success.</p>
+        <p>© LifeITup. <a href="https://lifeitupworldwide.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#047857] underline underline-offset-2">www.lifeitupworldwide.com</a></p>
       </footer>
     </div>
   );

@@ -34,12 +34,12 @@ export const Logo: React.FC<LogoProps> = ({
       />
 
       {/* Brand Name with sleek emerald dashes */}
-      <div className="flex items-center gap-2.5 sm:gap-3">
-        <span className="w-3 sm:w-5 h-[1.5px] bg-[#059669]"></span>
-        <span className={`font-extrabold font-display uppercase text-[#0A2618] ${textSizes[size]}`}>
-          LIFEITUP
+      <div className="flex items-center gap-2 sm:gap-2.5">
+        <span className="w-2.5 sm:w-4 h-[1.5px] bg-[#059669]"></span>
+        <span className={`font-black font-display text-[#0A2618] tracking-wider ${textSizes[size]}`}>
+          LifeITup
         </span>
-        <span className="w-3 sm:w-5 h-[1.5px] bg-[#059669]"></span>
+        <span className="w-2.5 sm:w-4 h-[1.5px] bg-[#059669]"></span>
       </div>
 
       {/* Tagline */}

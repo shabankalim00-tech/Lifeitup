@@ -52,13 +52,13 @@ const QUESTIONS = [
     id: 1,
     pillarId: 'soul',
     pillarName: 'Pillar 1 — Soul / Purpose',
-    text: 'My life feels connected to something meaningful beyond simply getting through the day.'
+    text: 'My daily life is connected to a clear, bigger purpose'
   },
   {
     id: 2,
     pillarId: 'soul',
     pillarName: 'Pillar 1 — Soul / Purpose',
-    text: 'The way I spend my time reflects what truly matters to me.'
+    text: 'The way I spend my time reflects, what truly matters to me.'
   },
   // Pillar 2 — Mind / Inner Calm
   {
@@ -71,33 +71,33 @@ const QUESTIONS = [
     id: 4,
     pillarId: 'mind',
     pillarName: 'Pillar 2 — Mind / Inner Calm',
-    text: 'I can focus on what matters without feeling constantly mentally pulled in different directions.'
+    text: 'I can focus on that matters, without constant distractions'
   },
   // Pillar 3 — Body / Energy
   {
     id: 5,
     pillarId: 'body',
     pillarName: 'Pillar 3 — Body / Energy',
-    text: 'I usually have enough physical energy to do the things that matter to me.'
+    text: 'I feel energetic throughout the day'
   },
   {
     id: 6,
     pillarId: 'body',
     pillarName: 'Pillar 3 — Body / Energy',
-    text: 'My everyday habits—sleep, movement, food and recovery—support my wellbeing.'
+    text: 'My everyday habits—sleep, movement, food - nutrition & recovery are in ideal zone.'
   },
   // Pillar 4 — Career / Growth
   {
     id: 7,
     pillarId: 'career',
     pillarName: 'Pillar 4 — Career / Growth',
-    text: 'I feel confident making important decisions about my work and life.'
+    text: 'I have clarity & confidence in making important career decisions'
   },
   {
     id: 8,
     pillarId: 'career',
     pillarName: 'Pillar 4 — Career / Growth',
-    text: 'I feel that I am growing, learning or moving forward in an area that matters to me.'
+    text: 'I feel that I am learning, moving, growing in an area that matters to me.'
   },
   // Pillar 5 — Environment / Connection
   {

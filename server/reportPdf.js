@@ -229,14 +229,14 @@ function generateReportPdf(leadData, scoreBand) {
         const logoPath = path.join(__dirname, 'logo-emblem.png');
         if (fs.existsSync(logoPath)) {
           doc.image(logoPath, 46, 21, { width: 38, height: 38 });
-          doc.fillColor('#34d399').fontSize(14).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 92, 25, { characterSpacing: 1.5, lineBreak: false });
+          doc.fillColor('#34d399').fontSize(14).font('Helvetica-Bold').text('LifeITup WorldWide', 92, 25, { characterSpacing: 1.2, lineBreak: false });
           doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 92, 44, { characterSpacing: 0.8, lineBreak: false });
         } else {
-          doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 50, 25, { characterSpacing: 1.5, lineBreak: false });
+          doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LifeITup WorldWide', 50, 25, { characterSpacing: 1.2, lineBreak: false });
           doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
         }
       } catch (_) {
-        doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LIFEITUP WORLDWIDE', 50, 25, { characterSpacing: 1.5, lineBreak: false });
+        doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LifeITup WorldWide', 50, 25, { characterSpacing: 1.2, lineBreak: false });
         doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
       }
 
@@ -304,7 +304,7 @@ function generateReportPdf(leadData, scoreBand) {
       });
 
       // Page 1 Footer
-      doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITUp Worldwide  •  Page 1 of 2  •  Confidential Holistic Assessment', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
+      doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITup WorldWide  •  Page 1 of 2  •  Confidential Holistic Assessment  •  www.lifeitupworldwide.com', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
 
       // ==========================================
       // PAGE 2: PILLARS 4-6 & ACTION PATHWAY
@@ -317,14 +317,14 @@ function generateReportPdf(leadData, scoreBand) {
         const logoPath = path.join(__dirname, 'logo-emblem.png');
         if (fs.existsSync(logoPath)) {
           doc.image(logoPath, 46, 21, { width: 24, height: 24 });
-          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 76, 24, { lineBreak: false });
+          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 76, 24, { lineBreak: false });
           doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 76, 37, { lineBreak: false });
         } else {
-          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
+          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 48, 25, { lineBreak: false });
           doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
         }
       } catch (_) {
-        doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LIFEITUP WELLNESS ASSESSMENT', 48, 25, { lineBreak: false });
+        doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 48, 25, { lineBreak: false });
         doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
       }
 
@@ -388,21 +388,21 @@ function generateReportPdf(leadData, scoreBand) {
       doc.fillColor(primaryEmerald).fontSize(7.5).font('Helvetica-Bold').text('EVIDENCE & FRAMEWORK ALIGNMENT (WHO • UNICEF • OECD • NEP 2020 • NCF-SE 2023)', 46, currentY + 5, { lineBreak: false });
       doc.fillColor(textMuted).fontSize(7).font('Helvetica').text(bandContent.evidenceNote, 46, currentY + 16, { width: contentWidth - 20, lineGap: 1, height: 16 });
 
-      // 7. LifeITUp Worldwide Signature Strip (Clean Non-Overlapping Layout)
+      // 7. LifeITup Worldwide Signature Strip (Clean Non-Overlapping Layout)
       currentY += evidenceHeight + 7;
       const signatureHeight = 36;
       doc.roundedRect(36, currentY, contentWidth, signatureHeight, 3).fill(primaryEmerald);
       
       // Left block: Motivational anchor
       doc.fillColor('#6ee7b7').fontSize(8.5).font('Helvetica-Bold').text('YOUR SCORE IS ONLY THE BEGINNING.', 48, currentY + 7, { lineBreak: false });
-      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Real transformation begins with your next consistent step.', 48, currentY + 20, { width: 280, lineBreak: false });
+      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Real transformation begins with your next consistent step.', 48, currentY + 20, { width: 260, lineBreak: false });
       
       // Right block: Brand and contact info with dedicated bounding box (zero collision)
-      doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica-Bold').text('LifeITUp Worldwide', 330, currentY + 7, { width: 215, align: 'right', lineBreak: false });
-      doc.fillColor('#e2e8f0').fontSize(7.5).font('Helvetica').text('ho@lifeitupworldwide.com', 330, currentY + 20, { width: 215, align: 'right', lineBreak: false });
+      doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica-Bold').text('LifeITup WorldWide', 310, currentY + 7, { width: 235, align: 'right', lineBreak: false });
+      doc.fillColor('#e2e8f0').fontSize(7.5).font('Helvetica').text('ho@lifeitupworldwide.com  •  www.lifeitupworldwide.com', 310, currentY + 20, { width: 235, align: 'right', lineBreak: false });
 
       // Page 2 Footer
-      doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITUp Worldwide  •  Page 2 of 2  •  Confidential Holistic Assessment', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
+      doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITup WorldWide  •  Page 2 of 2  •  Confidential Holistic Assessment  •  www.lifeitupworldwide.com', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
 
       doc.end();
     } catch (err) {
