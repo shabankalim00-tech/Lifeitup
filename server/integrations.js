@@ -233,7 +233,84 @@ ${reportDetails.pathwaySteps ? reportDetails.pathwaySteps.join(' → ') : ''}
 Best wishes, Team LifeITup
 www.lifeitupworldwide.com`;
 
-  // 0. Interakt WhatsApp Business API (Official Meta Cloud API)
+  // 0. AiSensy WhatsApp Business API (Official Meta Cloud API via Campaign API v2)
+  const aisensyApiKey = ((await getSetting('aisensy_api_key')) || process.env.AISENSY_API_KEY || '').trim();
+  const aisensyCampaignName = ((await getSetting('aisensy_campaign_name')) || process.env.AISENSY_CAMPAIGN_NAME || 'lifeitup_report').trim();
+
+  if (aisensyApiKey) {
+    let destDigits = cleanPhone;
+    if (destDigits.length === 10) {
+      destDigits = '91' + destDigits;
+    } else if (destDigits.startsWith('0') && destDigits.length === 11) {
+      destDigits = '91' + destDigits.substring(1);
+    }
+
+    const payloadData = {
+      name: leadData.full_name || 'Participant',
+      score: leadData.score || 24,
+      band: (reportDetails && reportDetails.zone ? reportDetails.zone.toLowerCase() : 'moderate'),
+      answers: leadData.answers_json || {}
+    };
+    const encodedPayload = Buffer.from(JSON.stringify(payloadData)).toString('base64url');
+    const pdfPublicUrl = `https://lifeitup.vercel.app/api/report/${encodedPayload}/LifeITUp_Report.pdf`;
+    const sanitizedName = (leadData.full_name || 'Participant').replace(/[^a-zA-Z0-9]/g, '_');
+    const fileName = `LifeITUp_Report_${sanitizedName}.pdf`;
+
+    const aisensyPayload = {
+      apiKey: aisensyApiKey,
+      campaignName: aisensyCampaignName,
+      destination: destDigits,
+      userName: leadData.full_name || 'Participant',
+      source: 'LifeITUp Web App',
+      media: {
+        url: pdfPublicUrl,
+        filename: fileName
+      },
+      templateParams: [
+        leadData.full_name || 'Participant',
+        String(leadData.score || 0),
+        reportDetails.zone || 'STABLE'
+      ],
+      tags: ['LifeITUp Assessment'],
+      attributes: {
+        email: leadData.email || '',
+        score: String(leadData.score || 0),
+        status: reportDetails.zone || 'STABLE'
+      }
+    };
+
+    try {
+      const res = await fetch('https://backend.aisensy.com/campaign/t1/api/v2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(aisensyPayload)
+      });
+      const responseData = await res.json().catch(() => ({}));
+      const success = res.ok && (responseData.success === true || responseData.status === 'success' || (responseData.message && responseData.message.toLowerCase().includes('success')));
+
+      await logIntegration(
+        leadData.id,
+        'whatsapp',
+        success ? 'success' : 'failure',
+        { to: destDigits, provider: 'aisensy', campaign: aisensyCampaignName, attachment: fileName },
+        JSON.stringify(responseData)
+      );
+
+      if (success) {
+        console.log(`[AiSensy WhatsApp API Success] Sent to ${destDigits}:`, responseData);
+        return { status: 'success', provider: 'aisensy', response: responseData };
+      } else {
+        console.warn('[AiSensy WhatsApp API Warning]', responseData);
+      }
+    } catch (aisensyErr) {
+      console.error('[AiSensy WhatsApp API Error]', aisensyErr);
+      await logIntegration(leadData.id, 'whatsapp', 'failure', { to: destDigits, provider: 'aisensy' }, aisensyErr.message);
+    }
+  }
+
+  // 1. Interakt WhatsApp Business API (Official Meta Cloud API)
   const interaktApiKey = ((await getSetting('interakt_api_key')) || '').trim();
   const interaktTemplateName = ((await getSetting('interakt_template_name')) || 'lifeitup_report').trim();
 
