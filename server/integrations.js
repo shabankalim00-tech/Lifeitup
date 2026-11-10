@@ -234,8 +234,8 @@ Best wishes, Team LifeITup
 www.lifeitupworldwide.com`;
 
   // 0. AiSensy WhatsApp Business API (Official Meta Cloud API via Campaign API v2)
-  const aisensyApiKey = ((await getSetting('aisensy_api_key')) || process.env.AISENSY_API_KEY || '').trim();
-  const aisensyCampaignName = ((await getSetting('aisensy_campaign_name')) || process.env.AISENSY_CAMPAIGN_NAME || 'lifeitup').trim();
+  const aisensyApiKey = ((await getSetting('aisensy_api_key')) || process.env.AISENSY_API_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTk3MjkzNWNmMTRiZTNmMTlhYWQ1YiIsIm5hbWUiOiJMaWZlSVRVcCIsImFwcE5hbWUiOiJBaVNlbnN5IiwiY2xpZW50SWQiOiI2YWU4YTdjOWFiYThkNTU5NmYxMTI2ZDQiLCJhY3RpdmVQbGFuIjoiQkFTSUNfTU9OVEhMWSIsImlhdCI6MTc5NDMzNjkwNX0.wWYydVXc-NbxthcHYBmFZzPgsDQOghiYSCEKfrPilXQ').trim();
+  const aisensyCampaignName = ((await getSetting('aisensy_campaign_name')) || process.env.AISENSY_CAMPAIGN_NAME || 'Lifeitup').trim();
 
   if (aisensyApiKey) {
     let destDigits = cleanPhone;
@@ -288,7 +288,7 @@ www.lifeitupworldwide.com`;
         body: JSON.stringify(aisensyPayload)
       });
       const responseData = await res.json().catch(() => ({}));
-      const success = res.ok && (responseData.success === true || responseData.status === 'success' || (responseData.message && responseData.message.toLowerCase().includes('success')));
+      const success = res.ok && (responseData.success === true || responseData.success === 'true' || responseData.status === 'success' || (responseData.message && responseData.message.toLowerCase().includes('success')));
 
       await logIntegration(
         leadData.id,
