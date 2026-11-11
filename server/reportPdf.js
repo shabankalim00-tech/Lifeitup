@@ -176,7 +176,8 @@ const DETAILED_BAND_CONTENT = {
 
 /**
  * Generate clean, modern, executive 2-Page Assessment Report PDF
- * Tight spacing, font size 12 for insights, 100% fits within 2 pages for all 4 categories
+ * Styled with LifeITUp Luxury Botanical Theme (#FAF6EE cream, #06281e emerald, #D4AF37 gold)
+ * Features subtle central watermark emblem and guaranteed zero text-overlap.
  */
 function generateReportPdf(leadData, scoreBand) {
   return new Promise((resolve, reject) => {
@@ -211,31 +212,58 @@ function generateReportPdf(leadData, scoreBand) {
       doc.on('end', () => resolve(Buffer.concat(buffers)));
       doc.on('error', err => reject(err));
 
+      // Brand Palette matching LifeITUp website theme
+      const bgCream = '#FAF6EE';
+      const borderWarm = '#E2DDD2';
+      const borderInner = '#E8E2D5';
+      const royalGold = '#D4AF37';
       const primaryEmerald = '#06281e';
-      const textDark = '#0f172a';
-      const textMuted = '#475569';
+      const forestJade = '#1A2E24';
       const brandGreen = '#059669';
+      const textMuted = '#4B5563';
+
       const pageWidth = 595.28;
       const pageHeight = 841.89;
-      const contentWidth = pageWidth - 72; // 523.28
+      const contentWidth = pageWidth - 72; // 523.28 pt
+
+      const logoPath = path.join(__dirname, 'logo-emblem.png');
+      const hasLogo = fs.existsSync(logoPath);
+
+      // Helper: Render full-page luxury frame & central watermark
+      function renderPageBackgroundAndWatermark() {
+        // 1. Botanical Cream Background
+        doc.rect(0, 0, pageWidth, pageHeight).fill(bgCream);
+
+        // 2. Royal Gold & Warm Cream Double Perimeter Border
+        doc.rect(13, 13, pageWidth - 26, pageHeight - 26).lineWidth(0.8).strokeColor(royalGold).stroke();
+        doc.rect(16, 16, pageWidth - 32, pageHeight - 32).lineWidth(0.4).strokeColor(borderInner).stroke();
+
+        // 3. Central Brand Watermark Emblem
+        if (hasLogo) {
+          const wmSize = 290;
+          const wmX = (pageWidth - wmSize) / 2;
+          const wmY = (pageHeight - wmSize) / 2;
+          doc.save();
+          doc.opacity(0.065);
+          doc.image(logoPath, wmX, wmY, { width: wmSize, height: wmSize });
+          doc.restore();
+        }
+      }
 
       // ==========================================
       // PAGE 1: EXECUTIVE ASSESSMENT & PILLARS 1-3
       // ==========================================
+      renderPageBackgroundAndWatermark();
 
       // 1. Header Bar
       doc.rect(36, 18, contentWidth, 46).fill(primaryEmerald);
-      try {
-        const logoPath = path.join(__dirname, 'logo-emblem.png');
-        if (fs.existsSync(logoPath)) {
-          doc.image(logoPath, 46, 21, { width: 38, height: 38 });
-          doc.fillColor('#34d399').fontSize(14).font('Helvetica-Bold').text('LifeITup WorldWide', 92, 25, { characterSpacing: 1.2, lineBreak: false });
-          doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 92, 44, { characterSpacing: 0.8, lineBreak: false });
-        } else {
-          doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LifeITup WorldWide', 50, 25, { characterSpacing: 1.2, lineBreak: false });
-          doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
-        }
-      } catch (_) {
+      doc.rect(36, 63, contentWidth, 1.5).fill(royalGold); // Luxury Gold Accent Line
+
+      if (hasLogo) {
+        doc.image(logoPath, 46, 21, { width: 38, height: 38 });
+        doc.fillColor('#34d399').fontSize(14).font('Helvetica-Bold').text('LifeITup WorldWide', 92, 25, { characterSpacing: 1.2, lineBreak: false });
+        doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 92, 44, { characterSpacing: 0.8, lineBreak: false });
+      } else {
         doc.fillColor('#34d399').fontSize(15).font('Helvetica-Bold').text('LifeITup WorldWide', 50, 25, { characterSpacing: 1.2, lineBreak: false });
         doc.fillColor('#94a3b8').fontSize(7.5).font('Helvetica').text('EMPOWERING YOUR HOLISTIC SUCCESS  •  HOLISTIC ASSESSMENT REPORT', 50, 44, { characterSpacing: 0.8, lineBreak: false });
       }
@@ -245,114 +273,137 @@ function generateReportPdf(leadData, scoreBand) {
       doc.fillColor('#ffffff').fontSize(8.5).font('Helvetica-Bold').text(`Date: ${todayStr}`, 410, 27, { width: 135, align: 'right', lineBreak: false });
       doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica').text(`Participant: ${leadData.full_name || 'Candidate'}`, 370, 42, { width: 175, align: 'right', lineBreak: false });
 
-      // Subtitle line
-      doc.rect(36, 68, contentWidth, 16).fill('#f1f5f9');
+      // Subtitle line (WHO alignment)
+      doc.roundedRect(36, 68, contentWidth, 16, 2).lineWidth(0.5).strokeColor(borderWarm).fillAndStroke('#F6F3EB', borderWarm);
       doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('Aligned with WHO Multidimensional Wellbeing Guidelines  •  Confidential Assessment & Pathway', 46, 72, { lineBreak: false });
 
-      // 2. Score & Diagnostic Summary Hero
+      // 2. Score & Diagnostic Summary Hero (Overlap-Free Dynamic Layout)
       let currentY = 90;
-      const heroHeight = 78;
+      const heroHeight = 84;
+
+      // Hero Card Container
+      doc.save();
+      doc.opacity(0.95);
       doc.roundedRect(36, currentY, contentWidth, heroHeight, 4).lineWidth(1.2).strokeColor(bandContent.borderColor).fillAndStroke(bandContent.bgColor, bandContent.borderColor);
+      doc.restore();
 
       // Score dial block (Left)
-      doc.roundedRect(48, currentY + 10, 96, 58, 4).fill(primaryEmerald);
-      doc.fillColor('#a7f3d0').fontSize(7).font('Helvetica-Bold').text('OVERALL SCORE', 48, currentY + 16, { width: 96, align: 'center', lineBreak: false });
-      doc.fillColor('#ffffff').fontSize(22).font('Helvetica-Bold').text(String(verifiedScore), 48, currentY + 26, { width: 96, align: 'center', lineBreak: false });
-      doc.fillColor('#6ee7b7').fontSize(8).font('Helvetica').text('OUT OF 48', 48, currentY + 51, { width: 96, align: 'center', lineBreak: false });
+      doc.roundedRect(48, currentY + 9, 96, 66, 4).fill(primaryEmerald);
+      doc.rect(60, currentY + 68, 72, 1.2).fill(royalGold); // Gold trim under score box
+      doc.fillColor('#a7f3d0').fontSize(7).font('Helvetica-Bold').text('OVERALL SCORE', 48, currentY + 15, { width: 96, align: 'center', lineBreak: false });
+      doc.fillColor('#ffffff').fontSize(23).font('Helvetica-Bold').text(String(verifiedScore), 48, currentY + 25, { width: 96, align: 'center', lineBreak: false });
+      doc.fillColor('#6ee7b7').fontSize(7.5).font('Helvetica').text('OUT OF 48', 48, currentY + 52, { width: 96, align: 'center', lineBreak: false });
 
-      // Diagnosis text (Right)
+      // Diagnosis text block (Right) - Zero Collision Logic
       const diagX = 158;
-      doc.roundedRect(diagX, currentY + 10, 110, 16, 3).fill(bandContent.color);
-      doc.fillColor('#ffffff').fontSize(8).font('Helvetica-Bold').text(`STATUS: ${bandContent.zone}`, diagX + 8, currentY + 14, { lineBreak: false });
+      const textAvailableWidth = contentWidth - (diagX - 36) - 14; // ~387 pt
 
-      doc.fillColor(textDark).fontSize(10.5).font('Helvetica-Bold').text(bandContent.title, diagX, currentY + 31, { width: 350, lineBreak: false });
-      doc.fillColor(textMuted).fontSize(8.5).font('Helvetica').text(bandContent.headline, diagX, currentY + 46, { width: 350, lineGap: 1, height: 30 });
+      // Status pill badge
+      doc.roundedRect(diagX, currentY + 9, 110, 16, 3).fill(bandContent.color);
+      doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica-Bold').text(`STATUS: ${bandContent.zone}`, diagX + 8, currentY + 13, { lineBreak: false });
 
-      // 3. Section Heading: YOUR 6-PILLAR SNAPSHOT
-      currentY += heroHeight + 10;
+      // Band Title with dedicated vertical space
+      const titleY = currentY + 29;
+      doc.fillColor(forestJade).fontSize(9.5).font('Helvetica-Bold').text(bandContent.title, diagX, titleY, { width: textAvailableWidth, lineGap: 1.2 });
+      const titleHeight = doc.heightOfString(bandContent.title, { width: textAvailableWidth, lineGap: 1.2 });
+
+      // Band Headline dynamically placed strictly below title with clean 4pt gap
+      const headlineY = titleY + titleHeight + 4;
+      doc.fillColor(textMuted).fontSize(8).font('Helvetica').text(bandContent.headline, diagX, headlineY, { width: textAvailableWidth, lineGap: 1.2, height: 32 });
+
+      // 3. Section Heading: YOUR 6-PILLAR WELLNESS SNAPSHOT
+      currentY += heroHeight + 9;
       doc.fillColor(primaryEmerald).fontSize(10.5).font('Helvetica-Bold').text('YOUR 6-PILLAR WELLNESS SNAPSHOT', 36, currentY, { lineBreak: false });
       doc.fillColor(textMuted).fontSize(8).font('Helvetica').text('Comprehensive qualitative review across the core dimensions of holistic living:', 36, currentY + 13, { lineBreak: false });
 
       currentY += 26;
 
-      // Render Pillars 1, 2, 3 on Page 1 (Using Font Size 12 for Insights)
+      // Render Pillars 1, 2, 3 on Page 1 (Using Font Size 11.5 for Insights)
       const page1Pillars = PILLAR_CONFIG.slice(0, 3);
       page1Pillars.forEach((p) => {
         const pillarData = bandContent.pillars[p.id];
         const cardHeight = 164;
 
-        // Card Border
-        doc.roundedRect(36, currentY, contentWidth, cardHeight, 4).lineWidth(1).strokeColor('#e2e8f0').fillAndStroke('#ffffff', '#e2e8f0');
+        // Card Base with soft opacity to let watermark softly show
+        doc.save();
+        doc.opacity(0.94);
+        doc.roundedRect(36, currentY, contentWidth, cardHeight, 4).lineWidth(1).strokeColor(borderWarm).fillAndStroke('#ffffff', borderWarm);
+        doc.restore();
 
         // Pillar Header Banner
-        doc.rect(36, currentY, contentWidth, 22).fill('#f8fafc');
+        doc.rect(36, currentY, contentWidth, 22).fill('#F6F3EB');
         doc.rect(36, currentY, 4, 22).fill(brandGreen);
+        doc.rect(40, currentY + 21.5, contentWidth - 4, 0.5).fill(royalGold);
         doc.fillColor(primaryEmerald).fontSize(9.5).font('Helvetica-Bold').text(p.name, 48, currentY + 6, { lineBreak: false });
 
-        // Observation (Font Size 12)
-        doc.fillColor(textDark).fontSize(8.5).font('Helvetica-Bold').text('What Your Assessment Revealed:', 48, currentY + 28, { lineBreak: false });
-        doc.fillColor('#1e293b').fontSize(11.5).font('Helvetica').text(pillarData.obs, 48, currentY + 41, { width: contentWidth - 24, lineGap: 1.5, height: 36 });
+        // Observation
+        doc.fillColor('#064e3b').fontSize(8.5).font('Helvetica-Bold').text('What Your Assessment Revealed:', 48, currentY + 28, { lineBreak: false });
+        doc.fillColor(forestJade).fontSize(11.5).font('Helvetica').text(pillarData.obs, 48, currentY + 41, { width: contentWidth - 24, lineGap: 1.5, height: 36 });
 
-        // Way forward block (Font Size 11.5)
+        // Way forward block
         const wayY = currentY + 82;
         const wayHeight = 72;
-        doc.roundedRect(46, wayY, contentWidth - 20, wayHeight, 3).fill('#f0fdf4').stroke('#bbf7d0');
+        doc.roundedRect(46, wayY, contentWidth - 20, wayHeight, 3).lineWidth(1).strokeColor('#c8e6d3').fillAndStroke('#f0f7f3', '#c8e6d3');
+        doc.rect(46, wayY, 3.5, wayHeight).fill(brandGreen);
         doc.fillColor('#065f46').fontSize(8.5).font('Helvetica-Bold').text('WAY FORWARD:', 56, wayY + 7, { lineBreak: false });
-        doc.fillColor('#0f172a').fontSize(11.5).font('Helvetica').text(pillarData.wayForward, 56, wayY + 20, { width: contentWidth - 40, lineGap: 1.5, height: 46 });
+        doc.fillColor(forestJade).fontSize(11.5).font('Helvetica').text(pillarData.wayForward, 56, wayY + 20, { width: contentWidth - 40, lineGap: 1.5, height: 46 });
 
         currentY += cardHeight + 8;
       });
 
-      // Page 1 Footer
+      // Page 1 Footer with Gold Divider
+      doc.rect(36, 815, contentWidth, 0.6).fill(royalGold);
       doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITup WorldWide  •  Page 1 of 2  •  Confidential Holistic Assessment  •  www.lifeitupworldwide.com', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
 
       // ==========================================
       // PAGE 2: PILLARS 4-6 & ACTION PATHWAY
       // ==========================================
       doc.addPage();
+      renderPageBackgroundAndWatermark();
 
       // Top Mini Header
       doc.rect(36, 18, contentWidth, 30).fill(primaryEmerald);
-      try {
-        const logoPath = path.join(__dirname, 'logo-emblem.png');
-        if (fs.existsSync(logoPath)) {
-          doc.image(logoPath, 46, 21, { width: 24, height: 24 });
-          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 76, 24, { lineBreak: false });
-          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 76, 37, { lineBreak: false });
-        } else {
-          doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 48, 25, { lineBreak: false });
-          doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
-        }
-      } catch (_) {
+      doc.rect(36, 47, contentWidth, 1).fill(royalGold);
+
+      if (hasLogo) {
+        doc.image(logoPath, 46, 21, { width: 24, height: 24 });
+        doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 76, 24, { lineBreak: false });
+        doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 76, 37, { lineBreak: false });
+      } else {
         doc.fillColor('#34d399').fontSize(10.5).font('Helvetica-Bold').text('LifeITup Wellness Assessment', 48, 25, { lineBreak: false });
         doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Section 2: Pillars 4–6, Strategy & Holistic Action Pathway', 48, 38, { lineBreak: false });
       }
 
       currentY = 56;
 
-      // Render Pillars 4, 5, 6 on Page 2 (Font Size 12 for Insights)
+      // Render Pillars 4, 5, 6 on Page 2
       const page2Pillars = PILLAR_CONFIG.slice(3, 6);
       page2Pillars.forEach((p) => {
         const pillarData = bandContent.pillars[p.id];
         const cardHeight = 136;
 
-        doc.roundedRect(36, currentY, contentWidth, cardHeight, 4).lineWidth(1).strokeColor('#e2e8f0').fillAndStroke('#ffffff', '#e2e8f0');
+        doc.save();
+        doc.opacity(0.94);
+        doc.roundedRect(36, currentY, contentWidth, cardHeight, 4).lineWidth(1).strokeColor(borderWarm).fillAndStroke('#ffffff', borderWarm);
+        doc.restore();
 
         // Header for pillar
-        doc.rect(36, currentY, contentWidth, 20).fill('#f8fafc');
+        doc.rect(36, currentY, contentWidth, 20).fill('#F6F3EB');
         doc.rect(36, currentY, 4, 20).fill(brandGreen);
+        doc.rect(40, currentY + 19.5, contentWidth - 4, 0.5).fill(royalGold);
         doc.fillColor(primaryEmerald).fontSize(9).font('Helvetica-Bold').text(p.name, 48, currentY + 5, { lineBreak: false });
 
-        // Observation (Font Size 12)
-        doc.fillColor(textDark).fontSize(8.5).font('Helvetica-Bold').text('What Your Assessment Revealed:', 48, currentY + 25, { lineBreak: false });
-        doc.fillColor('#1e293b').fontSize(11.5).font('Helvetica').text(pillarData.obs, 48, currentY + 37, { width: contentWidth - 24, lineGap: 1.2, height: 28 });
+        // Observation
+        doc.fillColor('#064e3b').fontSize(8.5).font('Helvetica-Bold').text('What Your Assessment Revealed:', 48, currentY + 25, { lineBreak: false });
+        doc.fillColor(forestJade).fontSize(11.5).font('Helvetica').text(pillarData.obs, 48, currentY + 37, { width: contentWidth - 24, lineGap: 1.2, height: 28 });
 
-        // Way forward block (Font Size 11.5)
+        // Way forward block
         const wayY = currentY + 68;
         const wayHeight = 60;
-        doc.roundedRect(46, wayY, contentWidth - 20, wayHeight, 3).fill('#f0fdf4').stroke('#bbf7d0');
+        doc.roundedRect(46, wayY, contentWidth - 20, wayHeight, 3).lineWidth(1).strokeColor('#c8e6d3').fillAndStroke('#f0f7f3', '#c8e6d3');
+        doc.rect(46, wayY, 3.5, wayHeight).fill(brandGreen);
         doc.fillColor('#065f46').fontSize(8).font('Helvetica-Bold').text('WAY FORWARD:', 56, wayY + 6, { lineBreak: false });
-        doc.fillColor('#0f172a').fontSize(11).font('Helvetica').text(pillarData.wayForward, 56, wayY + 18, { width: contentWidth - 40, lineGap: 1.2, height: 38 });
+        doc.fillColor(forestJade).fontSize(11).font('Helvetica').text(pillarData.wayForward, 56, wayY + 18, { width: contentWidth - 40, lineGap: 1.2, height: 38 });
 
         currentY += cardHeight + 7;
       });
@@ -362,20 +413,24 @@ function generateReportPdf(leadData, scoreBand) {
       const firstMoveHeight = 66;
       doc.roundedRect(36, currentY, contentWidth, firstMoveHeight, 4).lineWidth(1.2).strokeColor('#10b981').fillAndStroke('#ecfdf5', '#10b981');
       doc.fillColor('#065f46').fontSize(9).font('Helvetica-Bold').text('YOUR FIRST STRATEGIC MOVE', 48, currentY + 8, { lineBreak: false });
-      doc.fillColor(textDark).fontSize(10.5).font('Helvetica-Bold').text(bandContent.firstMoveRule, 48, currentY + 22, { lineBreak: false });
-      doc.fillColor('#1e293b').fontSize(11).font('Helvetica').text(bandContent.firstMoveAdvice, 48, currentY + 36, { width: contentWidth - 24, lineGap: 1.2, height: 26 });
+      doc.fillColor(forestJade).fontSize(10.5).font('Helvetica-Bold').text(bandContent.firstMoveRule, 48, currentY + 22, { lineBreak: false });
+      doc.fillColor(forestJade).fontSize(11).font('Helvetica').text(bandContent.firstMoveAdvice, 48, currentY + 36, { width: contentWidth - 24, lineGap: 1.2, height: 26 });
 
       // 5. YOUR PERSONALISED PATHWAY
       currentY += firstMoveHeight + 7;
       const pathwayHeight = 76;
-      doc.roundedRect(36, currentY, contentWidth, pathwayHeight, 4).lineWidth(1).strokeColor('#cbd5e1').fillAndStroke('#ffffff', '#e2e8f0');
+      doc.save();
+      doc.opacity(0.94);
+      doc.roundedRect(36, currentY, contentWidth, pathwayHeight, 4).lineWidth(1).strokeColor(borderWarm).fillAndStroke('#ffffff', borderWarm);
+      doc.restore();
+
       doc.fillColor(primaryEmerald).fontSize(9).font('Helvetica-Bold').text('YOUR PERSONALISED PATHWAY', 48, currentY + 8, { lineBreak: false });
 
-      // Step badges
+      // Step badges with executive dark emerald and royal gold trim
       const stepWidth = 146;
       bandContent.pathwaySteps.forEach((step, sIdx) => {
         const stepX = 48 + (sIdx * (stepWidth + 14));
-        doc.roundedRect(stepX, currentY + 22, stepWidth, 20, 3).fill(primaryEmerald);
+        doc.roundedRect(stepX, currentY + 22, stepWidth, 20, 3).lineWidth(0.8).strokeColor(royalGold).fillAndStroke(primaryEmerald, royalGold);
         doc.fillColor('#34d399').fontSize(8.5).font('Helvetica-Bold').text(`STEP ${sIdx + 1}: ${step}`, stepX, currentY + 27, { width: stepWidth, align: 'center', lineBreak: false });
       });
 
@@ -384,24 +439,26 @@ function generateReportPdf(leadData, scoreBand) {
       // 6. Evidence & Framework Alignment Box
       currentY += pathwayHeight + 7;
       const evidenceHeight = 36;
-      doc.roundedRect(36, currentY, contentWidth, evidenceHeight, 3).lineWidth(1).strokeColor('#e2e8f0').fillAndStroke('#f8fafc', '#e2e8f0');
+      doc.roundedRect(36, currentY, contentWidth, evidenceHeight, 3).lineWidth(1).strokeColor(borderWarm).fillAndStroke('#F6F3EB', borderWarm);
       doc.fillColor(primaryEmerald).fontSize(7.5).font('Helvetica-Bold').text('EVIDENCE & FRAMEWORK ALIGNMENT (WHO • UNICEF • OECD • NEP 2020 • NCF-SE 2023)', 46, currentY + 5, { lineBreak: false });
       doc.fillColor(textMuted).fontSize(7).font('Helvetica').text(bandContent.evidenceNote, 46, currentY + 16, { width: contentWidth - 20, lineGap: 1, height: 16 });
 
-      // 7. LifeITup Worldwide Signature Strip (Clean Non-Overlapping Layout)
+      // 7. LifeITup Worldwide Signature Strip
       currentY += evidenceHeight + 7;
       const signatureHeight = 36;
       doc.roundedRect(36, currentY, contentWidth, signatureHeight, 3).fill(primaryEmerald);
-      
+      doc.rect(36, currentY, contentWidth, 1.2).fill(royalGold); // Top Gold Line
+
       // Left block: Motivational anchor
       doc.fillColor('#6ee7b7').fontSize(8.5).font('Helvetica-Bold').text('YOUR SCORE IS ONLY THE BEGINNING.', 48, currentY + 7, { lineBreak: false });
       doc.fillColor('#ffffff').fontSize(7.5).font('Helvetica').text('Real transformation begins with your next consistent step.', 48, currentY + 20, { width: 260, lineBreak: false });
-      
-      // Right block: Brand and contact info with dedicated bounding box (zero collision)
+
+      // Right block: Brand and contact info with dedicated bounding box
       doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica-Bold').text('LifeITup WorldWide', 310, currentY + 7, { width: 235, align: 'right', lineBreak: false });
       doc.fillColor('#e2e8f0').fontSize(7.5).font('Helvetica').text('ho@lifeitupworldwide.com  •  www.lifeitupworldwide.com', 310, currentY + 20, { width: 235, align: 'right', lineBreak: false });
 
-      // Page 2 Footer
+      // Page 2 Footer with Gold Divider
+      doc.rect(36, 815, contentWidth, 0.6).fill(royalGold);
       doc.fillColor(textMuted).fontSize(7.5).font('Helvetica').text('LifeITup WorldWide  •  Page 2 of 2  •  Confidential Holistic Assessment  •  www.lifeitupworldwide.com', 36, 822, { width: contentWidth, align: 'center', lineBreak: false });
 
       doc.end();
