@@ -145,7 +145,7 @@ async function dispatchToEmail(leadData, reportDetails) {
         <p>Thank you for completing your <strong>2-Minute LifeITUp Holistic Wellbeing Check</strong>.</p>
         <p>Your official assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
         <div style="background-color: #fffbeb; border: 2px solid #d97706; border-radius: 8px; padding: 14px 18px; margin: 20px 0;">
-          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Reply &quot;RECEIVED&quot; to avoid receiving repeat messages.</p>
+          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Reply &quot;RECEIVED&quot; to this message to avoid receiving repeat messages.</p>
         </div>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 24px;">
           <p style="margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
