@@ -286,7 +286,7 @@ function generateReportPdf(leadData, scoreBand) {
       // Right-aligned header metadata
       const todayStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
       doc.fillColor('#ffffff').fontSize(8.5).font('Helvetica-Bold').text(`Date: ${todayStr}`, 410, 28, { width: 135, align: 'right', lineBreak: false });
-      doc.fillColor('#a7f3d0').fontSize(8).font('Helvetica').text(`Participant: ${leadData.full_name || 'Candidate'}`, 370, 44, { width: 175, align: 'right', lineBreak: false });
+      doc.fillColor('#ffffff').fontSize(8.5).font('Helvetica-Bold').text(`Participant: ${leadData.full_name || 'Candidate'}`, 340, 44, { width: 205, align: 'right', lineBreak: false });
 
       // Subtitle line (WHO alignment banner)
       doc.save();

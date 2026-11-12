@@ -142,19 +142,15 @@ async function dispatchToEmail(leadData, reportDetails) {
           <p style="color: #64748b; font-size: 12px; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Empowering Your Holistic Success</p>
         </div>
         <p style="margin-top: 0;">Hello <strong>{{fullName}}</strong>,</p>
-        <p>Thank you for participating in the <strong>LifeITup 2-Minute Holistic Wellbeing Check</strong>.</p>
-        <p>Your official personalised assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
-        <p>Please review the attached PDF to explore your 6-Pillar Wellbeing Snapshot, your score analysis, and your key focus areas.</p>
+        <p>Thank you for completing your <strong>2-Minute LifeITUp Holistic Wellbeing Check</strong>.</p>
+        <p>Your official assessment report has been generated and is attached to this email as a PDF document (<strong>{{attachmentFilename}}</strong>).</p>
         <div style="background-color: #fffbeb; border: 2px solid #d97706; border-radius: 8px; padding: 14px 18px; margin: 20px 0;">
-          <p style="margin: 0 0 6px 0; color: #b45309; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">⚠️ CALL TO ACTION</p>
-          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Please DO REPLY, &quot;RECEIVED&quot; once you get your report, to AVOID getting REPEAT mails.</p>
+          <p style="margin: 0; color: #78350f; font-size: 15px; font-weight: bold; line-height: 1.5;">Reply &quot;RECEIVED&quot; to avoid receiving repeat messages.</p>
         </div>
-        <p style="color: #64748b; font-size: 13px; margin: 24px 0 20px 0;">If you have any questions or would like guidance on your pathway, please feel free to reply directly to this email.</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 24px;">
-          <p style="margin: 0; font-size: 14px; color: #334155;">
-            Wishing you holistic health and success,<br>
-            <strong>Team LifeITup</strong><br>
-            <a href="mailto:ho@lifeitupworldwide.com" style="color: #059669; text-decoration: none; font-size: 13px;">ho@lifeitupworldwide.com</a><br>
+          <p style="margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
+            Your Holistic Wellbeing Partner,<br><br>
+            <strong>Team LifeITUp</strong><br>
             <a href="https://lifeitupworldwide.com" target="_blank" style="color: #059669; text-decoration: underline; font-size: 13px; font-weight: bold;">www.lifeitupworldwide.com</a>
           </p>
         </div>
@@ -210,27 +206,19 @@ async function dispatchToWhatsapp(leadData, reportDetails) {
   // Clean phone number (e.g. +91 98765 43210 -> 919876543210)
   const cleanPhone = String(leadData.mobile || '').replace(/[^\d]/g, '');
 
-  const messageText = `🌿 *LifeITup Wellbeing Assessment Report*
+  const messageText = `Hello *${leadData.full_name || 'Participant'}*,
 
-Hello *${leadData.full_name}*,
+Thank you for completing your 2-Minute LifeITUp Holistic Wellbeing Check.
 
-Thank you for completing your 2-Minute Holistic Wellbeing Check.
+Your Score: ${leadData.score || 0} / 48 (Status: ${reportDetails.zone || 'STABLE'}).
 
-📊 *Your Holistic Wellbeing Score:* *${leadData.score} / 48*
-✨ *Status:* *${reportDetails.zone}* — *${reportDetails.title}*
+Your official assessment report has been generated and is attached above as a PDF.
 
-${reportDetails.headline}
+Reply "RECEIVED" to avoid receiving repeat messages.
 
-*Urgent - Please DO REPLY "RECEIVED" to avoid getting REPEAT messages.*
+Your Holistic Wellbeing Partner,
 
-🎯 *YOUR FIRST STRATEGIC MOVE:*
-*${reportDetails.firstMoveRule || ''}*
-${reportDetails.firstMoveAdvice || ''}
-
-📋 *YOUR PERSONALISED PATHWAY:*
-${reportDetails.pathwaySteps ? reportDetails.pathwaySteps.join(' → ') : ''}
-
-Best wishes, Team LifeITup
+Team LifeITUp 
 www.lifeitupworldwide.com`;
 
   // 0. AiSensy WhatsApp Business API (Official Meta Cloud API via Campaign API v2)

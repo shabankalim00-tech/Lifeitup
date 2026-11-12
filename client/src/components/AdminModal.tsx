@@ -258,7 +258,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                 const toPhone = cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone;
                                 const pdfUrl = `${window.location.origin}/api/leads/${l.id}/pdf`;
                                 const waMsg = encodeURIComponent(
-                                  `🌿 *LifeITUp Wellbeing Assessment Report*\n\nHello *${l.full_name}*,\n\nThank you for participating in the *LifeITUp 2-Minute Holistic Wellbeing Check*.\n\n📊 *Your Holistic Wellbeing Score:* *${l.score} / 48*\n✨ *Status:* *${l.score_band_name}*\n\n📄 *Download Your Official 2-Page PDF Report:*\n${pdfUrl}\n\n_Empowering Your Holistic Success — LifeITUp_`
+                                  `Hello *${l.full_name}*,\n\nThank you for completing your 2-Minute LifeITUp Holistic Wellbeing Check.\n\nYour Score: ${l.score} / 48 (Status: ${l.score_band_name}).\n\nYour official assessment report has been generated and is available as a PDF:\n${pdfUrl}\n\nReply "RECEIVED" to avoid receiving repeat messages.\n\nYour Holistic Wellbeing Partner,\n\nTeam LifeITUp\nwww.lifeitupworldwide.com`
                                 );
                                 const waUrl = toPhone 
                                   ? `https://api.whatsapp.com/send?phone=${toPhone}&text=${waMsg}`
