@@ -16,7 +16,7 @@ const memoryStore = {
     ['smtp_from', 'LifeITUp WorldWide <ho@lifeitupworldwide.com>'],
     ['whatsapp_provider', 'aisensy'],
     ['aisensy_api_key', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTk3MjkzNWNmMTRiZTNmMTlhYWQ1YiIsIm5hbWUiOiJMaWZlSVRVcCIsImFwcE5hbWUiOiJBaVNlbnN5IiwiY2xpZW50SWQiOiI2YWU4YTdjOWFiYThkNTU5NmYxMTI2ZDQiLCJhY3RpdmVQbGFuIjoiQkFTSUNfTU9OVEhMWSIsImlhdCI6MTc5NDMzNjkwNX0.wWYydVXc-NbxthcHYBmFZzPgsDQOghiYSCEKfrPilXQ'],
-    ['aisensy_campaign_name', 'Lifeitup'],
+    ['aisensy_campaign_name', 'Lifeitup 2'],
     ['whatsapp_webhook_url', ''],
     ['whatsapp_api_token', ''],
     ['ultramsg_instance_id', 'instance194619'],

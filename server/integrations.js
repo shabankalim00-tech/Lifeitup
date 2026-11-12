@@ -223,7 +223,7 @@ www.lifeitupworldwide.com`;
 
   // 0. AiSensy WhatsApp Business API (Official Meta Cloud API via Campaign API v2)
   const aisensyApiKey = ((await getSetting('aisensy_api_key')) || process.env.AISENSY_API_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZTk3MjkzNWNmMTRiZTNmMTlhYWQ1YiIsIm5hbWUiOiJMaWZlSVRVcCIsImFwcE5hbWUiOiJBaVNlbnN5IiwiY2xpZW50SWQiOiI2YWU4YTdjOWFiYThkNTU5NmYxMTI2ZDQiLCJhY3RpdmVQbGFuIjoiQkFTSUNfTU9OVEhMWSIsImlhdCI6MTc5NDMzNjkwNX0.wWYydVXc-NbxthcHYBmFZzPgsDQOghiYSCEKfrPilXQ').trim();
-  const aisensyCampaignName = ((await getSetting('aisensy_campaign_name')) || process.env.AISENSY_CAMPAIGN_NAME || 'Lifeitup').trim();
+  const aisensyCampaignName = ((await getSetting('aisensy_campaign_name')) || process.env.AISENSY_CAMPAIGN_NAME || 'Lifeitup 2').trim();
 
   if (aisensyApiKey) {
     let destDigits = cleanPhone;
