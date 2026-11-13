@@ -21,7 +21,7 @@ const memoryStore = {
     ['whatsapp_api_token', ''],
     ['ultramsg_instance_id', 'instance194619'],
     ['ultramsg_token', '8bi0f2seyeslpgn4'],
-    ['google_sheet_url', 'https://script.google.com/macros/s/AKfycbzkgPYVKxGx_lHR3VIJ03qIXOIwth5_tbvQNLKqtAyFzsJ7ZP7TTpvvV74O7FT6iBAFRw/exec'],
+    ['google_sheet_url', 'https://script.google.com/macros/s/AKfycbxfprsQTVbH9nt9L0YTjBWxC57eCX5QD3qC249FZ3Qlx___RW2teTrLX4YEx39Vi3SIvA/exec'],
     ['interakt_api_key', 'c0hUYUNJeVpKY0pxYXVPb0tyWHhtclRTQWF1TWZlRHI0bzN1ZjBMQWNxYzo='],
     ['interakt_template_name', 'lifeitup_report'],
     ['social_instagram_url', ''],
