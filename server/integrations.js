@@ -567,7 +567,8 @@ async function dispatchToMailchimp(leadData, reportDetails) {
       MMERGE7: leadData.full_name,
       PHONE: cleanPhone,
       SCORE: String(leadData.score || ''),
-      ZONE: String(reportDetails.zone || '')
+      ZONE: String(reportDetails.zone || ''),
+      COMPANY: String(leadData.organization || leadData.institution || '')
     },
     tags: [
       'LifeITUp Assessment',
@@ -592,193 +593,37 @@ async function dispatchToMailchimp(leadData, reportDetails) {
 
     await logIntegration(leadData.id, 'mailchimp', status, payload, responseText);
 
-    // If contact is subscribed, send the official personalised report email via Mailchimp campaign from ho@lifeitupworldwide.com
-    let campaignSent = false;
+    // If contact is subscribed, add directly to dedicated Mailchimp segment(s)
     if (success) {
-      try {
-        const emailSubject = `Your LifeITUp Wellbeing Assessment Report — Score: ${leadData.score}/48 (${reportDetails.zone})`;
-        const emailHtml = `
-          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #06150f; color: #ecfdf5; padding: 32px 16px; margin: 0;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 620px; margin: 0 auto; background-color: #0c2319; border-radius: 16px; border: 1px solid rgba(52, 211, 153, 0.2); overflow: hidden;">
-              <tr>
-                <td style="padding: 32px 28px 20px 28px; text-align: center; border-bottom: 1px solid rgba(52, 211, 153, 0.15); background: linear-gradient(180deg, #0f2e21 0%, #0c2319 100%);">
-                  <h1 style="color: #6ee7b7; letter-spacing: 3px; text-transform: uppercase; margin: 0; font-size: 24px; font-weight: 800;">LIFEITUP</h1>
-                  <p style="color: #94a3b8; font-size: 13px; margin: 6px 0 0 0; letter-spacing: 0.5px;">Empowering Your Holistic Success</p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding: 28px;">
-                  <p style="color: #a7f3d0; font-size: 15px; margin: 0 0 16px 0;">Hello <strong>${leadData.full_name}</strong>,</p>
-                  <p style="color: #e2e8f0; font-size: 14px; line-height: 1.6; margin: 0 0 24px 0;">
-                    Thank you for completing your 2-Minute Holistic Wellbeing Check. Here is your official assessment report and recommended first move.
-                  </p>
+      const cleanEmail = leadData.email.trim();
+      const mainSegmentId = (await getSetting('mailchimp_assessment_segment_id')).trim() || '3728797';
+      const zoneSegmentMap = {
+        'LOW': '3728842',
+        'MODERATE': '3728798',
+        'STABLE': '3728799',
+        'BALANCED': '3728800'
+      };
+      const zoneSegmentId = zoneSegmentMap[String(reportDetails.zone || '').toUpperCase()];
+      const segmentsToAdd = [mainSegmentId, zoneSegmentId].filter(Boolean);
 
-                  <div style="background-color: #061912; border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 24px;">
-                    <div style="font-size: 12px; text-transform: uppercase; color: #a7f3d0; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 8px;">Holistic Wellbeing Score</div>
-                    <div style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1;">
-                      ${leadData.score} <span style="font-size: 20px; color: #34d399; font-weight: 600;">/ 48</span>
-                    </div>
-                    <div style="margin-top: 12px;">
-                      <span style="display: inline-block; padding: 6px 16px; border-radius: 9999px; font-weight: 700; font-size: 13px; background-color: #064e3b; color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.4);">
-                        ${reportDetails.emoji || '✨'} STATUS: ${reportDetails.zone} — ${reportDetails.title}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div style="background-color: rgba(22, 101, 52, 0.2); border-left: 4px solid #34d399; padding: 14px 16px; border-radius: 6px; margin-bottom: 24px;">
-                    <p style="color: #f1f5f9; font-size: 14px; line-height: 1.6; margin: 0 0 8px 0; font-weight: 600;">
-                      ${reportDetails.headline}
-                    </p>
-                    <p style="color: #94a3b8; font-size: 13px; line-height: 1.5; margin: 0; font-style: italic;">
-                      ${reportDetails.reassurance}
-                    </p>
-                  </div>
-
-                  <div style="background-color: #081d14; border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 10px; padding: 18px; margin-bottom: 24px;">
-                    <h3 style="color: #34d399; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0;">
-                      🎯 YOUR FIRST STRATEGIC MOVE
-                    </h3>
-                    <p style="color: #f8fafc; font-weight: 700; font-size: 14px; margin: 0 0 6px 0;">
-                      ${reportDetails.firstMoveRule || ''}
-                    </p>
-                    <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5; margin: 0;">
-                      ${reportDetails.firstMoveAdvice || ''}
-                    </p>
-                  </div>
-
-                  <div style="background-color: #081d14; border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 10px; padding: 18px; margin-bottom: 24px;">
-                    <h3 style="color: #34d399; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0;">
-                      📋 YOUR PERSONALISED PATHWAY
-                    </h3>
-                    <div style="color: #6ee7b7; font-weight: 700; font-size: 15px; letter-spacing: 1px; margin-bottom: 6px;">
-                      ${(reportDetails.pathwaySteps || []).join(' &rarr; ')}
-                    </div>
-                    <p style="color: #94a3b8; font-size: 13px; line-height: 1.5; margin: 0;">
-                      ${reportDetails.pathwayDescription || ''}
-                    </p>
-                  </div>
-
-                  <p style="color: #64748b; font-size: 12px; line-height: 1.5; text-align: center; margin: 24px 0 0 0;">
-                    This assessment is an evidence-based self-reflection tool aligned with WHO multidimensional wellbeing guidelines.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding: 20px 28px; background-color: #081711; border-top: 1px solid rgba(52, 211, 153, 0.1); text-align: center; font-size: 11px; color: #64748b; line-height: 1.6;">
-                  <p style="margin: 0 0 4px 0;">Sent with care from <strong>ho@lifeitupworldwide.com</strong></p>
-                  <p style="margin: 0 0 4px 0;">LifeITUp WorldWide &bull; Vasant Kunj South, New Delhi, Delhi 110070, India</p>
-                  <p style="margin: 0;"><a href="*|UNSUB|*" style="color: #34d399; text-decoration: underline;">Unsubscribe</a> from future wellness updates</p>
-                </td>
-              </tr>
-            </table>
-          </div>
-        `;
-
-        const cleanEmail = leadData.email.trim();
-
-        // 1. Create instant static segment containing this exact subscriber
-        let savedSegmentId = null;
+      for (const segId of segmentsToAdd) {
         try {
-          const segRes = await fetch(`https://${dc}.api.mailchimp.com/3.0/lists/${listId}/segments`, {
+          const segMemberUrl = `https://${dc}.api.mailchimp.com/3.0/lists/${listId}/segments/${segId}/members`;
+          await fetch(segMemberUrl, {
             method: 'POST',
             headers: {
               Authorization: `Basic ${auth}`,
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-              name: `Lead-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-              static_segment: [cleanEmail]
-            })
+            body: JSON.stringify({ email_address: cleanEmail })
           });
-          if (segRes.ok) {
-            const segData = await segRes.json();
-            savedSegmentId = segData.id;
-          }
         } catch (segErr) {
-          console.error('Static segment creation warning:', segErr);
+          console.warn(`Could not add ${cleanEmail} to Mailchimp segment ${segId}:`, segErr.message);
         }
-
-        // 2. Create campaign targeted to this static segment
-        const recipientsConfig = savedSegmentId 
-          ? { list_id: listId, segment_opts: { saved_segment_id: savedSegmentId } }
-          : { list_id: listId };
-
-        const campRes = await fetch(`https://${dc}.api.mailchimp.com/3.0/campaigns`, {
-          method: 'POST',
-          headers: {
-            Authorization: `Basic ${auth}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            type: 'regular',
-            recipients: recipientsConfig,
-            settings: {
-              subject_line: emailSubject,
-              title: `Assessment - ${cleanEmail} - ${Date.now()}`,
-              from_name: 'LifeITUp WorldWide',
-              reply_to: 'ho@lifeitupworldwide.com'
-            }
-          })
-        });
-
-        if (campRes.ok) {
-          const campData = await campRes.json();
-          const campaignId = campData.id;
-
-          // 3. Set campaign HTML content
-          const contentRes = await fetch(`https://${dc}.api.mailchimp.com/3.0/campaigns/${campaignId}/content`, {
-            method: 'PUT',
-            headers: {
-              Authorization: `Basic ${auth}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ html: emailHtml })
-          });
-
-          if (contentRes.ok) {
-            // 4. Send campaign immediately via Mailchimp
-            const sendRes = await fetch(`https://${dc}.api.mailchimp.com/3.0/campaigns/${campaignId}/actions/send`, {
-              method: 'POST',
-              headers: {
-                Authorization: `Basic ${auth}`,
-                'Content-Type': 'application/json'
-              }
-            });
-
-            campaignSent = sendRes.ok || sendRes.status === 204;
-
-            // If regular send failed (e.g. Segment not yet ready), use direct actions/test fallback
-            if (!campaignSent) {
-              const testRes = await fetch(`https://${dc}.api.mailchimp.com/3.0/campaigns/${campaignId}/actions/test`, {
-                method: 'POST',
-                headers: {
-                  Authorization: `Basic ${auth}`,
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                  test_emails: [cleanEmail],
-                  send_type: 'html'
-                })
-              });
-              campaignSent = testRes.ok || testRes.status === 204;
-            }
-
-            await logIntegration(
-              leadData.id,
-              'mailchimp_email',
-              campaignSent ? 'success' : 'failure',
-              { to: cleanEmail, from: 'ho@lifeitupworldwide.com', subject: emailSubject },
-              { campaignId, sent: campaignSent }
-            );
-          }
-        }
-      } catch (sendErr) {
-        console.error('Mailchimp email dispatch error:', sendErr);
-        await logIntegration(leadData.id, 'mailchimp_email', 'failure', { to: leadData.email }, sendErr.message);
       }
     }
 
-    return { status, code: res.status, response: responseText, emailSent: campaignSent };
+    return { status, code: res.status, response: responseText };
   } catch (err) {
     await logIntegration(leadData.id, 'mailchimp', 'failure', payload, err.message);
     return { status: 'failure', error: err.message };
