@@ -571,8 +571,7 @@ async function dispatchToMailchimp(leadData, reportDetails) {
       COMPANY: String(leadData.organization || leadData.institution || '')
     },
     tags: [
-      'LifeITUp Assessment',
-      String(reportDetails.zone || 'Assessment')
+      'LifeItUp Adult Assessment'
     ]
   };
 
@@ -593,33 +592,22 @@ async function dispatchToMailchimp(leadData, reportDetails) {
 
     await logIntegration(leadData.id, 'mailchimp', status, payload, responseText);
 
-    // If contact is subscribed, add directly to dedicated Mailchimp segment(s)
+    // If contact is subscribed, ensure added to LifeItUp Adult Assessment static tag
     if (success) {
       const cleanEmail = leadData.email.trim();
-      const mainSegmentId = (await getSetting('mailchimp_assessment_segment_id')).trim() || '3728797';
-      const zoneSegmentMap = {
-        'LOW': '3728842',
-        'MODERATE': '3728798',
-        'STABLE': '3728799',
-        'BALANCED': '3728800'
-      };
-      const zoneSegmentId = zoneSegmentMap[String(reportDetails.zone || '').toUpperCase()];
-      const segmentsToAdd = [mainSegmentId, zoneSegmentId].filter(Boolean);
-
-      for (const segId of segmentsToAdd) {
-        try {
-          const segMemberUrl = `https://${dc}.api.mailchimp.com/3.0/lists/${listId}/segments/${segId}/members`;
-          await fetch(segMemberUrl, {
-            method: 'POST',
-            headers: {
-              Authorization: `Basic ${auth}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email_address: cleanEmail })
-          });
-        } catch (segErr) {
-          console.warn(`Could not add ${cleanEmail} to Mailchimp segment ${segId}:`, segErr.message);
-        }
+      const staticTagId = '3728797';
+      try {
+        const segMemberUrl = `https://${dc}.api.mailchimp.com/3.0/lists/${listId}/segments/${staticTagId}/members`;
+        await fetch(segMemberUrl, {
+          method: 'POST',
+          headers: {
+            Authorization: `Basic ${auth}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email_address: cleanEmail })
+        });
+      } catch (segErr) {
+        console.warn(`Could not add ${cleanEmail} to Mailchimp segment:`, segErr.message);
       }
     }
 

@@ -24,7 +24,7 @@ const memoryStore = {
     ['google_sheet_url', 'https://script.google.com/macros/s/AKfycbxfprsQTVbH9nt9L0YTjBWxC57eCX5QD3qC249FZ3Qlx___RW2teTrLX4YEx39Vi3SIvA/exec'],
     ['mailchimp_api_key', process.env.MAILCHIMP_API_KEY || Buffer.from('MjQ1MmQ2YmNlMzBkZmRjNGFlOWU2YzM3NzAyMzgxYWUtdXMz', 'base64').toString('utf-8')],
     ['mailchimp_list_id', process.env.MAILCHIMP_LIST_ID || '0e7cd84597'],
-    ['mailchimp_assessment_segment_id', '3728797'],
+    ['mailchimp_assessment_segment_id', '3728850'],
     ['interakt_api_key', 'c0hUYUNJeVpKY0pxYXVPb0tyWHhtclRTQWF1TWZlRHI0bzN1ZjBMQWNxYzo='],
     ['interakt_template_name', 'lifeitup_report'],
     ['social_instagram_url', ''],
