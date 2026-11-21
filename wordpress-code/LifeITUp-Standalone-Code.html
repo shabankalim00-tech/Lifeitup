@@ -248,21 +248,56 @@
      Scoped strictly to #lifeitup-app-root with !important resets to block WordPress theme clashes
      ========================================================================= -->
 <style>
-  /* Root Wrapper Reset */
+  /* -------------------------------------------------------------------------
+     PAGE & SECTION LEVEL OVERRIDES (FOR WORDPRESS / ELEMENTOR THEMES)
+     Prevents dark theme canvas or narrow column clipping on Resources page
+     ------------------------------------------------------------------------- */
+  body.page-id-2584,
+  body.page-id-2584 #page,
+  body.page-id-2584 .site-content,
+  body.page-id-2584 .elementor-2584,
+  body.page-id-2584 .elementor-section,
+  body.page-id-2584 .elementor-container,
+  body.page-id-2584 .elementor-column,
+  body.page-id-2584 .elementor-widget-wrap,
+  body.elementor-editor-active .elementor-widget-html {
+    background-color: #FAF6EE !important;
+  }
+
+  /* -------------------------------------------------------------------------
+     ROOT WRAPPER RESET & OFFICIAL BOTANICAL ZEN CREAM BACKGROUND
+     Desktop & Tablet: botanical-cream-bg.jpg (lush leaves framing canvas)
+     Mobile: botanical-cream-mobile.jpg (portrait framed leaves)
+     ------------------------------------------------------------------------- */
   #lifeitup-app-root {
     all: initial;
     display: block !important;
+    position: relative !important;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     background-color: #FAF6EE !important;
+    background-image: url('https://lifeitup.vercel.app/botanical-cream-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
     color: #1A2E24 !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 30px 16px !important;
-    border-radius: 16px !important;
+    padding: 36px 16px 80px 16px !important;
     -webkit-font-smoothing: antialiased !important;
   }
+
+  @media (max-width: 768px) {
+    #lifeitup-app-root {
+      background-image: url('https://lifeitup.vercel.app/botanical-cream-mobile.jpg') !important;
+      background-attachment: scroll !important;
+      padding: 20px 12px 50px 12px !important;
+    }
+  }
+
   #lifeitup-app-root *, #lifeitup-app-root *::before, #lifeitup-app-root *::after {
     box-sizing: border-box !important;
     font-family: inherit !important;

@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main lifeitup-page-wrapper" style="background-color: #04100b; min-height: 100vh; padding: 40px 16px;">
+<main id="primary" class="site-main lifeitup-page-wrapper" style="background-color: #FAF6EE; background-image: url('https://lifeitup.vercel.app/botanical-cream-bg.jpg'); background-size: cover; background-position: center top; min-height: 100vh; padding: 40px 16px;">
     <?php include plugin_dir_path(__FILE__) . 'LifeITUp-Standalone-Code.html'; ?>
 </main>
 

@@ -11,7 +11,7 @@ Is file me **poora HTML, CSS aur JavaScript** ek hi file me pack kiya gaya hai:
 - Sabhi 12 WHO-aligned wellness questions
 - 4 Options (Never, Sometimes, Often, Always)
 - Live Progress bar aur Pillar badges
-- Luxury Emerald Green Dark Theme
+- Executive Botanical Warm Cream & Forest Emerald Theme (Official `botanical-cream-bg.jpg` canvas)
 - Form: Full Name, Institution/College, WhatsApp Phone, Email, Consent
 - Automatic backend API dispatch (Mailchimp, Google Sheet, WhatsApp AiSensy, Gmail SMTP)
 - Final Instant Score & Report Screen with PDF confirmation
