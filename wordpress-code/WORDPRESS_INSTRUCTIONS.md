@@ -11,7 +11,8 @@ Is file me **poora HTML, CSS aur JavaScript** ek hi file me pack kiya gaya hai:
 - Sabhi 12 WHO-aligned wellness questions
 - 4 Options (Never, Sometimes, Often, Always)
 - Live Progress bar aur Pillar badges
-- Executive Botanical Warm Cream & Forest Emerald Theme (Official `botanical-cream-bg.jpg` canvas)
+- Executive Botanical Warm Cream (#FAF6EE) Luxury Theme with Official LifeITUp Emblem Logo
+- Theme-Proof CSS Isolation (!important) taaki WordPress theme iske design ko distort na kare
 - Form: Full Name, Institution/College, WhatsApp Phone, Email, Consent
 - Automatic backend API dispatch (Mailchimp, Google Sheet, WhatsApp AiSensy, Gmail SMTP)
 - Final Instant Score & Report Screen with PDF confirmation
