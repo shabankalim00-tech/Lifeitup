@@ -250,7 +250,7 @@
 <style>
   /* -------------------------------------------------------------------------
      PAGE & SECTION LEVEL OVERRIDES (FOR WORDPRESS / ELEMENTOR THEMES)
-     Prevents dark theme canvas or narrow column clipping on Resources page
+     Eliminates Elementor's huge top/bottom paddings and dark canvas clashes
      ------------------------------------------------------------------------- */
   body.page-id-2584,
   body.page-id-2584 #page,
@@ -262,12 +262,15 @@
   body.page-id-2584 .elementor-widget-wrap,
   body.elementor-editor-active .elementor-widget-html {
     background-color: #FAF6EE !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* -------------------------------------------------------------------------
      ROOT WRAPPER RESET & OFFICIAL BOTANICAL ZEN CREAM BACKGROUND
-     Desktop & Tablet: botanical-cream-bg.jpg (lush leaves framing canvas)
-     Mobile: botanical-cream-mobile.jpg (portrait framed leaves)
+     Ultra-Compact Layout: No unnecessary gaps or vertical padding
      ------------------------------------------------------------------------- */
   #lifeitup-app-root {
     all: initial;
@@ -286,7 +289,7 @@
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 18px 16px 36px 16px !important;
+    padding: 6px 12px 24px 12px !important;
     -webkit-font-smoothing: antialiased !important;
   }
 
@@ -294,7 +297,7 @@
     #lifeitup-app-root {
       background-image: url('https://lifeitup.vercel.app/botanical-cream-mobile.jpg') !important;
       background-attachment: scroll !important;
-      padding: 14px 12px 28px 12px !important;
+      padding: 6px 8px 18px 8px !important;
     }
   }
 
@@ -304,26 +307,26 @@
   }
 
   .liu-wrapper {
-    max-width: 640px !important;
+    max-width: 580px !important;
     margin: 0 auto !important;
   }
 
   .liu-view {
     display: none !important;
-    animation: liuSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    animation: liuSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .liu-view.active {
     display: block !important;
   }
   @keyframes liuSlideUp {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   /* Header Branding */
   .liu-header {
     text-align: center !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 10px !important;
   }
   .liu-brand-mark {
     display: flex !important;
@@ -331,15 +334,15 @@
     align-items: center !important;
   }
   .liu-logo-text {
-    font-size: 26px !important;
+    font-size: 22px !important;
     font-weight: 800 !important;
     letter-spacing: 2px !important;
     color: #064E3B !important;
     line-height: 1 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 2px !important;
   }
   .liu-logo-sub {
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
     text-transform: uppercase !important;
@@ -353,53 +356,53 @@
   .liu-badge-pill {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 6px 14px !important;
+    gap: 5px !important;
+    padding: 3px 10px !important;
     border-radius: 9999px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
     letter-spacing: 0.5px !important;
     background: #EBF5EE !important;
     border: 1px solid #C2E3CD !important;
     color: #065F46 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 8px !important;
   }
   .liu-pill-icon {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
   .liu-title-large {
-    font-size: 38px !important;
+    font-size: 28px !important;
     font-weight: 800 !important;
     color: #0A2618 !important;
     line-height: 1.15 !important;
-    margin: 0 0 16px 0 !important;
+    margin: 0 0 6px 0 !important;
     letter-spacing: -0.5px !important;
   }
   .liu-emerald-text {
     color: #047857 !important;
   }
   .liu-sub-box {
-    margin-bottom: 24px !important;
+    margin-bottom: 10px !important;
   }
   .liu-sub-text {
-    font-size: 15px !important;
+    font-size: 13.5px !important;
     color: #2E4337 !important;
     font-weight: 500 !important;
-    margin: 0 0 10px 0 !important;
-    line-height: 1.5 !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.4 !important;
   }
   .liu-meta-capsule {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    padding: 6px 16px !important;
+    gap: 6px !important;
+    padding: 3px 12px !important;
     border-radius: 9999px !important;
     background: #FFFFFF !important;
     border: 1px solid #E5DFD3 !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     color: #2E4337 !important;
     font-weight: 600 !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03) !important;
   }
   .liu-dot {
     color: #94a3b8 !important;
@@ -409,27 +412,27 @@
     font-weight: 700 !important;
   }
 
-  /* Luxury Glass Card */
+  /* Luxury Glass Card (Compact) */
   .liu-card-glass {
     background: rgba(255, 255, 255, 0.95) !important;
     border: 1px solid #EBE5D8 !important;
-    border-radius: 16px !important;
-    padding: 22px 24px !important;
+    border-radius: 12px !important;
+    padding: 14px 18px !important;
     text-align: left !important;
-    margin: 0 auto 28px auto !important;
-    max-width: 520px !important;
-    box-shadow: 0 16px 36px -12px rgba(26, 46, 36, 0.08) !important;
+    margin: 0 auto 12px auto !important;
+    max-width: 480px !important;
+    box-shadow: 0 8px 24px -8px rgba(26, 46, 36, 0.06) !important;
   }
   .liu-card-head {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    font-size: 12px !important;
+    gap: 5px !important;
+    font-size: 11px !important;
     font-weight: 800 !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 0.8px !important;
     text-transform: uppercase !important;
     color: #065F46 !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 8px !important;
   }
   .liu-tips-list {
     list-style: none !important;
@@ -439,12 +442,12 @@
   .liu-tips-list li {
     display: flex !important;
     align-items: flex-start !important;
-    gap: 10px !important;
-    font-size: 13px !important;
-    line-height: 1.5 !important;
+    gap: 8px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
     color: #1A2E24 !important;
     font-weight: 500 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 6px !important;
   }
   .liu-tips-list li:last-child {
     margin-bottom: 0 !important;
@@ -453,15 +456,15 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 15px !important;
+    height: 15px !important;
     border-radius: 50% !important;
     background: #EBF5EE !important;
     color: #059669 !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 800 !important;
     flex-shrink: 0 !important;
-    margin-top: 2px !important;
+    margin-top: 1px !important;
   }
 
   /* Royal Button (Executive Forest Emerald) */
@@ -474,23 +477,23 @@
     background: linear-gradient(135deg, #064E3B 0%, #047857 55%, #059669 100%) !important;
     color: #FFFFFF !important;
     border: none !important;
-    padding: 16px 44px !important;
+    padding: 12px 36px !important;
     border-radius: 9999px !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
     font-weight: 800 !important;
     letter-spacing: 0.5px !important;
     cursor: pointer !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
-    box-shadow: 0 10px 25px -4px rgba(4, 120, 87, 0.45) !important;
+    gap: 8px !important;
+    box-shadow: 0 6px 18px -3px rgba(4, 120, 87, 0.4) !important;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     text-decoration: none !important;
   }
   .liu-btn-royal:hover:not(:disabled) {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 14px 30px -4px rgba(4, 120, 87, 0.6) !important;
+    transform: translateY(-1.5px) !important;
+    box-shadow: 0 10px 24px -3px rgba(4, 120, 87, 0.55) !important;
   }
   .liu-btn-royal:disabled {
     opacity: 0.5 !important;
@@ -498,61 +501,56 @@
   }
   .liu-btn-full {
     width: 100% !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
+    border-radius: 10px !important;
+    padding: 13px !important;
   }
   .liu-arrow {
-    font-size: 18px !important;
+    font-size: 16px !important;
     transition: transform 0.2s !important;
   }
   .liu-btn-royal:hover .liu-arrow {
-    transform: translateX(4px) !important;
+    transform: translateX(3px) !important;
   }
   .liu-privacy-note {
-    font-size: 12px !important;
+    font-size: 11px !important;
     color: #4A6354 !important;
     font-weight: 600 !important;
-    margin-top: 12px !important;
+    margin-top: 8px !important;
   }
   .liu-footer {
     text-align: center !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
     color: #6B8074 !important;
-    margin-top: 36px !important;
+    margin-top: 14px !important;
   }
   .liu-footer a {
     color: #047857 !important;
     text-decoration: underline !important;
   }
 
-  /* ---------------- QUIZ VIEW (COMPACT SINGLE-VIEWPORT LAYOUT) ---------------- */
+  /* ---------------- QUIZ VIEW (ULTRA-COMPACT ZERO-SCROLL LAYOUT) ---------------- */
   .liu-header-quiz {
-    margin-bottom: 12px !important;
+    margin-bottom: 6px !important;
   }
   .liu-brand-mini {
-    text-align: center !important;
-    font-size: 11px !important;
-    font-weight: 800 !important;
-    letter-spacing: 1.5px !important;
-    text-transform: uppercase !important;
-    color: #065F46 !important;
-    margin-bottom: 6px !important;
+    display: none !important;
   }
   .liu-progress-header {
     background: rgba(255, 255, 255, 0.95) !important;
     border: 1px solid #EBE5D8 !important;
-    border-radius: 10px !important;
-    padding: 8px 14px !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.02) !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    margin-bottom: 6px !important;
   }
   .liu-progress-labels {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 4px !important;
   }
   .liu-q-count {
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 800 !important;
     color: #0A2618 !important;
   }
@@ -563,7 +561,7 @@
   }
   .liu-track {
     width: 100% !important;
-    height: 6px !important;
+    height: 5px !important;
     background: #EBE5D8 !important;
     border-radius: 9999px !important;
     overflow: hidden !important;
@@ -576,38 +574,38 @@
   }
 
   .liu-main-quiz {
-    max-width: 560px !important;
+    max-width: 520px !important;
     margin: 0 auto !important;
   }
   .liu-pillar-badge {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 3px 10px !important;
+    gap: 5px !important;
+    padding: 2px 8px !important;
     border-radius: 9999px !important;
     background: #EBF5EE !important;
     border: 1px solid #A7D7B5 !important;
     color: #064E3B !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 800 !important;
     letter-spacing: 0.5px !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
   }
   .liu-question-heading {
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 800 !important;
     color: #0A2618 !important;
-    line-height: 1.35 !important;
-    margin: 0 0 12px 0 !important;
+    line-height: 1.3 !important;
+    margin: 0 0 8px 0 !important;
     letter-spacing: -0.2px !important;
   }
 
-  /* Option Cards (Sleek, Compact White Boxes with Green Hover/Selected) */
+  /* Option Cards (Ultra-Sleek, Compact White Boxes with Green Hover/Selected) */
   .liu-options-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
-    margin-bottom: 16px !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
   }
   .liu-opt-card {
     display: flex !important;
@@ -615,12 +613,13 @@
     justify-content: space-between !important;
     background: rgba(255, 255, 255, 0.96) !important;
     border: 1.5px solid #E5DFD3 !important;
-    border-radius: 12px !important;
-    padding: 11px 16px !important;
+    border-radius: 9px !important;
+    padding: 8px 14px !important;
+    min-height: 38px !important;
     cursor: pointer !important;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
     user-select: none !important;
-    box-shadow: 0 2px 5px rgba(26, 46, 36, 0.02) !important;
+    box-shadow: 0 1px 4px rgba(26, 46, 36, 0.02) !important;
     width: 100% !important;
     text-align: left !important;
   }
@@ -628,28 +627,28 @@
     background: #F3F8F4 !important;
     border-color: #059669 !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px -2px rgba(5, 150, 105, 0.16) !important;
+    box-shadow: 0 3px 10px -2px rgba(5, 150, 105, 0.16) !important;
   }
   .liu-opt-card.selected {
     background: #EDF7F1 !important;
     border-color: #047857 !important;
-    box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.2), 0 4px 14px -2px rgba(4, 120, 87, 0.16) !important;
+    box-shadow: 0 0 0 1.5px rgba(4, 120, 87, 0.25), 0 3px 10px -2px rgba(4, 120, 87, 0.16) !important;
   }
   .liu-opt-left {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
   .liu-radio-circle {
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
     border-radius: 50% !important;
     border: 1.5px solid #DDD5C5 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    transition: all 0.2s !important;
+    transition: all 0.15s !important;
     background: #FFFFFF !important;
   }
   .liu-opt-card.selected .liu-radio-circle {
@@ -657,8 +656,8 @@
     border-color: #047857 !important;
   }
   .liu-radio-dot {
-    width: 7px !important;
-    height: 7px !important;
+    width: 6px !important;
+    height: 6px !important;
     border-radius: 50% !important;
     background: #FFFFFF !important;
     display: none !important;
@@ -667,7 +666,7 @@
     display: block !important;
   }
   .liu-opt-label {
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     color: #0A2618 !important;
   }
@@ -676,15 +675,15 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    margin-top: 4px !important;
+    margin-top: 2px !important;
   }
   .liu-btn-back {
     background: #FFFFFF !important;
     color: #4A6354 !important;
-    border: 1.5px solid #DDD5C5 !important;
-    padding: 9px 20px !important;
+    border: 1px solid #DDD5C5 !important;
+    padding: 6px 16px !important;
     border-radius: 9999px !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     cursor: pointer !important;
     transition: all 0.2s !important;
@@ -698,17 +697,17 @@
     background: linear-gradient(135deg, #064E3B 0%, #047857 55%, #059669 100%) !important;
     color: #FFFFFF !important;
     border: none !important;
-    padding: 10px 28px !important;
+    padding: 8px 24px !important;
     border-radius: 9999px !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 800 !important;
     cursor: pointer !important;
-    box-shadow: 0 4px 14px rgba(4, 120, 87, 0.3) !important;
+    box-shadow: 0 3px 10px rgba(4, 120, 87, 0.3) !important;
     transition: all 0.2s !important;
   }
   .liu-btn-royal-small:hover:not(:disabled) {
-    transform: translateY(-1.5px) !important;
-    box-shadow: 0 6px 18px rgba(4, 120, 87, 0.45) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 5px 14px rgba(4, 120, 87, 0.45) !important;
   }
   .liu-btn-royal-small:disabled {
     opacity: 0.45 !important;
