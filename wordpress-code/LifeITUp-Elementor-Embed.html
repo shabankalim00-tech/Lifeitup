@@ -1,34 +1,43 @@
 <!-- =========================================================================
-     LIFEITUP 2-MINUTE WELLBEING CHECK — 100% EXACT VERCEL LIVE NATIVE EMBED
+     LIFEITUP 2-MINUTE WELLBEING CHECK — 100% RESPONSIVE DESKTOP + MOBILE EMBED
      Paste directly into WordPress Elementor "HTML" Widget
-     Features:
-     - 100% Identical to Vercel (React 19, Lucide Icons, Canvas Confetti, Radar Animations)
-     - Zero WordPress theme conflict (Theme Lunax cannot alter any styles)
-     - Full auto-resizing responsive layout (Mobile + Desktop)
-     - Live APIs connected (Mailchimp, AiSensy WhatsApp, Google Sheet, Gmail SMTP)
      ========================================================================= -->
 
-<div id="lifeitup-embed-container" style="width: 100%; min-height: 850px; background-color: #FAF6EE; display: flex; justify-content: center; align-items: flex-start; padding: 0; margin: 0; box-sizing: border-box;">
+<div id="lifeitup-desktop-wrapper" style="width: 100%; min-height: 100vh; background-color: #FAF6EE; margin: 0; padding: 0; overflow: hidden; display: flex; justify-content: center; align-items: stretch;">
   <iframe 
-    id="lifeitup-live-frame"
+    id="lifeitup-frame"
     src="https://lifeitup.vercel.app" 
-    style="width: 100%; max-width: 680px; height: 920px; border: none; outline: none; background-color: #FAF6EE; display: block; margin: 0 auto; overflow: hidden;"
+    style="width: 100%; min-width: 100%; height: 100vh; min-height: 900px; border: none; outline: none; display: block; margin: 0; padding: 0; background-color: #FAF6EE;"
     allow="clipboard-write; autoplay; fullscreen"
-    scrolling="no">
+    loading="eager">
   </iframe>
 </div>
 
+<style>
+  /* Remove theme margins/paddings around the embed for full-screen desktop view */
+  .elementor-widget-html,
+  .elementor-widget-html .elementor-widget-container {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  @media (min-width: 768px) {
+    #lifeitup-desktop-wrapper, #lifeitup-frame {
+      min-height: 950px !important;
+      height: 100vh !important;
+    }
+  }
+</style>
+
 <script>
-(function() {
-  // Listen for dynamic resize events from Vercel app if emitted
+  // Ensure iframe adjusts if mobile browser dynamic address bar changes
   window.addEventListener("message", function(e) {
-    if (e.data && (e.data.type === "SET_HEIGHT" || e.data.height)) {
-      var h = e.data.height || e.data.value;
-      var frame = document.getElementById("lifeitup-live-frame");
-      if (frame && h > 400) {
-        frame.style.height = (h + 30) + "px";
+    if (e.data && e.data.height) {
+      var frame = document.getElementById("lifeitup-frame");
+      if (frame && e.data.height > 600) {
+        frame.style.height = e.data.height + "px";
       }
     }
   });
-})();
 </script>
