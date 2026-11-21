@@ -1,0 +1,773 @@
+<!-- =========================================================================
+     LIFEITUP 2-MINUTE HOLISTIC WELLBEING CHECK — STANDALONE WORDPRESS CODE
+     Paste this entire code block into any WordPress Page (Custom HTML / Elementor HTML)
+     NO PLUGINS REQUIRED!
+     ========================================================================= -->
+
+<div id="lifeitup-wellness-app">
+  <div class="liu-container">
+    
+    <!-- 1. INTRO SCREEN -->
+    <div id="liu-step-intro" class="liu-screen active">
+      <div class="liu-badge">EVIDENCE-BASED SELF REFLECTION</div>
+      <h1 class="liu-hero-title">2-MINUTE LIFEITUP<br><span class="liu-highlight">HOLISTIC WELLBEING CHECK</span></h1>
+      <p class="liu-hero-sub">Get an evidence-based snapshot of your energy, focus, and life alignment — with a personalised action report sent to you instantly.</p>
+
+      <div class="liu-pillars-grid">
+        <div class="liu-pillar-chip">🌟 Soul / Purpose</div>
+        <div class="liu-pillar-chip">🧠 Mind / Inner Calm</div>
+        <div class="liu-pillar-chip">⚡ Body / Energy</div>
+        <div class="liu-pillar-chip">🚀 Career / Growth</div>
+        <div class="liu-pillar-chip">🌿 Environment / Connection</div>
+        <div class="liu-pillar-chip">🤝 Contribution / Impact</div>
+      </div>
+
+      <div class="liu-btn-wrap">
+        <button type="button" class="liu-btn-primary" onclick="liuStartQuiz()">
+          START 2-MINUTE CHECK &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. QUIZ SCREEN -->
+    <div id="liu-step-quiz" class="liu-screen">
+      <div class="liu-quiz-header">
+        <div class="liu-progress-meta">
+          <span id="liu-q-counter">Question 1 of 12</span>
+          <span id="liu-pillar-badge" class="liu-mini-badge">Pillar 1 — Soul / Purpose</span>
+        </div>
+        <div class="liu-progress-track">
+          <div id="liu-progress-bar" class="liu-progress-fill" style="width: 8.33%;"></div>
+        </div>
+      </div>
+
+      <div class="liu-question-box">
+        <h2 id="liu-question-text" class="liu-question-title">My daily life is connected to a clear, bigger purpose.</h2>
+      </div>
+
+      <div class="liu-options-grid" id="liu-options-container">
+        <!-- Rendered via JS -->
+      </div>
+
+      <div class="liu-nav-row">
+        <button type="button" id="liu-btn-back" class="liu-btn-outline" onclick="liuPrevQuestion()" style="visibility: hidden;">
+          &larr; Back
+        </button>
+        <button type="button" id="liu-btn-next" class="liu-btn-primary" onclick="liuNextQuestion()" disabled>
+          Next &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. ANALYZING SCREEN -->
+    <div id="liu-step-analyzing" class="liu-screen">
+      <div class="liu-analyzing-box">
+        <div class="liu-spinner"></div>
+        <h2 class="liu-analyzing-title">Analyzing Your 6 Wellbeing Dimensions...</h2>
+        <p class="liu-analyzing-desc">Aligning responses with WHO multidimensional wellbeing guidelines.</p>
+      </div>
+    </div>
+
+    <!-- 4. LEAD CAPTURE SCREEN -->
+    <div id="liu-step-lead" class="liu-screen">
+      <div class="liu-lead-box">
+        <div class="liu-badge">ASSESSMENT COMPLETE</div>
+        <h2 class="liu-lead-title">Where Should We Send Your Official Report?</h2>
+        <p class="liu-lead-sub">Enter your details below to unlock your holistic score and receive your official PDF report instantly via Email & WhatsApp.</p>
+
+        <form id="liu-lead-form" onsubmit="liuHandleFormSubmit(event)">
+          <div class="liu-field-group">
+            <label class="liu-label">Full Name *</label>
+            <input type="text" id="liu-name" class="liu-input" placeholder="e.g. Rahul Sharma" required />
+          </div>
+
+          <div class="liu-field-group">
+            <label class="liu-label">Institution / College / Company Name</label>
+            <input type="text" id="liu-institution" class="liu-input" placeholder="e.g. Delhi University / St. Xavier's" />
+          </div>
+
+          <div class="liu-field-group">
+            <label class="liu-label">Mobile Number (WhatsApp) *</label>
+            <input type="tel" id="liu-phone" class="liu-input" placeholder="e.g. +91 98765 43210" required />
+          </div>
+
+          <div class="liu-field-group">
+            <label class="liu-label">Email Address *</label>
+            <input type="email" id="liu-email" class="liu-input" placeholder="e.g. rahul@example.com" required />
+          </div>
+
+          <div class="liu-checkbox-group">
+            <label class="liu-checkbox-label">
+              <input type="checkbox" id="liu-consent" class="liu-checkbox" checked required />
+              <span>I consent to receiving my wellness assessment report, personalized pathway and wellness insights via Email & WhatsApp.</span>
+            </label>
+          </div>
+
+          <div id="liu-form-error" class="liu-alert-error" style="display: none;"></div>
+
+          <div class="liu-btn-wrap">
+            <button type="submit" id="liu-btn-submit" class="liu-btn-primary full-width">
+              SEND ME MY OFFICIAL REPORT &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 5. FINAL REPORT SCREEN -->
+    <div id="liu-step-report" class="liu-screen">
+      <div class="liu-report-card">
+        <div class="liu-badge">OFFICIAL WELLBEING RESULT</div>
+        <h1 class="liu-report-heading">LIFEITUP HOLISTIC WELLNESS SNAPSHOT</h1>
+        <p class="liu-report-sub">Your Personalised Wellness Report & Pathway</p>
+
+        <div class="liu-score-hero">
+          <div class="liu-score-label">HOLISTIC WELLBEING SCORE</div>
+          <div class="liu-score-value">
+            <span id="liu-final-score">38</span> <span class="liu-score-max">/ 48</span>
+          </div>
+          <div style="margin-top: 14px;">
+            <span id="liu-zone-badge" class="liu-status-pill">🟢 STATUS: STABLE</span>
+          </div>
+        </div>
+
+        <div class="liu-report-section highlight-box">
+          <h3 id="liu-band-title" class="liu-section-title">YOU HAVE A FOUNDATION. NOW FIND THE GAP.</h3>
+          <p id="liu-band-headline" class="liu-section-text"></p>
+          <p id="liu-band-reassurance" class="liu-section-muted"></p>
+        </div>
+
+        <div class="liu-report-section dark-card">
+          <h3 class="liu-section-title green-accent">🎯 YOUR FIRST STRATEGIC MOVE</h3>
+          <p id="liu-move-rule" style="font-weight: 700; margin-bottom: 6px; color: #f8fafc;"></p>
+          <p id="liu-move-advice" class="liu-section-text"></p>
+        </div>
+
+        <div class="liu-report-section dark-card">
+          <h3 class="liu-section-title green-accent">📋 YOUR PERSONALISED PATHWAY</h3>
+          <div id="liu-pathway-steps" class="liu-pathway-flow"></div>
+          <p id="liu-pathway-desc" class="liu-section-muted" style="margin-top: 8px;"></p>
+        </div>
+
+        <div class="liu-success-banner">
+          📩 <strong>Check Your Inbox & WhatsApp!</strong><br>
+          Your official Assessment PDF Report has been dispatched to your email address and WhatsApp number.
+        </div>
+
+        <div class="liu-btn-wrap" style="margin-top: 24px;">
+          <button type="button" class="liu-btn-outline" onclick="liuResetQuiz()">
+            🔄 Retake Assessment
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =========================================================================
+     LUXURY EMERALD DARK CSS STYLING
+     ========================================================================= -->
+<style>
+  #lifeitup-wellness-app {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #04100b;
+    color: #ecfdf5;
+    padding: 30px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 700px;
+  }
+  #lifeitup-wellness-app * {
+    box-sizing: border-box;
+  }
+  .liu-container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .liu-screen {
+    display: none;
+    animation: liuFadeIn 0.35s ease forwards;
+  }
+  .liu-screen.active {
+    display: block;
+  }
+  @keyframes liuFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Badges & Titles */
+  .liu-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+  }
+  .liu-hero-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  .liu-highlight {
+    color: #34d399;
+    text-shadow: 0 0 24px rgba(52, 211, 153, 0.3);
+  }
+  .liu-hero-sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 28px;
+  }
+
+  /* Pillars Grid */
+  .liu-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .liu-pillar-chip {
+    background: #092117;
+    border: 1px solid rgba(52, 211, 153, 0.18);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #a7f3d0;
+  }
+
+  /* Buttons */
+  .liu-btn-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .liu-btn-primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+  }
+  .liu-btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+  }
+  .liu-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .liu-btn-primary.full-width {
+    width: 100%;
+  }
+  .liu-btn-outline {
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .liu-btn-outline:hover {
+    color: #ffffff;
+    border-color: #34d399;
+  }
+
+  /* Quiz Layout */
+  .liu-quiz-header {
+    margin-bottom: 24px;
+  }
+  .liu-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #94a3b8;
+  }
+  .liu-mini-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #6ee7b7;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .liu-progress-track {
+    width: 100%;
+    height: 6px;
+    background: #092117;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .liu-progress-fill {
+    height: 100%;
+    background: #10b981;
+    transition: width 0.3s ease;
+  }
+  .liu-question-box {
+    background: #092117;
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .liu-question-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Options */
+  .liu-options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .liu-option-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #061811;
+    border: 1.5px solid rgba(52, 211, 153, 0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+  }
+  .liu-option-btn:hover {
+    border-color: #34d399;
+    background: #0b2c1f;
+    color: #ffffff;
+  }
+  .liu-option-btn.selected {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.18);
+    color: #6ee7b7;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+  }
+  .liu-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Analyzing Spinner */
+  .liu-analyzing-box {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .liu-spinner {
+    width: 54px;
+    height: 54px;
+    border: 4px solid rgba(52, 211, 153, 0.2);
+    border-top-color: #10b981;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    animation: liuSpin 0.9s linear infinite;
+  }
+  @keyframes liuSpin {
+    to { transform: rotate(360deg); }
+  }
+  .liu-analyzing-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+  }
+  .liu-analyzing-desc {
+    color: #94a3b8;
+    font-size: 14px;
+  }
+
+  /* Form Styling */
+  .liu-lead-box {
+    background: #092117;
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+  .liu-lead-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+  }
+  .liu-lead-sub {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+  }
+  .liu-field-group {
+    margin-bottom: 18px;
+  }
+  .liu-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+  }
+  .liu-input {
+    width: 100%;
+    padding: 13px 16px;
+    background: #04100b;
+    border: 1.5px solid rgba(52, 211, 153, 0.25);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .liu-input:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+  }
+  .liu-checkbox-group {
+    margin: 20px 0;
+  }
+  .liu-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .liu-checkbox {
+    margin-top: 2px;
+    accent-color: #10b981;
+    cursor: pointer;
+  }
+  .liu-alert-error {
+    background: rgba(225, 29, 72, 0.15);
+    border: 1px solid #f43f5e;
+    color: #fecdd3;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  /* Final Report Styling */
+  .liu-report-card {
+    background: #092117;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 16px;
+    padding: 32px 24px;
+  }
+  .liu-report-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+  }
+  .liu-report-sub {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 24px 0;
+  }
+  .liu-score-hero {
+    background: #051911;
+    border: 1.5px solid rgba(52, 211, 153, 0.3);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .liu-score-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #a7f3d0;
+    margin-bottom: 8px;
+  }
+  .liu-score-value {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+  }
+  .liu-score-max {
+    font-size: 22px;
+    font-weight: 600;
+    color: #34d399;
+  }
+  .liu-status-pill {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #064e3b;
+    color: #6ee7b7;
+    border: 1px solid rgba(52, 211, 153, 0.4);
+  }
+  .liu-report-section {
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
+  .liu-report-section.highlight-box {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid #10b981;
+  }
+  .liu-report-section.dark-card {
+    background: #061811;
+    border: 1px solid rgba(52, 211, 153, 0.18);
+  }
+  .liu-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+  .liu-section-title.green-accent {
+    color: #34d399;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .liu-section-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .liu-section-muted {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #94a3b8;
+    margin: 8px 0 0 0;
+    font-style: italic;
+  }
+  .liu-pathway-flow {
+    color: #6ee7b7;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .liu-success-banner {
+    background: rgba(5, 150, 105, 0.2);
+    border: 1px solid #10b981;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #d1fae5;
+    line-height: 1.5;
+    text-align: center;
+  }
+</style>
+
+<!-- =========================================================================
+     JAVASCRIPT LOGIC & API DISPATCH
+     ========================================================================= -->
+<script>
+(function() {
+  // Backend API URL (Default: Vercel Production)
+  var BACKEND_API_URL = "https://lifeitup.vercel.app/api/leads";
+
+  var questions = [
+    { id: 1, pillar: "Pillar 1 — Soul / Purpose", text: "My daily life is connected to a clear, bigger purpose" },
+    { id: 2, pillar: "Pillar 1 — Soul / Purpose", text: "The way I spend my time reflects, what truly matters to me." },
+    { id: 3, pillar: "Pillar 2 — Mind / Inner Calm", text: "I can stay calm and think clearly when life becomes stressful." },
+    { id: 4, pillar: "Pillar 2 — Mind / Inner Calm", text: "I can focus on that matters, without constant distractions" },
+    { id: 5, pillar: "Pillar 3 — Body / Energy", text: "I feel energetic throughout the day" },
+    { id: 6, pillar: "Pillar 3 — Body / Energy", text: "My everyday habits—sleep, movement, food - nutrition & recovery are in ideal zone." },
+    { id: 7, pillar: "Pillar 4 — Career / Growth", text: "I have clarity & confidence in making important career decisions" },
+    { id: 8, pillar: "Pillar 4 — Career / Growth", text: "I feel that I am learning, moving, growing in an area that matters to me." },
+    { id: 9, pillar: "Pillar 5 — Environment / Connection", text: "My physical and digital surroundings help me feel organised, calm and in control." },
+    { id: 10, pillar: "Pillar 5 — Environment / Connection", text: "The people closest to me generally support my wellbeing, growth and sense of belonging." },
+    { id: 11, pillar: "Pillar 6 — Contribution / Impact", text: "I feel that what I do makes a positive difference to other people." },
+    { id: 12, pillar: "Pillar 6 — Contribution / Impact", text: "I regularly make time to help, support or uplift others." }
+  ];
+
+  var options = [
+    { label: "Never", value: 1 },
+    { label: "Sometimes", value: 2 },
+    { label: "Often", value: 3 },
+    { label: "Always", value: 4 }
+  ];
+
+  var currentIndex = 0;
+  var answers = {};
+  var sessionId = "wp_" + Math.random().toString(36).substring(2, 10) + "_" + Date.now();
+
+  function showScreen(id) {
+    document.querySelectorAll(".liu-screen").forEach(function(el) { el.classList.remove("active"); });
+    var target = document.getElementById(id);
+    if (target) target.classList.add("active");
+    var container = document.getElementById("lifeitup-wellness-app");
+    if (container) container.scrollIntoView({ behavior: "smooth" });
+  }
+
+  window.liuStartQuiz = function() {
+    currentIndex = 0;
+    answers = {};
+    renderQuestion();
+    showScreen("liu-step-quiz");
+  };
+
+  function renderQuestion() {
+    var q = questions[currentIndex];
+    document.getElementById("liu-q-counter").textContent = "Question " + (currentIndex + 1) + " of 12";
+    document.getElementById("liu-pillar-badge").textContent = q.pillar;
+    document.getElementById("liu-question-text").textContent = q.text;
+
+    var pct = ((currentIndex + 1) / 12) * 100;
+    document.getElementById("liu-progress-bar").style.width = pct + "%";
+
+    var optionsContainer = document.getElementById("liu-options-container");
+    optionsContainer.innerHTML = "";
+
+    var currentAns = answers[q.id];
+
+    options.forEach(function(opt) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "liu-option-btn" + (currentAns === opt.value ? " selected" : "");
+      btn.innerHTML = "<span>" + opt.label + "</span><span>" + (currentAns === opt.value ? "✓" : "") + "</span>";
+      btn.onclick = function() {
+        answers[q.id] = opt.value;
+        renderQuestion();
+        document.getElementById("liu-btn-next").disabled = false;
+      };
+      optionsContainer.appendChild(btn);
+    });
+
+    document.getElementById("liu-btn-back").style.visibility = (currentIndex === 0) ? "hidden" : "visible";
+    document.getElementById("liu-btn-next").disabled = !answers[q.id];
+  }
+
+  window.liuPrevQuestion = function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderQuestion();
+    }
+  };
+
+  window.liuNextQuestion = function() {
+    var q = questions[currentIndex];
+    if (!answers[q.id]) return;
+
+    if (currentIndex < questions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+    } else {
+      // Finished 12 questions -> Analyze screen
+      showScreen("liu-step-analyzing");
+      setTimeout(function() {
+        showScreen("liu-step-lead");
+      }, 1400);
+    }
+  };
+
+  window.liuHandleFormSubmit = async function(e) {
+    e.preventDefault();
+    var errBox = document.getElementById("liu-form-error");
+    errBox.style.display = "none";
+
+    var name = document.getElementById("liu-name").value.trim();
+    var institution = document.getElementById("liu-institution").value.trim();
+    var phone = document.getElementById("liu-phone").value.trim();
+    var email = document.getElementById("liu-email").value.trim();
+    var consent = document.getElementById("liu-consent").checked;
+
+    if (!name || !email || !phone) {
+      errBox.textContent = "Please fill in all required fields.";
+      errBox.style.display = "block";
+      return;
+    }
+
+    var submitBtn = document.getElementById("liu-btn-submit");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "GENERATING YOUR REPORT...";
+
+    var payload = {
+      sessionId: sessionId,
+      fullName: name,
+      organization: institution,
+      institution: institution,
+      email: email,
+      mobile: phone,
+      consent: consent,
+      answers: answers
+    };
+
+    try {
+      var res = await fetch(BACKEND_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      var data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to submit assessment.");
+      }
+
+      // Display Final Report Screen
+      renderReportScreen(data);
+      showScreen("liu-step-report");
+
+    } catch (err) {
+      errBox.textContent = "Error: " + err.message + ". Please try again.";
+      errBox.style.display = "block";
+      submitBtn.disabled = false;
+      submitBtn.textContent = "SEND ME MY OFFICIAL REPORT \u2192";
+    }
+  };
+
+  function renderReportScreen(data) {
+    var score = (data.report && data.report.score) || 36;
+    var band = (data.report && data.report.scoreBand) || {};
+
+    document.getElementById("liu-final-score").textContent = score;
+    document.getElementById("liu-zone-badge").textContent = (band.emoji || "✨") + " STATUS: " + (band.zone || "STABLE");
+    document.getElementById("liu-band-title").textContent = band.title || "YOUR ASSESSMENT RESULT";
+    document.getElementById("liu-band-headline").textContent = band.headline || "";
+    document.getElementById("liu-band-reassurance").textContent = band.reassurance || "";
+    document.getElementById("liu-move-rule").textContent = band.firstMoveRule || "";
+    document.getElementById("liu-move-advice").textContent = band.firstMoveAdvice || "";
+    document.getElementById("liu-pathway-steps").innerHTML = (band.pathwaySteps || ["RESET", "BUILD", "SUSTAIN"]).join(" &rarr; ");
+    document.getElementById("liu-pathway-desc").textContent = band.pathwayDescription || "";
+  }
+
+  window.liuResetQuiz = function() {
+    sessionId = "wp_" + Math.random().toString(36).substring(2, 10) + "_" + Date.now();
+    currentIndex = 0;
+    answers = {};
+    document.getElementById("liu-lead-form").reset();
+    showScreen("liu-step-intro");
+  };
+
+})();
+</script>
