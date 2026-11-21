@@ -1,0 +1,34 @@
+<!-- =========================================================================
+     LIFEITUP 2-MINUTE WELLBEING CHECK — 100% EXACT VERCEL LIVE NATIVE EMBED
+     Paste directly into WordPress Elementor "HTML" Widget
+     Features:
+     - 100% Identical to Vercel (React 19, Lucide Icons, Canvas Confetti, Radar Animations)
+     - Zero WordPress theme conflict (Theme Lunax cannot alter any styles)
+     - Full auto-resizing responsive layout (Mobile + Desktop)
+     - Live APIs connected (Mailchimp, AiSensy WhatsApp, Google Sheet, Gmail SMTP)
+     ========================================================================= -->
+
+<div id="lifeitup-embed-container" style="width: 100%; min-height: 850px; background-color: #FAF6EE; display: flex; justify-content: center; align-items: flex-start; padding: 0; margin: 0; box-sizing: border-box;">
+  <iframe 
+    id="lifeitup-live-frame"
+    src="https://lifeitup.vercel.app" 
+    style="width: 100%; max-width: 680px; height: 920px; border: none; outline: none; background-color: #FAF6EE; display: block; margin: 0 auto; overflow: hidden;"
+    allow="clipboard-write; autoplay; fullscreen"
+    scrolling="no">
+  </iframe>
+</div>
+
+<script>
+(function() {
+  // Listen for dynamic resize events from Vercel app if emitted
+  window.addEventListener("message", function(e) {
+    if (e.data && (e.data.type === "SET_HEIGHT" || e.data.height)) {
+      var h = e.data.height || e.data.value;
+      var frame = document.getElementById("lifeitup-live-frame");
+      if (frame && h > 400) {
+        frame.style.height = (h + 30) + "px";
+      }
+    }
+  });
+})();
+</script>

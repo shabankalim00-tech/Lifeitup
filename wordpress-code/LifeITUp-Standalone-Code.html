@@ -118,12 +118,40 @@
       </div>
     </div>
 
-    <!-- 3. ANALYZING SCREEN -->
+    <!-- 3. ANALYZING SCREEN (Exact Original with Radar Pulse & 4 Progressive Steps) -->
     <div id="liu-screen-analyzing" class="liu-screen">
-      <div class="liu-center-wrap" style="padding: 40px 10px;">
-        <div class="liu-emerald-spinner"></div>
-        <h2 class="liu-analyzing-h2">Analyzing Your 6 Wellbeing Dimensions...</h2>
-        <p class="liu-analyzing-sub">Aligning responses with WHO multidimensional wellbeing guidelines.</p>
+      <div class="liu-center-wrap" style="padding: 20px 10px; max-width: 520px; margin: 0 auto;">
+        <!-- Pulsing Concentric Radar Rings -->
+        <div class="liu-radar-wrap">
+          <div class="liu-radar-ping"></div>
+          <div class="liu-radar-spin"></div>
+          <div class="liu-radar-center">
+            <svg class="liu-sparkles-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M8.757 15.243l-2.121 2.121m12.728 0l-2.121-2.121M8.757 8.757L6.636 6.636"/></svg>
+          </div>
+        </div>
+
+        <h2 class="liu-analyzing-h2" style="margin-top: 18px; margin-bottom: 6px;">Synthesizing Your Assessment</h2>
+        <p class="liu-analyzing-sub" style="margin-bottom: 20px;">Aligning your responses with evidence-based wellbeing pillars.</p>
+
+        <!-- 4 Sequential Progress Steps -->
+        <div class="liu-analysis-steps-box" id="liu-analysis-steps-box">
+          <div class="liu-step-item" id="liu-step-0">
+            <div class="liu-step-indicator"><div class="liu-step-dot"></div></div>
+            <span class="liu-step-label">Aggregating 12 responses across 6 life dimensions...</span>
+          </div>
+          <div class="liu-step-item" id="liu-step-1">
+            <div class="liu-step-indicator"><div class="liu-step-dot"></div></div>
+            <span class="liu-step-label">Evaluating Soul, Inner Calm, and Energy indicators...</span>
+          </div>
+          <div class="liu-step-item" id="liu-step-2">
+            <div class="liu-step-indicator"><div class="liu-step-dot"></div></div>
+            <span class="liu-step-label">Calibrating Career, Environment, and Contribution scores...</span>
+          </div>
+          <div class="liu-step-item" id="liu-step-3">
+            <div class="liu-step-indicator"><div class="liu-step-dot"></div></div>
+            <span class="liu-step-label">Formulating your WHO-aligned personalized pathway...</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -986,6 +1014,7 @@
 <!-- =========================================================================
      JAVASCRIPT LOGIC & API DISPATCH
      ========================================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 <script>
 (function() {
   var API_ENDPOINT = "https://lifeitup.vercel.app/api/leads";
@@ -1169,9 +1198,9 @@
       document.getElementById("liu-lead-desc-zone").textContent = localScoreResult.zone;
 
       showScreen("liu-screen-analyzing");
-      setTimeout(function() {
+      runAnalyzingSteps(function() {
         showScreen("liu-screen-lead");
-      }, 1300);
+      });
     }
   };
 
@@ -1244,12 +1273,40 @@
       // Display Final Report
       renderFinalReport(data);
       showScreen("liu-screen-report");
+    // Trigger Luxury Celebration Confetti
+    if (typeof confetti === "function") {
+      try {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#047857', '#10b981', '#d4af37', '#e6ca85', '#38bdf8']
+        });
+      } catch (e) {
+        console.log("Confetti trigger:", e);
+      }
+    }
+
 
     } catch (err) {
       console.warn("Backend API warning, rendering local score:", err);
       // Even if network blips, user gets their instant score report
       renderFinalReport({ report: { score: localScoreResult.score, scoreBand: localScoreResult } });
       showScreen("liu-screen-report");
+    // Trigger Luxury Celebration Confetti
+    if (typeof confetti === "function") {
+      try {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#047857', '#10b981', '#d4af37', '#e6ca85', '#38bdf8']
+        });
+      } catch (e) {
+        console.log("Confetti trigger:", e);
+      }
+    }
+
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<span>SEND ME MY OFFICIAL REPORT</span><svg class="liu-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
